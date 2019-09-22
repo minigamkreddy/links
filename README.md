@@ -71,6 +71,11 @@ https://elinux.org/Building_BBB_Kernel
 https://embedjournal.com/kernel-compilation-beaglebone-black/
 https://longervision.github.io/2018/01/10/Embedded/beaglebone-black-uboot-kernel/
 http://www.bootembedded.com/embedded-linux/building-embedded-linux-scratch-beaglebone-black/
+https://www.kernel.org/doc/html/v4.14/dev-tools/kgdb.html
+https://mirrors.edge.kernel.org/pub/linux/kernel/people/jwessel/kgdb/ch04.html
+https://elinux.org/images/2/2a/Using-buildroot-real-project.pdf
+https://buildroot.org/downloads/manual/manual.html
+
 
 
 

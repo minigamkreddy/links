@@ -402,6 +402,12 @@ https://pypi.org/project/tissue/
 
 ant : wpa_supplicant -Dnl80211 -iwlan0 -c/etc/wpa_supplicant.conf
 
+I tried to compile wpa_supplicant 2.9 on device by following commands:
+pkg install wget build-essential pkg-config openssl openssl-static dbus dbus-glib dbus-glib-static dbus-static readline readline-static ncurses ncurses-static libnl libnl-static
+wget https://www.w1.fi/releases/wpa_supplicant-2.9.tar.gz && tar xvf wpa_supplicant-2.9.tar.gz
+cd wpa_supplicant-2.9/wpa_supplicant/
+cp defconfig .config
+make
 
 -D : specifies the driver
 
@@ -416,6 +422,7 @@ nmcli -help
 nmcli con show : Lists all the Network connections which is created under network manager.
 wpa_cli -i <interface> status
 ps -aux | grep -v grep | grep wpa_supplicant
+/sbin/wpa_supplicant -u -s -O /run/wpa_supplicant
 
 regression exexution command
 python run_regression_with_sky.py -s regression_sanity_test.py -a test_id='test_case_number' -l test.log

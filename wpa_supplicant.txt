@@ -1,0 +1,105 @@
+
+
+root@miniga:/tmp/wpa_supplicant-2.9# wpa_cli
+wpa_cli v2.9
+Copyright (c) 2004-2019, Jouni Malinen <j@w1.fi> and contributors
+
+This software may be distributed under the terms of the BSD license.
+See README for more details.
+
+
+Selected interface 'wlp3s0'
+
+Interactive mode
+
+> scan_result
+bssid / frequency / signal level / flags / ssid
+64:70:02:3e:1e:4c	2437	-22	[WPA-PSK-CCMP][WPA2-PSK-CCMP][WPS][ESS]	PG 2ND FLOOR 1
+c8:3a:35:3b:4a:48	2437	-58	[WPA-PSK-CCMP][ESS]	PG 3RD FLOOR 4
+c0:a0:bb:c9:46:dc	2412	-46	[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP][WPS][ESS]	PG 2ND FLOOR 4
+c8:3a:35:80:7b:50	2437	-54	[WPA-PSK-CCMP][ESS]	PG 1ST FLOOR 1
+c8:3a:35:3b:8c:18	2447	-64	[WPA-PSK-CCMP][ESS]	PG 2ND FLOOR 2
+74:da:da:c6:85:36	2417	-62	[WPA-PSK-CCMP][WPA2-PSK-CCMP][ESS]	OM SAI RAM 3RD B
+
+
+root@miniga:/tmp/wpa_supplicant-2.9/wpa_supplicant# wpa_cli
+wpa_cli v2.9
+Copyright (c) 2004-2019, Jouni Malinen <j@w1.fi> and contributors
+
+This software may be distributed under the terms of the BSD license.
+See README for more details.
+
+
+Selected interface 'wlp3s0'
+
+Interactive mode
+
+> wlp3s0
+Unknown command 'wlp3s0'
+> scan
+OK
+<3>CTRL-EVENT-SCAN-STARTED 
+<3>CTRL-EVENT-SCAN-RESULTS
+
+
+sudo killall wpa_supplicant
+
+
+wpa_supplicant compilation steps link
+
+https://www.linuxtopic.com/2017/08/compile-wpasupplicant-ubuntu.html
+
+which wpa_cli
+/usr/local/sbin/wpa_cli
+
+
+ant : wpa_supplicant -Dnl80211 -iwlan0 -c/etc/wpa_supplicant.conf
+
+I tried to compile wpa_supplicant 2.9 on device by following commands:
+pkg install wget build-essential pkg-config openssl openssl-static dbus dbus-glib dbus-glib-static dbus-static readline readline-static ncurses ncurses-static libnl libnl-static
+wget https://www.w1.fi/releases/wpa_supplicant-2.9.tar.gz && tar xvf wpa_supplicant-2.9.tar.gz
+cd wpa_supplicant-2.9/wpa_supplicant/
+cp defconfig .config
+make
+
+-D : specifies the driver
+
+-i : wireless interface
+
+-c : configuration file for connection.
+
+Configuration file examples for connections:
+
+nmcli is a command line tool for controlling Network Manager.nmcli is used to create, display, edit, delete, activate, and deactivate network connections, as well as control and display network device status.
+nmcli -help
+nmcli con show : Lists all the Network connections which is created under network manager.
+wpa_cli -i <interface> status
+ps -aux | grep -v grep | grep wpa_supplicant
+
+we need to run the this command to execute your compiled code
+and this is used to create the interface of wireless
+
+sudo killall wpa_supplicant
+/sbin/wpa_supplicant -u -s -O /run/wpa_supplicant
+
+
+
+sudo wpa_cli -i wlp3s0 status
+
+output
+
+bssid=64:70:02:3e:1e:4c
+freq=2437
+ssid=PG 2ND FLOOR 1
+id=0
+mode=station
+wifi_generation=4
+pairwise_cipher=CCMP
+group_cipher=CCMP
+key_mgmt=WPA2-PSK
+wpa_state=COMPLETED
+ip_address=192.168.0.113
+manoj_p2p_device_address=78:45:61:ec:41:b1
+address=78:45:61:ec:41:b1
+uuid=e3890fd4-e5a4-597f-ae61-22b72b3dadb0
+

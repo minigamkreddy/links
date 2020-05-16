@@ -1,0 +1,546 @@
+DATE
+	
+
+TOPICS
+	
+
+PRESENTER
+
+
+
+	
+
+802.11 Power Management
+Legacy power management
+U-APSD power management
+
+
+
+	
+
+802.11 Medium Contention
+
+
+
+	
+
+802.11n HT Analysis:
+   Introduction
+   HT Control Field
+   HT Information Elements
+
+
+
+	
+
+802.11n HT Analysis:
+    HT Capabilities Element
+    HT Operation Element
+
+802.11s Mesh Technology
+
+
+TIM : Traffic Indication
+
+
+https://blogs.arubanetworks.com/industries/802-11-tim-and-dtim-information-elements/
+
+http://www.hitchhikersguidetolearning.com/2017/09/17/traffic-indication-map-explained/
+
+
+
+docker links
+
+docker run busybox nslookup google.com
+
+pip freeze > requirements.txt
+
+intalling the latest docker-compose to compile the docker-compose.yml
+
+curl -L "https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m)" > ./docker-compose
+sudo mv ./docker-compose /usr/bin/docker-compose
+sudo chmod +x /usr/bin/docker-compose
+
+
+
+https://support.getjoan.com/hc/en-us/articles/360008889859-How-to-change-the-Docker-default-subnet-IP-address
+
+https://docs.docker.com/engine/reference/commandline/swarm_leave/
+
+https://askubuntu.com/questions/935569/how-to-completely-uninstall-docker
+
+https://linuxize.com/post/how-to-remove-docker-images-containers-volumes-and-networks/
+
+https://docs.docker.com/network/network-tutorial-standalone/
+
+https://stackoverflow.com/questions/42760216/docker-restart-container-failed-already-in-use-but-theres-no-more-docker-im/42760333
+
+https://www.digitalocean.com/community/questions/how-to-ping-docker-container-from-another-container-by-name
+
+https://superuser.com/questions/718916/problems-installing-ping-in-docker
+
+https://askubuntu.com/questions/881843/dns-issue-with-docker-image
+
+
+
+
+
+
+cisco packet tracer links
+
+https://www.netacad.com/portal/learning for creating the account in cisco packet trace
+
+https://www.netacad.com/portal/learning
+
+
+username : mmkreddy701@gmail.com
+
+password  : Manoj434
+
+
+http://techemergente.blogspot.com/ will have all the vedioes related to the packet tracer.
+
+
+https://www.debian.org/distrib/packages#search_packages searching related packages in the internet
+
+
+wireless capture filters and the management frames and control frames and data frames links
+
+
+https://www.wireshark.org/docs/dfref/w/wlan.html
+
+https://mrncciew.com/
+
+https://mrncciew.com/2014/10/04/my-cwap-study-notes/
+
+https://www.cleartosend.net/archive/
+
+ 
+
+
+multiprocess in python
+
+https://pymotw.com/2/multiprocessing/basics.html
+
+
+html
+
+https://www.w3schools.com/tags/ref_byfunc.asp
+
+
+vlan:
+
+https://developers.redhat.com/blog/2017/09/14/vlan-filter-support-on-bridge/
+
+ https://wiki.archlinux.org/index.php/Network_bridge
+
+https://www.cyberciti.biz/faq/linux-command-to-display-network-bridge-name/
+
+https://www.linuxjournal.com/article/10821
+
+https://wiki.archlinux.org/index.php/Network_bridge
+
+
+
+As discussed below are few topics for presentation. Add any missing modules;
+
+Sl.No
+	
+
+Topic
+
+1
+	
+
+Generators
+
+2
+	
+
+Using pdb for debugging
+
+3
+	
+
+Pandas
+
+4
+	
+
+Context managers
+
+5
+	
+
+asyncio
+
+6
+	
+
+Decorators
+
+7
+	
+
+Jenkins and Continuous integration in python
+
+8
+	
+
+Creating own package in python
+
+9
+	
+
+Numpy
+
+10
+	
+
+Scipy
+
+11
+	
+
+Creating web UI to trigger automation (eg: slickqa)
+
+12
+	
+
+Xmlrpc with Twisted (for client/server)
+
+
+
+
+Q in Q explanation in detail
+
+
+https://community.fs.com/blog/qinq-vs-vlan-vs-vxlan.html
+https://support.huawei.com/enterprise/en/doc/EDOC1000178168/d9b989f5/selective-qinq
+
+
+https://www.digitalocean.com/community/tutorials/how-to-use-iproute2-tools-to-manage-network-configuration-on-a-linux-vps
+
+Hi Manoj,
+
+
+Install teamviewer.
+
+
+Use below credentials to login to vivint setup:
+
+
+sniffer PC : 1482075675
+password : 12345678
+
+
+Controller PC: 1482383853
+password : 12345678
+
+
+root password for controller PC : Pa55W0rd!!
+
+
+Teamviewer link
+
+
+https://websiteforstudents.com/installing-teamviewer-on-ubuntu-16-04-17-10-18-04/
+
+
+Ethernet network driver link
+
+https://www.oreilly.com/library/view/linux-device-drivers/0596005903/ch17.html
+
+
+https://www.cs.dartmouth.edu/~sergey/me/netreads/path-of-packet/Lab9_modified.pdf
+http://www.campsmur.cat/files/mac80211_intro.pdf
+
+
+The commands to redirect the compile code to a folder are
+
+1) mkdir build
+
+2) make O=build menuconfig
+
+3) make O=build
+
+4) make O=build modules_install
+
+5) make O=build install
+
+
+This csope_maps.vim file should be copied to /home/test/Documents
+
+
+And copy the cscope_maps_vim file into the ~/.vimrc file we need to make the changes like
+
+
+source /home/test/Documents/cscope_maps.vim
+
+
+
+lspci is used to find the which driver is present in the system
+
+
+Ath9k driver walk path:
+
+http://www.campsmur.cat/files/mac80211_intro.pdf
+
+
+Ath9k Dependency drivers:
+
+mac80211
+
+ath9k_hw
+
+ath9k_common
+
+cfg80211
+
+ath
+
+
+Backport Installation:
+
+Download the backport source files:
+
+https://backports.wiki.kernel.org/index.php/Releases
+
+
+Installation:
+
+1. untar
+
+2.
+
+3.
+
+4.
+
+5. Check your current linux version: uname -r
+
+Keep backup of Ath9k Dependency drivers files
+
+
+cd /lib/modules/4.4.0-170-generic/
+
+sudo mv ./net/mac80211/mac80211.ko ./net/mac80211/mac80211.ko_ORG
+
+# ctreate a directory ‘ath9k_modules_ORG’ in ./drivers/net/wireless/ath/ath9k and move the all .ko files into the new directory
+
+mkdir ath9k_modules_ORG
+
+sudo mv ./drivers/net/wireless/ath/ath9k/*.ko ./drivers/net/wireless/ath/ath9k/ ath9k_modules_ORG/
+
+
+
+
+# Add the debug statements
+
+vi net/mac80211/iface.c
+
+vi net/mac80211/tx.c
+
+# After adding the debug statements do make
+
+make
+
+# dmesg clear
+
+sudo dmesg -C
+
+
+find -iname *.ko
+
+# Insert the module for athros9k
+
+sudo insmod ./compat/compat.ko
+
+sudo insmod ./net/wireless/cfg80211.ko
+
+sudo insmod ./net/mac80211/mac80211.ko
+
+sudo insmod ./drivers/net/wireless/ath/ath.ko
+
+sudo insmod ./drivers/net/wireless/ath/ath9k/ath9k_hw.ko
+
+sudo insmod ./drivers/net/wireless/ath/ath9k/ath9k_common.ko
+
+sudo insmod ./drivers/net/wireless/ath/ath9k/ath9k_htc.ko
+
+sudo insmod ./drivers/net/wireless/ath/ath9k/ath9k.ko
+
+
+# Check the debug message via dmesg or modinfo
+
+dmesg
+
+
+modinfo ath9k
+
+modinfo ./drivers/net/wireless/ath/ath9k/ath9k
+
+modinfo ./drivers/net/wireless/ath/ath9k/ath9k.ko
+
+
+
+
+
+ath9k code flow
+
+wpa_supplcant->cfg82011->mac80211->ath9k
+                            nl80211    iee82011    
+This flow is for the management frames.
+we need to open the drivers/net/wireless/ath9k/ath9k_main.c
+In this file the atheros driver will give tx function to interact between the mac and ath.
+
+http://www.campsmur.cat/files/mac80211_intro.pdf
+
+
+code flow link for the icmp in linux kernel
+
+https://books.google.co.in/books?id=RpsQAwAAQBAJ&pg=PA37&lpg=PA37&dq=icmp+protocol+tranvers+through+the+ipv4++in+the+kernel+linux&source=bl&ots=rBwQ1ozH2g&sig=ACfU3U0XE3avoiCXy6DRPuL1U_9XLAehZw&hl=en&sa=X&ved=2ahUKEwjuxrzt1ebmAhXJzDgGHaVGAeYQ6AEwBHoECA0QAQ#v=onepage&q=icmp%20protocol%20tranvers%20through%20the%20ipv4%20%20in%20the%20kernel%20linux&f=false
+
+rmmod mac80211
+ERROR: Module mac80211 is in use by: ath9k ath9k_hw
+
+insmod mac80211 rmmod: ERROR:
+linux-5.4.6/drivers/net/wireless# modinfo ath9k
+rmmod ath9k
+
+
+https://www.toradex.com/community/questions/1309/adding-wifi-driver-to-the-kernel.html
+dmesg | grep ath
+
+linux-5.4.6/drivers/net/wireless/ath/ath9k# vi ath9k_hw.mod.c
+MODULE_INFO(depends, "ath,mac80211")
+
+
+linux-5.4.6/drivers/net/wireless/ath/ath9k# vi ath9k_common.mod.c
+MODULE_INFO(depends, "ath9k_hw,cfg80211,ath")
+
+
+
+linux-5.4.6/drivers/net/wireless/ath/ath9k# vi ath9k.mod.c
+MODULE_INFO(depends, "mac80211,ath9k_hw,ath9k_common,cfg80211,ath")
+
+
+linux-5.4.6/drivers/net/wireless/broadcom/brcm80211/brcmfmac# vi cfg80211.c
+
+linux-5.4.6# cd net/mac80211/
+
+linux-5.4.6# find . | grep mac80211$
+
+which wpa_cli
+/usr/local/sbin/wpa_cli
+
+lsmod | grep ath
+
+If we make any changes in the below given file we need to do the
+make bzImage
+
+link for the icmp ,ipv4 and upd
+net/ethernet/eth.c
+net/ipv4/icmp.c
+/net/ipv4/netfilter/nf_nat_proto_icmp.c
+/net/ipv4/netfilter/nf_conntrack_proto_icmp.c
+/net/batman-adv/icmp_socket.c
+
+net/ipv4/igmp.c
+net/ipv4/af_inet.c for ipv4 header
+net/ipv4/arp.c
+net/ipv4/udp.c
+net/ipv4/tcp.c
+include/linux/udp.h
+include/linux/icmp.h
+include/linux/icmpv6.h
+
+net/ethernet/eth.c
+
+wireless
+
+drivers/staging/wlan-ng/cfg80211.c
+
+
+drivers/net/wireless/ath/ath6kl/cfg80211.c
+include/net/mac80211.h  ->  The original struct ieee80211_ops contains a long list of APIs, but not all of them are mandatory
+linux-5.4.6/net/wireless# vi scan.c
+net/wireless/nl80211.c
+net/wireless/mesh.c
+net/wireless/nl80211.h
+net/mac80211/main.c
+include/net/cfg80211.h
+
+
+ping
+
+tools/testing/selftests/bpf/xdping.c:56:        printf("64 bytes from %s: icmp_seq=%d ttl=64 time=%#.5f ms\n",
+
+
+wireless device driver points
+
+1) For WiFi devices, however, it is usually mac80211 (instead of the device drivers) that registers with netdev_ops. See net/mac80211/iface.c
+2)
+
+http://www.haifux.org/lectures/217/netLec5.pdf
+http://www.haifux.org/lectures/172/netLec.pdf
+https://www.cs.dartmouth.edu/~sergey/me/netreads/path-of-packet/Lab9_modified.pdf
+
+
+
+wpa_supplicant compilation steps link
+
+https://www.linuxtopic.com/2017/08/compile-wpasupplicant-ubuntu.html
+
+udevadm info --query=property --name=/dev/sdb1 | grep ID_SERIAL_SHORT
+
+To install the mcproxy to support forward rules in the system as switch instead of the iptables in the switch and br-ctl is the command to create the brige to support the switch functionality in the system and as router.
+https://www.tldp.org/HOWTO/BRIDGE-STP-HOWTO/set-up-the-bridge.html
+
+https://github.com/mcproxy/mcproxy
+
+
+python /home/vivint/manoj_rpi//rpi/vivint_camera.py Dbc2s250 /dev/ttyUSB0 38400 reboot_camera adcvideo
+To configure the linux system as router.
+
+https://www.ascinc.com/blog/linux/how-to-build-a-simple-router-with-ubuntu-server-18-04-1-lts-bionic-beaver/
+And we need to give the dhcp client pc as a static ip thought the dhcp server is run.
+one interface should be connected to the internet (ISP).
+And another interface should be dhcp server (like LAN and WAN).
+And in the dhcp configuration we need to give every information like router,default-gw etc.,
+
+
+uci -q show vivint | grep mode
+cat /debug.txt  | top
+cat /debug.txt  | head
+grep -irn 'ISSUE_22' --include=*.py
+https://stackoverflow.com/questions/21181231/server-certificate-verification-failed-cafile-etc-ssl-certs-ca-certificates-c
+
+export GIT_SSL_NO_VERIFY=1
+
+How to Find the Best Wi-Fi Channel With Linux Command Line
+sudo iwlist wlp0s20f3 scan | grep 2.4 | sort | uniq -c | sort -n
+
+
+Capturing the four-way handshake will not divulge the PMK or PSK 
+(since capturing the handshake is trivial over wireless this would be a major vulnerability). 
+The PMK isn't even sent during the handshake, instead it is used to calculate a Message Integrity Check (MIC).
+
+not WPA2-EAP ? – Shuzheng Jan 19 '16 at 11:39
+
+http://www.differencebetween.net/technology/difference-between-wpa-and-wpa2/
+
+The four way handshake is actually very simple, but clever:
+
+    The AP sends a value to the Client. (This is not protected in any way).
+    The client generates a key and sends back its own random value and as code to verify that value using the value that the AP sent.
+    The AP generates a key and if needed sends back a group key and another verification code.
+    The Client sends back a message to confirm everything is okay.
+
+https://www.ictshore.com/free-ccna-course/dhcpv6-basics/
+
+
+Can you please check the below link for the IPv6 testing and corresponding tools offered by UNH-IOL
+
+https://www.iol.unh.edu/testing/ip/ipv6
+https://youtu.be/x7cUVuieQ5A

@@ -1,0 +1,30 @@
+https://www.slideshare.net/DherytaJaisinghani/tutorial-on-ieee-80211-mac-protocols-and-frames
+
+QOS Control Field.
+  2.802.11 Block Ack Mechanism.
+  3.Basics Of Aggregation
+
+
+https://mrncciew.com/2014/10/02/cwap-802-11-control-frame-types/
+https://mrncciew.com/2014/11/01/cwap-802-11-block-ack/
+
+(((wlan.sa == 0c:80:63:5a:de:3e)  ) && (wlan.da == 48:01:c5:25:c0:be)) || (((wlan.da == 0c:80:63:5a:de:3e)  ) && (wlan.sa == 48:01:c5:25:c0:be))
+
+https://stackoverflow.com/questions/31638582/android-adb-devices-unauthorized
+https://github.com/xiaocong/uiautomator/issues/172
+
+sudo -H pip3 install --upgrade pip
+sudo -H pip2 install --upgrade pip
+
+pip install ipython
+
+uiautomator link
+
+https://developer.android.com/studio
+
+https://www.linuxbabe.com/ubuntu/install-android-studio-ubuntu-16-04
+
+To install kubernetes in 2 VMs:                     https://vitux.com/install-and-deploy-kubernetes-on-ubuntu/
+2) To bring up the dashboard:                            https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/
+
+

@@ -1,0 +1,245 @@
+https://www.iol.unh.edu/testing/ip/ipv6
+
+python3.6 -m nose -c ../config/panels/ges_dbc_wallsly.ini --nologcapture --nocapture
+
+sudo apt-get install python-wxtools
+
+sudo apt-get install python-pygame
+
+wx python link
+
+https://letscodepython.com/blog/2017/12/27/building-guis-wxpython/
+
+
+pandas link
+
+https://www.marsja.se/pandas-excel-tutorial-how-to-read-and-write-excel-files/#Pandas_Read_Excel_How_to_Read_All_Sheets
+
+
+multiprocess in python
+
+https://pymotw.com/2/multiprocessing/basics.html
+
+
+To create the executiable file in python
+
+sudo pip install pyinstaller
+
+
+
+Kimo has started executing tests locally from NUC instead of smartlab due to MDNS and  other issues in smartlab. Please refer the attached mail for steps to access the test results, let me know if any issues in accessing the same. Below is the new private IPs for NUC w.r.t to Camera type.
+
+qaadmin@10.1.71.14
+
+password = password100
+
+ 
+
+NUC/Sniffer
+	
+
+IP
+	
+
+Camera
+
+2rf1
+	
+
+192.168.2.27
+	
+
+Ping
+
+2rf2
+	
+
+192.168.2.222
+	
+
+DBC
+
+2rf4
+	
+
+192.168.2.138
+	
+
+400
+
+Username/Password: qaadmin/password100
+
+
+ifconfig -a
+
+sudo ifconfig 'interface' up
+
+sudo iwconfig 'interface' mode monitor
+
+sudo iwconfig 'interface' channel 6
+
+
+
+find *.log | wc -l
+
+grep FAILED *.log | wc -l
+
+grep "AssertionError" *.log | wc -l
+
+grep "AssertionError" *.log -B 5 -A 5
+
+grep panel_*_failed  | wc -l
+
+
+To start the server : Command to start supplic
+
+go get -u github.com/urfave/negroni
+
+go get -u github.com/golang/dep/cmd/dep
+
+https://www.gorillatoolkit.org/pkg/mux
+
+https://github.com/Chennai-Golang/101-workshop/blob/master/Setup.md
+
+https://github.com/AgarwalConsulting/learning-golang/blob/master/004-http-application/003-handler-interface.go
+
+https://tour.golang.org/moretypes/4
+
+https://github.com/sirupsen/logrus
+
+https://12factor.net/
+
+https://github.com/golang-standards/project-layout
+
+
+To compile the go folders in the garnet
+
+
+Example
+
+
+/.goenv/src/github.com/Chennai-Golang/101-workshop/examples/packages
+
+vi hello.go
+
+go build .
+
+./packages
+
+
+http://gorm.io/docs/models.html
+
+https://golang.org/src/unsafe/unsafe.go
+
+
+examples on channels
+
+https://tour.golang.org/concurrency/5
+
+
+timer := time.After
+
+(time.Microsecond * 10) <- timer
+
+quit <- 0
+
+
+golang.org/pkg/builtin
+
+
+https://tour.golang.org/garbagecollector/1
+
+https://github.com/go-ozzo/ozzo-validation
+
+
+https://blog.golang.org/using-go-modules
+
+
+Garbage Collector
+
+
+GoTri-colour concurrent mark and sweep garbage collector
+
+https://gs.globaledgesoft.com/hl.ashweeja/Yofi_Automation
+
+Python uses GC and ARC (Automatic Reference Coding)
+
+
+GO
+
+
+1) Mark phase
+
+2) Sweep phases
+
+
+Go uses the breathefirst traversing (depthfirst)
+
+
+https://golang.org/pkg/runtime/
+
+
+1) Latency: low latency
+
+2) Throughput : how many operations can program can do
+
+high Throughput
+
+
+https://making.pusher.com/golangs-real-time-gc-in-theory-and-practice/
+
+https://making.pusher.com/go-tool-trace/
+
+https://github.com/WillSewell/gc-latency-experiment
+
+
+
+GOMAXPROCS controls no of go routines
+
+
+goenv version
+
+
+
+go get -u github.com/google/pprof
+
+pprof mem.prof
+
+pprof -http localhost:9001 cpu.prof
+
+apt-get install graphviz
+
+
+https://golang.org/pkg/net/http/pprof/
+
+https://github.com/WillSewell/gc-latency-experiment
+
+
+To control the race condition in golang
+
+
+go run -race main.go
+
+
+GOMAXPROC=2 make run-go-preemption
+
+
+gomega
+
+ginkgo
+
+
+https://onsi.github.io/ginkgo/
+
+https://golang.org/pkg/runtime/debug/
+
+https://golang.org/pkg/context/
+
+
+
+docker build -t books-example:latest .
+
+Docker run -it -p 9000:9000 books-examples:latest
+
+
+

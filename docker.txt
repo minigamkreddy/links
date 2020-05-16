@@ -1,0 +1,68 @@
+python3 -m nose -c ../config/panels/ges_dbc_wallsly.ini --nologcapture --nocapture -c ../config/panels/wired.ini add_camera_wifi_recent_fw.py
+
+to create the new branch
+git checkout -b video_automation
+to switch the branch
+git checkout python3
+to check the branch use the
+git branch
+
+
+
+
+sudo killall wpa_supplicant
+iwconfig
+sudo iwconfig wlp0s20f3 essid "ADC_Bridge_9d3"
+sudo dhclient wlp0s20f3
+sudo python3 /home/vivint/local-repos//rpi/vivint_camera.py HDP450 /dev/ttyUSB0 38400 is_expected_serial_port adcvideo 00:02:d1:6c:e3:24
+
+
+logs_26-02-20__13-28-23
+
+kubernetes setup
+https://www.edureka.co/blog/install-kubernetes-on-ubuntu
+https://www.katacoda.com/courses/ubuntu/deploy-microk8s
+https://www.katacoda.com/courses/ubuntu
+https://kubernetes.io/docs/tasks/tools/install-minikube/#confirm-installation
+https://stackoverflow.com/questions/59265021/unable-to-locate-package-kubectl-when-installing-the-kubectl-kubeadm-for-kuberne
+
+vi deployment.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webapp1
+  template:
+    metadata:
+      labels:
+        app: webapp1
+    spec:
+      containers:
+      - name: webapp1
+        image: katacoda/docker-http-server:latest
+        ports:
+        - containerPort: 80
+
+vi service.yaml
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp1-svc
+  labels:
+    app: webapp1
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+    nodePort: 30080
+  selector:
+    app: webapp1
+
+
+

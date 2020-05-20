@@ -610,6 +610,9 @@ static int dump_callback(struct nl_msg *msg, void *argp)
 
 static int nl_send_recv(struct nl_sock *sk, struct nl_msg *msg)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	int ret;
 
 	ret = nl_send_auto_complete(sk, msg);

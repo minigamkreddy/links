@@ -1,4 +1,103 @@
 https://www.slideshare.net/awkman/nl80211-and-libnl?next_slideshow=1
+https://www.linux.com/training-tutorials/linux-wireless-networking-short-walk/
+
+@par Sending Semantics
+     nl_send_auto_complete()
+             |
+             | Automatically fill in PID and/or sequence number
+             |
+             |                   [Application provides nl_send() replacement]
+             |- - - - - - - - - - - - - - - - - - - - v
+             v                      cb->cb_send_ow()                   
+   nl_complete_msg(sk, msg);          
+             |
+             v
+         nl_send()
+             | Add destination address and credentials
+             v
+	nl_send_iovec(sk, msg, &iov, 1);
+	     |
+             v
+        nl_sendmsg()
+             | Set source address
+             |
+             |- - - - - - - - - - - - - - - - - - - - v
+             |                                 NL_CB_MSG_OUT()
+             |<- - - - - - - - - - - - - - - - - - - -+
+             v
+         sendmsg()
+
+
+For receiving the data
+
+nl_recvmsgs(handle, my_callback_configuration);
+             |
+             v
+nl_recvmsgs_report
+             |
+             v
+nl_recvmsgs(handle, my_callback_configuration);
+             |
+             v
+nl_recv(handle, &peer, &msg);
+             |
+             v
+recvmsg(sk->s_fd, &msg, flags);
+
+
+
+
+
+
+
+
+
+
+sendmsg
+
+nl_recvmsgs
+
+recvmsg
+
+nl_recvmsgs_default
+
+ nl_send_auto(sk, msg)
+
+         |
+
+         |-----> nl_complete_msg(sk, msg)
+
+         |
+
+         |
+
+         |              Own send function specified via nl_cb_overwrite_send()
+
+         |- - - - - - - - - - - - - - - - - - - -
+
+         v                                      v
+
+   nl_send(sk, msg)   
+
+ nl_send_iovec(sk, msg, iov, iovlen)
+
+         |
+
+         v
+
+   nl_sendmsg(sk, msg, msghdr)
+
+nl_sendmsg(sk, msg, msghdr)
+
+         |- - - - - - - - - - - - - - - - - - - - v
+
+         |                                 NL_CB_MSG_OUT()
+
+         |<- - - - - - - - - - - - - - - - - - - -+
+
+         v
+
+   sendmsg()
 
 :o bookmark
 ===============================================================================================================================

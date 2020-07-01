@@ -619,6 +619,7 @@ pmksa_cache_init(void (*free_cb)(struct rsn_pmksa_cache_entry *entry,
 		pmksa->ctx = ctx;
 		pmksa->sm = sm;
 	}
+	printf(" PMKSA_CACHE_INIT FUNCTION the PMKSA->CTX %s\n",(char *)pmksa->ctx);
 
 	return pmksa;
 }

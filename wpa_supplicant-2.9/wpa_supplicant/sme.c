@@ -1242,6 +1242,9 @@ void sme_external_auth_mgmt_rx(struct wpa_supplicant *wpa_s,
 
 void sme_event_auth(struct wpa_supplicant *wpa_s, union wpa_event_data *data)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	struct wpa_ssid *ssid = wpa_s->current_ssid;
 
 	if (ssid == NULL) {
@@ -1334,6 +1337,7 @@ void sme_event_auth(struct wpa_supplicant *wpa_s, union wpa_event_data *data)
 			wpa_s->current_ssid->auth_alg = WPA_AUTH_ALG_SHARED;
 
 			wpa_dbg(wpa_s, MSG_DEBUG, "SME: Trying SHARED auth");
+			printf("SME_EVENT_AUTH &&&&&&&&&\n");
 			wpa_supplicant_associate(wpa_s, wpa_s->current_bss,
 						 wpa_s->current_ssid);
 			return;

@@ -586,10 +586,29 @@ void * nl80211_cmd(struct wpa_driver_nl80211_data *drv,
 		   struct nl_msg *msg, int flags, uint8_t cmd)
 {
 	printf(__FILE__);
+	printf("\n");
 	printf(__func__);
 	printf("\n");
 	if (TEST_FAIL())
 		return NULL;
+
+	struct nlmsghdr {
+        __u32           nlmsg_len;      /* Length of message including header */
+        __u16           nlmsg_type;     /* Message content */
+        __u16           nlmsg_flags;    /* Additional flags */
+        __u32           nlmsg_seq;      /* Sequence number */
+        __u32           nlmsg_pid;      /* Sending process port ID */
+};
+
+	printf("NL80211_CMD FUNCTION : FLAGS %d\n",flags); 
+	printf("NL80211_CMD FUNCTION : CMD %d\n",cmd); 
+	struct nlmsghdr *nlh;
+	nlh = genlmsg_put(msg, 0, 0, drv->global->nl80211_id,0, flags, cmd, 0);	
+	printf("NL80211_CMD FUNCTION : NLMSG_LEN %d\n",nlh->nlmsg_len); 
+	printf("NL80211_CMD FUNCTION : NLMSG_TYPE %d\n",nlh->nlmsg_type); 
+	printf("NL80211_CMD FUNCTION : NLMSG_FLAGS %d\n",nlh->nlmsg_flags); 
+	printf("NL80211_CMD FUNCTION : NLMSG_SEQ %d\n",nlh->nlmsg_seq); 
+	printf("NL80211_CMD FUNCTION : NLMSG_PID %d\n",nlh->nlmsg_pid); 
 	return genlmsg_put(msg, 0, 0, drv->global->nl80211_id,
 			   0, flags, cmd, 0);
 }

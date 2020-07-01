@@ -1534,6 +1534,9 @@ int wpa_supplicant_connect(struct wpa_supplicant *wpa_s,
 			   struct wpa_bss *selected,
 			   struct wpa_ssid *ssid)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	if (wpas_wps_scan_pbc_overlap(wpa_s, selected, ssid)) {
 		wpa_msg(wpa_s, MSG_INFO, WPS_EVENT_OVERLAP
 			"PBC session overlap");
@@ -1953,6 +1956,9 @@ scan_work_done:
 static int wpas_select_network_from_last_scan(struct wpa_supplicant *wpa_s,
 					      int new_scan, int own_request)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	struct wpa_bss *selected;
 	struct wpa_ssid *ssid = NULL;
 	int time_to_reenable = wpas_reenabled_network_time(wpa_s);

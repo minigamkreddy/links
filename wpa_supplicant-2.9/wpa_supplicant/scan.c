@@ -994,6 +994,7 @@ static void wpa_supplicant_scan(void *eloop_ctx, void *timeout_ctx)
 	if (connect_without_scan) {
 		wpa_s->connect_without_scan = NULL;
 		if (ssid) {
+			printf("WPA_SUPPLICANT_SCAN **************\n");
 			wpa_printf(MSG_DEBUG, "Start a pre-selected network "
 				   "without scan step");
 			wpa_supplicant_associate(wpa_s, NULL, ssid);

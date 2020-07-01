@@ -201,7 +201,9 @@ static void supp_deauthenticate(void * ctx, u16 reason_code)
 
 static int ibss_rsn_supp_init(struct ibss_rsn_peer *peer, const u8 *own_addr,
 			      const u8 *psk)
-{
+{	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	struct wpa_sm_ctx *ctx = os_zalloc(sizeof(*ctx));
 	if (ctx == NULL)
 		return -1;

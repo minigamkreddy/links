@@ -21,6 +21,10 @@
 
 static int protocol_feature_handler(struct nl_msg *msg, void *arg)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	u32 *feat = arg;
 	struct nlattr *tb_msg[NL80211_ATTR_MAX + 1];
 	struct genlmsghdr *gnlh = nlmsg_data(nlmsg_hdr(msg));
@@ -37,6 +41,10 @@ static int protocol_feature_handler(struct nl_msg *msg, void *arg)
 
 static u32 get_nl80211_protocol_features(struct wpa_driver_nl80211_data *drv)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	u32 feat = 0;
 	struct nl_msg *msg;
 
@@ -83,6 +91,10 @@ struct wiphy_info_data {
 
 static unsigned int probe_resp_offload_support(int supp_protocols)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	unsigned int prot = 0;
 
 	if (supp_protocols & NL80211_PROBE_RESP_OFFLOAD_SUPPORT_WPS)
@@ -101,6 +113,10 @@ static unsigned int probe_resp_offload_support(int supp_protocols)
 static void wiphy_info_supported_iftypes(struct wiphy_info_data *info,
 					 struct nlattr *tb)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	struct nlattr *nl_mode;
 	int i;
 
@@ -136,6 +152,10 @@ static void wiphy_info_supported_iftypes(struct wiphy_info_data *info,
 static int wiphy_info_iface_comb_process(struct wiphy_info_data *info,
 					 struct nlattr *nl_combi)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	struct nlattr *tb_comb[NUM_NL80211_IFACE_COMB];
 	struct nlattr *tb_limit[NUM_NL80211_IFACE_LIMIT];
 	struct nlattr *nl_limit, *nl_mode;
@@ -201,6 +221,10 @@ static int wiphy_info_iface_comb_process(struct wiphy_info_data *info,
 static void wiphy_info_iface_comb(struct wiphy_info_data *info,
 				  struct nlattr *tb)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	struct nlattr *nl_combi;
 	int rem_combi;
 
@@ -217,6 +241,10 @@ static void wiphy_info_iface_comb(struct wiphy_info_data *info,
 static void wiphy_info_supp_cmds(struct wiphy_info_data *info,
 				 struct nlattr *tb)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	struct nlattr *nl_cmd;
 	int i;
 
@@ -251,6 +279,10 @@ static void wiphy_info_supp_cmds(struct wiphy_info_data *info,
 static void wiphy_info_cipher_suites(struct wiphy_info_data *info,
 				     struct nlattr *tb)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	int i, num;
 	u32 *ciphers;
 
@@ -310,6 +342,10 @@ static void wiphy_info_cipher_suites(struct wiphy_info_data *info,
 static void wiphy_info_max_roc(struct wpa_driver_capa *capa,
 			       struct nlattr *tb)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (tb)
 		capa->max_remain_on_chan = nla_get_u32(tb);
 }
@@ -318,6 +354,10 @@ static void wiphy_info_max_roc(struct wpa_driver_capa *capa,
 static void wiphy_info_tdls(struct wpa_driver_capa *capa, struct nlattr *tdls,
 			    struct nlattr *ext_setup)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (tdls == NULL)
 		return;
 
@@ -334,6 +374,10 @@ static void wiphy_info_tdls(struct wpa_driver_capa *capa, struct nlattr *tdls,
 static int ext_feature_isset(const u8 *ext_features, int ext_features_len,
 			     enum nl80211_ext_feature_index ftidx)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	u8 ft_byte;
 
 	if ((int) ftidx / 8 >= ext_features_len)
@@ -347,6 +391,10 @@ static int ext_feature_isset(const u8 *ext_features, int ext_features_len,
 static void wiphy_info_ext_feature_flags(struct wiphy_info_data *info,
 					 struct nlattr *tb)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	struct wpa_driver_capa *capa = info->capa;
 	u8 *ext_features;
 	int len;
@@ -439,6 +487,10 @@ static void wiphy_info_ext_feature_flags(struct wiphy_info_data *info,
 static void wiphy_info_feature_flags(struct wiphy_info_data *info,
 				     struct nlattr *tb)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	u32 flags;
 	struct wpa_driver_capa *capa = info->capa;
 
@@ -511,6 +563,10 @@ static void wiphy_info_feature_flags(struct wiphy_info_data *info,
 static void wiphy_info_probe_resp_offload(struct wpa_driver_capa *capa,
 					  struct nlattr *tb)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	u32 protocols;
 
 	if (tb == NULL)
@@ -527,6 +583,10 @@ static void wiphy_info_probe_resp_offload(struct wpa_driver_capa *capa,
 static void wiphy_info_wowlan_triggers(struct wpa_driver_capa *capa,
 				       struct nlattr *tb)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	struct nlattr *triggers[MAX_NL80211_WOWLAN_TRIG + 1];
 
 	if (tb == NULL)
@@ -556,6 +616,10 @@ static void wiphy_info_wowlan_triggers(struct wpa_driver_capa *capa,
 static void wiphy_info_extended_capab(struct wpa_driver_nl80211_data *drv,
 				      struct nlattr *tb)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	int rem = 0, i;
 	struct nlattr *tb1[NL80211_ATTR_MAX + 1], *attr;
 
@@ -622,6 +686,10 @@ err:
 
 static int wiphy_info_handler(struct nl_msg *msg, void *arg)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	struct nlattr *tb[NL80211_ATTR_MAX + 1];
 	struct genlmsghdr *gnlh = nlmsg_data(nlmsg_hdr(msg));
 	struct wiphy_info_data *info = arg;
@@ -833,6 +901,10 @@ static int wiphy_info_handler(struct nl_msg *msg, void *arg)
 static int wpa_driver_nl80211_get_info(struct wpa_driver_nl80211_data *drv,
 				       struct wiphy_info_data *info)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	u32 feat;
 	struct nl_msg *msg;
 	int flags = 0;
@@ -909,6 +981,10 @@ static int wpa_driver_nl80211_get_info(struct wpa_driver_nl80211_data *drv,
 
 static int dfs_info_handler(struct nl_msg *msg, void *arg)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	struct nlattr *tb[NL80211_ATTR_MAX + 1];
 	struct genlmsghdr *gnlh = nlmsg_data(nlmsg_hdr(msg));
 	int *dfs_capability_ptr = arg;
@@ -938,6 +1014,10 @@ static int dfs_info_handler(struct nl_msg *msg, void *arg)
 
 static void qca_nl80211_check_dfs_capa(struct wpa_driver_nl80211_data *drv)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	struct nl_msg *msg;
 	int dfs_capability = 0;
 	int ret;
@@ -961,6 +1041,10 @@ static void qca_nl80211_check_dfs_capa(struct wpa_driver_nl80211_data *drv)
 
 static unsigned int get_akm_suites_info(struct nlattr *tb)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	int i, num;
 	unsigned int key_mgmt = 0;
 	u32 *akms;
@@ -1028,6 +1112,10 @@ static unsigned int get_akm_suites_info(struct nlattr *tb)
 
 static int get_akm_suites_handler(struct nl_msg *msg, void *arg)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	struct nlattr *tb[NL80211_ATTR_MAX + 1];
 	struct genlmsghdr *gnlh = nlmsg_data(nlmsg_hdr(msg));
 	unsigned int *key_mgmt = arg;
@@ -1052,6 +1140,10 @@ static int get_akm_suites_handler(struct nl_msg *msg, void *arg)
 
 static int qca_nl80211_get_akm_suites(struct wpa_driver_nl80211_data *drv)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	struct nl_msg *msg;
 	unsigned int key_mgmt = 0;
 	int ret;
@@ -1088,6 +1180,10 @@ struct features_info {
 
 static int features_info_handler(struct nl_msg *msg, void *arg)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	struct nlattr *tb[NL80211_ATTR_MAX + 1];
 	struct genlmsghdr *gnlh = nlmsg_data(nlmsg_hdr(msg));
 	struct features_info *info = arg;
@@ -1134,6 +1230,10 @@ static int features_info_handler(struct nl_msg *msg, void *arg)
 static int check_feature(enum qca_wlan_vendor_features feature,
 			 struct features_info *info)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	size_t idx = feature / 8;
 
 	return (idx < info->flags_len) &&
@@ -1143,6 +1243,10 @@ static int check_feature(enum qca_wlan_vendor_features feature,
 
 static void qca_nl80211_get_features(struct wpa_driver_nl80211_data *drv)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	struct nl_msg *msg;
 	struct features_info info;
 	int ret;
@@ -1189,6 +1293,10 @@ static void qca_nl80211_get_features(struct wpa_driver_nl80211_data *drv)
 
 int wpa_driver_nl80211_capa(struct wpa_driver_nl80211_data *drv)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	printf(__FILE__);
 	printf(__func__);
 	printf("\n");
@@ -1308,6 +1416,10 @@ static void phy_info_ht_capa(struct hostapd_hw_modes *mode, struct nlattr *capa,
 			     struct nlattr *ampdu_density,
 			     struct nlattr *mcs_set)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (capa)
 		mode->ht_capab = nla_get_u16(capa);
 
@@ -1329,6 +1441,10 @@ static void phy_info_vht_capa(struct hostapd_hw_modes *mode,
 			      struct nlattr *capa,
 			      struct nlattr *mcs_set)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (capa)
 		mode->vht_capab = nla_get_u32(capa);
 
@@ -1344,6 +1460,10 @@ static void phy_info_freq(struct hostapd_hw_modes *mode,
 			  struct hostapd_channel_data *chan,
 			  struct nlattr *tb_freq[])
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	u8 channel;
 	chan->freq = nla_get_u32(tb_freq[NL80211_FREQUENCY_ATTR_FREQ]);
 	chan->flag = 0;
@@ -1454,6 +1574,10 @@ static void phy_info_freq(struct hostapd_hw_modes *mode,
 static int phy_info_freqs(struct phy_info_arg *phy_info,
 			  struct hostapd_hw_modes *mode, struct nlattr *tb)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	static struct nla_policy freq_policy[NL80211_FREQUENCY_ATTR_MAX + 1] = {
 		[NL80211_FREQUENCY_ATTR_FREQ] = { .type = NLA_U32 },
 		[NL80211_FREQUENCY_ATTR_DISABLED] = { .type = NLA_FLAG },
@@ -1512,6 +1636,10 @@ static int phy_info_freqs(struct phy_info_arg *phy_info,
 
 static int phy_info_rates(struct hostapd_hw_modes *mode, struct nlattr *tb)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	static struct nla_policy rate_policy[NL80211_BITRATE_ATTR_MAX + 1] = {
 		[NL80211_BITRATE_ATTR_RATE] = { .type = NLA_U32 },
 		[NL80211_BITRATE_ATTR_2GHZ_SHORTPREAMBLE] =
@@ -1558,6 +1686,10 @@ static void phy_info_iftype_copy(struct he_capabilities *he_capab,
 				 enum ieee80211_op_mode opmode,
 				 struct nlattr **tb, struct nlattr **tb_flags)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	enum nl80211_iftype iftype;
 	size_t len;
 
@@ -1628,6 +1760,10 @@ static void phy_info_iftype_copy(struct he_capabilities *he_capab,
 static int phy_info_iftype(struct hostapd_hw_modes *mode,
 			   struct nlattr *nl_iftype)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	struct nlattr *tb[NL80211_BAND_IFTYPE_ATTR_MAX + 1];
 	struct nlattr *tb_flags[NL80211_IFTYPE_MAX + 1];
 	unsigned int i;
@@ -1651,6 +1787,10 @@ static int phy_info_iftype(struct hostapd_hw_modes *mode,
 
 static int phy_info_band(struct phy_info_arg *phy_info, struct nlattr *nl_band)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	struct nlattr *tb_band[NL80211_BAND_ATTR_MAX + 1];
 	struct hostapd_hw_modes *mode;
 	int ret;
@@ -1724,6 +1864,10 @@ static int phy_info_band(struct phy_info_arg *phy_info, struct nlattr *nl_band)
 
 static int phy_info_handler(struct nl_msg *msg, void *arg)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	struct nlattr *tb_msg[NL80211_ATTR_MAX + 1];
 	struct genlmsghdr *gnlh = nlmsg_data(nlmsg_hdr(msg));
 	struct phy_info_arg *phy_info = arg;
@@ -1751,6 +1895,10 @@ static struct hostapd_hw_modes *
 wpa_driver_nl80211_postprocess_modes(struct hostapd_hw_modes *modes,
 				     u16 *num_modes)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	u16 m;
 	struct hostapd_hw_modes *mode11g = NULL, *nmodes, *mode;
 	int i, mode11g_idx = -1;
@@ -1842,6 +1990,10 @@ wpa_driver_nl80211_postprocess_modes(struct hostapd_hw_modes *modes,
 static void nl80211_set_ht40_mode(struct hostapd_hw_modes *mode, int start,
 				  int end)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	int c;
 
 	for (c = 0; c < mode->num_channels; c++) {
@@ -1855,6 +2007,10 @@ static void nl80211_set_ht40_mode(struct hostapd_hw_modes *mode, int start,
 static void nl80211_set_ht40_mode_sec(struct hostapd_hw_modes *mode, int start,
 				      int end)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	int c;
 
 	for (c = 0; c < mode->num_channels; c++) {
@@ -1872,6 +2028,10 @@ static void nl80211_set_ht40_mode_sec(struct hostapd_hw_modes *mode, int start,
 static void nl80211_reg_rule_max_eirp(u32 start, u32 end, u32 max_eirp,
 				      struct phy_info_arg *results)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	u16 m;
 
 	for (m = 0; m < *results->num_modes; m++) {
@@ -1891,6 +2051,10 @@ static void nl80211_reg_rule_max_eirp(u32 start, u32 end, u32 max_eirp,
 static void nl80211_reg_rule_ht40(u32 start, u32 end,
 				  struct phy_info_arg *results)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	u16 m;
 
 	for (m = 0; m < *results->num_modes; m++) {
@@ -1905,6 +2069,10 @@ static void nl80211_reg_rule_ht40(u32 start, u32 end,
 static void nl80211_reg_rule_sec(struct nlattr *tb[],
 				 struct phy_info_arg *results)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	u32 start, end, max_bw;
 	u16 m;
 
@@ -1932,6 +2100,10 @@ static void nl80211_reg_rule_sec(struct nlattr *tb[],
 static void nl80211_set_vht_mode(struct hostapd_hw_modes *mode, int start,
 				 int end, int max_bw)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	int c;
 
 	for (c = 0; c < mode->num_channels; c++) {
@@ -1980,6 +2152,10 @@ static void nl80211_set_vht_mode(struct hostapd_hw_modes *mode, int start,
 static void nl80211_reg_rule_vht(struct nlattr *tb[],
 				 struct phy_info_arg *results)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	u32 start, end, max_bw;
 	u16 m;
 
@@ -2024,6 +2200,10 @@ static void nl80211_set_dfs_domain(enum nl80211_dfs_regions region,
 
 static const char * dfs_domain_name(enum nl80211_dfs_regions region)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	switch (region) {
 	case NL80211_DFS_UNSET:
 		return "DFS-UNSET";
@@ -2041,6 +2221,10 @@ static const char * dfs_domain_name(enum nl80211_dfs_regions region)
 
 static int nl80211_get_reg(struct nl_msg *msg, void *arg)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	struct phy_info_arg *results = arg;
 	struct nlattr *tb_msg[NL80211_ATTR_MAX + 1];
 	struct genlmsghdr *gnlh = nlmsg_data(nlmsg_hdr(msg));
@@ -2133,6 +2317,10 @@ static int nl80211_get_reg(struct nl_msg *msg, void *arg)
 static int nl80211_set_regulatory_flags(struct wpa_driver_nl80211_data *drv,
 					struct phy_info_arg *results)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	struct nl_msg *msg;
 
 	msg = nlmsg_alloc();
@@ -2153,6 +2341,10 @@ static int nl80211_set_regulatory_flags(struct wpa_driver_nl80211_data *drv,
 
 static const char * modestr(enum hostapd_hw_mode mode)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	switch (mode) {
 	case HOSTAPD_MODE_IEEE80211B:
 		return "802.11b";
@@ -2171,6 +2363,10 @@ static const char * modestr(enum hostapd_hw_mode mode)
 static void nl80211_dump_chan_list(struct hostapd_hw_modes *modes,
 				   u16 num_modes)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	int i;
 
 	if (!modes)
@@ -2210,6 +2406,10 @@ struct hostapd_hw_modes *
 nl80211_get_hw_feature_data(void *priv, u16 *num_modes, u16 *flags,
 			    u8 *dfs_domain)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	u32 feat;
 	struct i802_bss *bss = priv;
 	struct wpa_driver_nl80211_data *drv = bss->drv;

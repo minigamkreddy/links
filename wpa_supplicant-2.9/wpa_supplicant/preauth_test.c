@@ -218,6 +218,9 @@ static struct wpa_driver_ops dummy_driver;
 
 static void wpa_init_conf(struct wpa_supplicant *wpa_s, const char *ifname)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	struct l2_packet_data *l2;
 	struct wpa_sm_ctx *ctx;
 

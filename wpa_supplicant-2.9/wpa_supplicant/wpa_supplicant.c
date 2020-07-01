@@ -2166,6 +2166,7 @@ void wpa_supplicant_associate(struct wpa_supplicant *wpa_s,
 	 * candidate APs are added to a list based on scan result processing
 	 * before completion of the first association.
 	 */
+	printf("WPA_SUPPLICANT_RSN_SUPP_SET_CONFIG::::::\n");
 	wpa_supplicant_rsn_supp_set_config(wpa_s, ssid);
 
 #ifdef CONFIG_DPP

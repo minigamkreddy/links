@@ -1,5 +1,8 @@
-https://www.slideshare.net/awkman/nl80211-and-libnl?next_slideshow=1
+ttps://www.slideshare.net/awkman/nl80211-and-libnl?next_slideshow=1
 https://www.linux.com/training-tutorials/linux-wireless-networking-short-walk/
+
+wpa_supplicant_init_iface
+
 
 @par Sending Semantics
      nl_send_auto_complete()

@@ -649,6 +649,10 @@ SM_STEP(SUPP_BE)
 
 static void eapol_sm_txLogoff(struct eapol_sm *sm)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	wpa_printf(MSG_DEBUG, "EAPOL: txLogoff");
 	sm->ctx->eapol_send(sm->ctx->eapol_send_ctx,
 			    IEEE802_1X_TYPE_EAPOL_LOGOFF, (u8 *) "", 0);
@@ -659,6 +663,10 @@ static void eapol_sm_txLogoff(struct eapol_sm *sm)
 
 static void eapol_sm_txStart(struct eapol_sm *sm)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	wpa_printf(MSG_DEBUG, "EAPOL: txStart");
 	sm->ctx->eapol_send(sm->ctx->eapol_send_ctx,
 			    IEEE802_1X_TYPE_EAPOL_START, (u8 *) "", 0);
@@ -678,6 +686,10 @@ struct eap_key_data {
 
 static void eapol_sm_processKey(struct eapol_sm *sm)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 #ifndef CONFIG_FIPS
 	struct ieee802_1x_hdr *hdr;
 	struct ieee802_1x_eapol_key *key;
@@ -857,6 +869,10 @@ static void eapol_sm_processKey(struct eapol_sm *sm)
 
 static void eapol_sm_getSuppRsp(struct eapol_sm *sm)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	wpa_printf(MSG_DEBUG, "EAPOL: getSuppRsp");
 	/* EAP layer processing; no special code is needed, since Supplicant
 	 * Backend state machine is waiting for eapNoResp or eapResp to be set
@@ -867,6 +883,10 @@ static void eapol_sm_getSuppRsp(struct eapol_sm *sm)
 
 static void eapol_sm_txSuppRsp(struct eapol_sm *sm)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	struct wpabuf *resp;
 
 	wpa_printf(MSG_DEBUG, "EAPOL: txSuppRsp");
@@ -909,6 +929,10 @@ static void eapol_sm_txSuppRsp(struct eapol_sm *sm)
 
 static void eapol_sm_abortSupp(struct eapol_sm *sm)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	/* release system resources that may have been allocated for the
 	 * authentication session */
 	os_free(sm->last_rx_key);
@@ -924,12 +948,20 @@ static void eapol_sm_abortSupp(struct eapol_sm *sm)
 
 static void eapol_sm_step_timeout(void *eloop_ctx, void *timeout_ctx)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	eapol_sm_step(timeout_ctx);
 }
 
 
 static void eapol_sm_set_port_authorized(struct eapol_sm *sm)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	int cb;
 
 	cb = sm->suppPortStatus != Authorized || sm->force_authorized_update;
@@ -942,6 +974,10 @@ static void eapol_sm_set_port_authorized(struct eapol_sm *sm)
 
 static void eapol_sm_set_port_unauthorized(struct eapol_sm *sm)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	int cb;
 
 	cb = sm->suppPortStatus != Unauthorized || sm->force_authorized_update;
@@ -962,6 +998,10 @@ static void eapol_sm_set_port_unauthorized(struct eapol_sm *sm)
  */
 void eapol_sm_step(struct eapol_sm *sm)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	int i;
 
 	/* In theory, it should be ok to run this in loop until !changed.
@@ -1010,6 +1050,10 @@ void eapol_sm_step(struct eapol_sm *sm)
 #ifdef CONFIG_CTRL_IFACE
 static const char *eapol_supp_pae_state(int state)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	switch (state) {
 	case SUPP_PAE_LOGOFF:
 		return "LOGOFF";
@@ -1033,6 +1077,10 @@ static const char *eapol_supp_pae_state(int state)
 
 static const char *eapol_supp_be_state(int state)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	switch (state) {
 	case SUPP_BE_REQUEST:
 		return "REQUEST";
@@ -1058,6 +1106,10 @@ static const char *eapol_supp_be_state(int state)
 
 static const char * eapol_port_status(PortStatus status)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (status == Authorized)
 		return "Authorized";
 	else
@@ -1069,6 +1121,10 @@ static const char * eapol_port_status(PortStatus status)
 #if defined(CONFIG_CTRL_IFACE) || !defined(CONFIG_NO_STDOUT_DEBUG)
 static const char * eapol_port_control(PortControl ctrl)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	switch (ctrl) {
 	case Auto:
 		return "Auto";
@@ -1097,6 +1153,10 @@ static const char * eapol_port_control(PortControl ctrl)
 void eapol_sm_configure(struct eapol_sm *sm, int heldPeriod, int authPeriod,
 			int startPeriod, int maxStart)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (sm == NULL)
 		return;
 	if (heldPeriod >= 0)
@@ -1117,6 +1177,10 @@ void eapol_sm_configure(struct eapol_sm *sm, int heldPeriod, int authPeriod,
  */
 const char * eapol_sm_get_method_name(struct eapol_sm *sm)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (sm->SUPP_PAE_state != SUPP_PAE_AUTHENTICATED ||
 	    sm->suppPortStatus != Authorized)
 		return NULL;
@@ -1142,6 +1206,10 @@ const char * eapol_sm_get_method_name(struct eapol_sm *sm)
 int eapol_sm_get_status(struct eapol_sm *sm, char *buf, size_t buflen,
 			int verbose)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	int len, ret;
 	if (sm == NULL)
 		return 0;
@@ -1200,6 +1268,10 @@ int eapol_sm_get_status(struct eapol_sm *sm, char *buf, size_t buflen,
  */
 int eapol_sm_get_mib(struct eapol_sm *sm, char *buf, size_t buflen)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	size_t len;
 	int ret;
 
@@ -1271,6 +1343,10 @@ int eapol_sm_get_mib(struct eapol_sm *sm, char *buf, size_t buflen)
 int eapol_sm_rx_eapol(struct eapol_sm *sm, const u8 *src, const u8 *buf,
 		      size_t len)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	const struct ieee802_1x_hdr *hdr;
 	const struct ieee802_1x_eapol_key *key;
 	int data_len;
@@ -1426,6 +1502,10 @@ int eapol_sm_rx_eapol(struct eapol_sm *sm, const u8 *src, const u8 *buf,
  */
 void eapol_sm_notify_tx_eapol_key(struct eapol_sm *sm)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (sm)
 		sm->dot1xSuppEapolFramesTx++;
 }
@@ -1440,6 +1520,10 @@ void eapol_sm_notify_tx_eapol_key(struct eapol_sm *sm)
  */
 void eapol_sm_notify_portEnabled(struct eapol_sm *sm, Boolean enabled)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (sm == NULL)
 		return;
 	wpa_printf(MSG_DEBUG, "EAPOL: External notification - "
@@ -1460,6 +1544,10 @@ void eapol_sm_notify_portEnabled(struct eapol_sm *sm, Boolean enabled)
  */
 void eapol_sm_notify_portValid(struct eapol_sm *sm, Boolean valid)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (sm == NULL)
 		return;
 	wpa_printf(MSG_DEBUG, "EAPOL: External notification - "
@@ -1482,6 +1570,10 @@ void eapol_sm_notify_portValid(struct eapol_sm *sm, Boolean valid)
  */
 void eapol_sm_notify_eap_success(struct eapol_sm *sm, Boolean success)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (sm == NULL)
 		return;
 	wpa_printf(MSG_DEBUG, "EAPOL: External notification - "
@@ -1504,6 +1596,10 @@ void eapol_sm_notify_eap_success(struct eapol_sm *sm, Boolean success)
  */
 void eapol_sm_notify_eap_fail(struct eapol_sm *sm, Boolean fail)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (sm == NULL)
 		return;
 	wpa_printf(MSG_DEBUG, "EAPOL: External notification - "
@@ -1530,6 +1626,10 @@ void eapol_sm_notify_config(struct eapol_sm *sm,
 			    struct eap_peer_config *config,
 			    const struct eapol_config *conf)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (sm == NULL)
 		return;
 
@@ -1574,6 +1674,10 @@ void eapol_sm_notify_config(struct eapol_sm *sm,
  */
 int eapol_sm_get_key(struct eapol_sm *sm, u8 *key, size_t len)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	const u8 *eap_key;
 	size_t eap_len;
 
@@ -1628,6 +1732,10 @@ key_fetched:
  */
 const u8 * eapol_sm_get_session_id(struct eapol_sm *sm, size_t *len)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (sm == NULL || !eap_key_available(sm->eap)) {
 		wpa_printf(MSG_DEBUG, "EAPOL: EAP Session-Id not available");
 		return NULL;
@@ -1645,6 +1753,10 @@ const u8 * eapol_sm_get_session_id(struct eapol_sm *sm, size_t *len)
  */
 void eapol_sm_notify_logoff(struct eapol_sm *sm, Boolean logoff)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (sm) {
 		sm->userLogoff = logoff;
 		if (!logoff) {
@@ -1665,6 +1777,10 @@ void eapol_sm_notify_logoff(struct eapol_sm *sm, Boolean logoff)
  */
 void eapol_sm_notify_cached(struct eapol_sm *sm)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (sm == NULL)
 		return;
 	wpa_printf(MSG_DEBUG, "EAPOL: PMKSA caching was used - skip EAPOL");
@@ -1682,6 +1798,10 @@ void eapol_sm_notify_cached(struct eapol_sm *sm)
  */
 void eapol_sm_notify_pmkid_attempt(struct eapol_sm *sm)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (sm == NULL)
 		return;
 	wpa_printf(MSG_DEBUG, "RSN: Trying to use cached PMKSA");
@@ -1691,6 +1811,10 @@ void eapol_sm_notify_pmkid_attempt(struct eapol_sm *sm)
 
 static void eapol_sm_abort_cached(struct eapol_sm *sm)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	wpa_printf(MSG_DEBUG, "RSN: Authenticator did not accept PMKID, "
 		   "doing full EAP authentication");
 	if (sm == NULL)
@@ -1719,6 +1843,10 @@ static void eapol_sm_abort_cached(struct eapol_sm *sm)
  */
 void eapol_sm_register_scard_ctx(struct eapol_sm *sm, void *ctx)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (sm) {
 		sm->ctx->scard_ctx = ctx;
 		eap_register_scard_ctx(sm->eap, ctx);
@@ -1735,6 +1863,10 @@ void eapol_sm_register_scard_ctx(struct eapol_sm *sm, void *ctx)
  */
 void eapol_sm_notify_portControl(struct eapol_sm *sm, PortControl portControl)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (sm == NULL)
 		return;
 	wpa_printf(MSG_DEBUG, "EAPOL: External notification - "
@@ -1753,6 +1885,10 @@ void eapol_sm_notify_portControl(struct eapol_sm *sm, PortControl portControl)
  */
 void eapol_sm_notify_ctrl_attached(struct eapol_sm *sm)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (sm == NULL)
 		return;
 	eap_sm_notify_ctrl_attached(sm->eap);
@@ -1768,6 +1904,10 @@ void eapol_sm_notify_ctrl_attached(struct eapol_sm *sm)
  */
 void eapol_sm_notify_ctrl_response(struct eapol_sm *sm)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (sm == NULL)
 		return;
 	if (sm->eapReqData && !sm->eapReq) {
@@ -1790,6 +1930,10 @@ void eapol_sm_notify_ctrl_response(struct eapol_sm *sm)
  */
 void eapol_sm_request_reauth(struct eapol_sm *sm)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (sm == NULL || sm->SUPP_PAE_state != SUPP_PAE_AUTHENTICATED)
 		return;
 	eapol_sm_txStart(sm);
@@ -1808,6 +1952,10 @@ void eapol_sm_request_reauth(struct eapol_sm *sm)
  */
 void eapol_sm_notify_lower_layer_success(struct eapol_sm *sm, int in_eapol_sm)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (sm == NULL)
 		return;
 	eap_notify_lower_layer_success(sm->eap);
@@ -1822,6 +1970,10 @@ void eapol_sm_notify_lower_layer_success(struct eapol_sm *sm, int in_eapol_sm)
  */
 void eapol_sm_invalidate_cached_session(struct eapol_sm *sm)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (sm)
 		eap_invalidate_cached_session(sm->eap);
 }
@@ -1829,6 +1981,10 @@ void eapol_sm_invalidate_cached_session(struct eapol_sm *sm)
 
 static struct eap_peer_config * eapol_sm_get_config(void *ctx)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	struct eapol_sm *sm = ctx;
 	return sm ? sm->config : NULL;
 }
@@ -1836,6 +1992,10 @@ static struct eap_peer_config * eapol_sm_get_config(void *ctx)
 
 static struct wpabuf * eapol_sm_get_eapReqData(void *ctx)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	struct eapol_sm *sm = ctx;
 	if (sm == NULL || sm->eapReqData == NULL)
 		return NULL;
@@ -1846,6 +2006,10 @@ static struct wpabuf * eapol_sm_get_eapReqData(void *ctx)
 
 static Boolean eapol_sm_get_bool(void *ctx, enum eapol_bool_var variable)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	struct eapol_sm *sm = ctx;
 	if (sm == NULL)
 		return FALSE;
@@ -1878,6 +2042,10 @@ static Boolean eapol_sm_get_bool(void *ctx, enum eapol_bool_var variable)
 static void eapol_sm_set_bool(void *ctx, enum eapol_bool_var variable,
 			      Boolean value)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	struct eapol_sm *sm = ctx;
 	if (sm == NULL)
 		return;
@@ -1918,6 +2086,10 @@ static void eapol_sm_set_bool(void *ctx, enum eapol_bool_var variable,
 
 static unsigned int eapol_sm_get_int(void *ctx, enum eapol_int_var variable)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	struct eapol_sm *sm = ctx;
 	if (sm == NULL)
 		return 0;
@@ -1932,6 +2104,10 @@ static unsigned int eapol_sm_get_int(void *ctx, enum eapol_int_var variable)
 static void eapol_sm_set_int(void *ctx, enum eapol_int_var variable,
 			     unsigned int value)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	struct eapol_sm *sm = ctx;
 	if (sm == NULL)
 		return;
@@ -1947,6 +2123,10 @@ static void eapol_sm_set_int(void *ctx, enum eapol_int_var variable,
 
 static void eapol_sm_set_config_blob(void *ctx, struct wpa_config_blob *blob)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 #ifndef CONFIG_NO_CONFIG_BLOBS
 	struct eapol_sm *sm = ctx;
 	if (sm && sm->ctx && sm->ctx->set_config_blob)
@@ -1958,6 +2138,10 @@ static void eapol_sm_set_config_blob(void *ctx, struct wpa_config_blob *blob)
 static const struct wpa_config_blob *
 eapol_sm_get_config_blob(void *ctx, const char *name)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 #ifndef CONFIG_NO_CONFIG_BLOBS
 	struct eapol_sm *sm = ctx;
 	if (sm && sm->ctx && sm->ctx->get_config_blob)
@@ -1972,6 +2156,10 @@ eapol_sm_get_config_blob(void *ctx, const char *name)
 
 static void eapol_sm_notify_pending(void *ctx)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	struct eapol_sm *sm = ctx;
 	if (sm == NULL)
 		return;
@@ -1989,6 +2177,10 @@ static void eapol_sm_notify_pending(void *ctx)
 static void eapol_sm_eap_param_needed(void *ctx, enum wpa_ctrl_req_type field,
 				      const char *txt)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	struct eapol_sm *sm = ctx;
 	wpa_printf(MSG_DEBUG, "EAPOL: EAP parameter needed");
 	if (sm->ctx->eap_param_needed)
@@ -2001,6 +2193,10 @@ static void eapol_sm_eap_param_needed(void *ctx, enum wpa_ctrl_req_type field,
 static void eapol_sm_notify_cert(void *ctx, struct tls_cert_data *cert,
 				 const char *cert_hash)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	struct eapol_sm *sm = ctx;
 	if (sm->ctx->cert_cb)
 		sm->ctx->cert_cb(sm->ctx->ctx, cert, cert_hash);
@@ -2010,6 +2206,10 @@ static void eapol_sm_notify_cert(void *ctx, struct tls_cert_data *cert,
 static void eapol_sm_notify_status(void *ctx, const char *status,
 				   const char *parameter)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	struct eapol_sm *sm = ctx;
 
 	if (sm->ctx->status_cb)
@@ -2019,6 +2219,10 @@ static void eapol_sm_notify_status(void *ctx, const char *status,
 
 static void eapol_sm_notify_eap_error(void *ctx, int error_code)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	struct eapol_sm *sm = ctx;
 
 	if (sm->ctx->eap_error_cb)
@@ -2030,6 +2234,10 @@ static void eapol_sm_notify_eap_error(void *ctx, int error_code)
 
 static void eapol_sm_eap_proxy_cb(void *ctx)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	struct eapol_sm *sm = ctx;
 
 	if (sm->ctx->eap_proxy_cb)
@@ -2041,6 +2249,10 @@ static void
 eapol_sm_eap_proxy_notify_sim_status(void *ctx,
 				     enum eap_proxy_sim_state sim_state)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	struct eapol_sm *sm = ctx;
 
 	if (sm->ctx->eap_proxy_notify_sim_status)
@@ -2052,6 +2264,10 @@ eapol_sm_eap_proxy_notify_sim_status(void *ctx,
 
 static void eapol_sm_set_anon_id(void *ctx, const u8 *id, size_t len)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	struct eapol_sm *sm = ctx;
 
 	if (sm->ctx->set_anon_id)
@@ -2093,6 +2309,10 @@ static const struct eapol_callbacks eapol_cb =
  */
 struct eapol_sm *eapol_sm_init(struct eapol_ctx *ctx)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	struct eapol_sm *sm;
 	struct eap_config conf;
 	sm = os_zalloc(sizeof(*sm));
@@ -2154,6 +2374,10 @@ struct eapol_sm *eapol_sm_init(struct eapol_ctx *ctx)
  */
 void eapol_sm_deinit(struct eapol_sm *sm)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (sm == NULL)
 		return;
 	eloop_cancel_timeout(eapol_sm_step_timeout, NULL, sm);
@@ -2172,6 +2396,10 @@ void eapol_sm_deinit(struct eapol_sm *sm)
 void eapol_sm_set_ext_pw_ctx(struct eapol_sm *sm,
 			     struct ext_password_data *ext)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (sm && sm->eap)
 		eap_sm_set_ext_pw_ctx(sm->eap, ext);
 }
@@ -2179,6 +2407,10 @@ void eapol_sm_set_ext_pw_ctx(struct eapol_sm *sm,
 
 int eapol_sm_failed(struct eapol_sm *sm)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (sm == NULL)
 		return 0;
 	return !sm->eapSuccess && sm->eapFail;
@@ -2188,6 +2420,10 @@ int eapol_sm_failed(struct eapol_sm *sm)
 #ifdef CONFIG_EAP_PROXY
 int eapol_sm_get_eap_proxy_imsi(void *ctx, int sim_num, char *imsi, size_t *len)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	struct eapol_sm *sm = ctx;
 
 	if (sm->eap_proxy == NULL)
@@ -2199,6 +2435,10 @@ int eapol_sm_get_eap_proxy_imsi(void *ctx, int sim_num, char *imsi, size_t *len)
 
 void eapol_sm_erp_flush(struct eapol_sm *sm)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (sm)
 		eap_peer_erp_free_keys(sm->eap);
 }
@@ -2206,6 +2446,10 @@ void eapol_sm_erp_flush(struct eapol_sm *sm)
 
 struct wpabuf * eapol_sm_build_erp_reauth_start(struct eapol_sm *sm)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 #ifdef CONFIG_ERP
 	if (!sm)
 		return NULL;
@@ -2219,6 +2463,10 @@ struct wpabuf * eapol_sm_build_erp_reauth_start(struct eapol_sm *sm)
 void eapol_sm_process_erp_finish(struct eapol_sm *sm, const u8 *buf,
 				 size_t len)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 #ifdef CONFIG_ERP
 	if (!sm)
 		return;
@@ -2229,6 +2477,10 @@ void eapol_sm_process_erp_finish(struct eapol_sm *sm, const u8 *buf,
 
 int eapol_sm_update_erp_next_seq_num(struct eapol_sm *sm, u16 next_seq_num)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 #ifdef CONFIG_ERP
 	if (!sm)
 		return -1;
@@ -2245,6 +2497,10 @@ int eapol_sm_get_erp_info(struct eapol_sm *sm, struct eap_peer_config *config,
 			  u16 *erp_next_seq_num, const u8 **rrk,
 			  size_t *rrk_len)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 #ifdef CONFIG_ERP
 	if (!sm)
 		return -1;

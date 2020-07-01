@@ -578,6 +578,9 @@ static enum wpa_states eapol_test_get_state(void *ctx)
 static int test_eapol(struct eapol_test_data *e, struct wpa_supplicant *wpa_s,
 		      struct wpa_ssid *ssid)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	struct eapol_config eapol_conf;
 	struct eapol_ctx *ctx;
 	struct wpa_sm_ctx *wctx;

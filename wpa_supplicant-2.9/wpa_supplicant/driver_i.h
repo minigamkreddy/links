@@ -29,6 +29,10 @@ static inline void * wpa_drv_init(struct wpa_supplicant *wpa_s,
 
 static inline void wpa_drv_deinit(struct wpa_supplicant *wpa_s)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->deinit)
 		wpa_s->driver->deinit(wpa_s->drv_priv);
 }
@@ -47,6 +51,10 @@ static inline int wpa_drv_set_param(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_set_countermeasures(struct wpa_supplicant *wpa_s,
 					      int enabled)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->set_countermeasures) {
 		return wpa_s->driver->set_countermeasures(wpa_s->drv_priv,
 							  enabled);
@@ -57,6 +65,10 @@ static inline int wpa_drv_set_countermeasures(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_authenticate(struct wpa_supplicant *wpa_s,
 				       struct wpa_driver_auth_params *params)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->authenticate)
 		return wpa_s->driver->authenticate(wpa_s->drv_priv, params);
 	return -1;
@@ -65,6 +77,10 @@ static inline int wpa_drv_authenticate(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_associate(struct wpa_supplicant *wpa_s,
 				    struct wpa_driver_associate_params *params)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->associate) {
 		return wpa_s->driver->associate(wpa_s->drv_priv, params);
 	}
@@ -73,6 +89,10 @@ static inline int wpa_drv_associate(struct wpa_supplicant *wpa_s,
 
 static inline int wpa_drv_init_mesh(struct wpa_supplicant *wpa_s)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->init_mesh)
 		return wpa_s->driver->init_mesh(wpa_s->drv_priv);
 	return -1;
@@ -81,6 +101,10 @@ static inline int wpa_drv_init_mesh(struct wpa_supplicant *wpa_s)
 static inline int wpa_drv_join_mesh(struct wpa_supplicant *wpa_s,
 				    struct wpa_driver_mesh_join_params *params)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->join_mesh)
 		return wpa_s->driver->join_mesh(wpa_s->drv_priv, params);
 	return -1;
@@ -88,6 +112,10 @@ static inline int wpa_drv_join_mesh(struct wpa_supplicant *wpa_s,
 
 static inline int wpa_drv_leave_mesh(struct wpa_supplicant *wpa_s)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->leave_mesh)
 		return wpa_s->driver->leave_mesh(wpa_s->drv_priv);
 	return -1;
@@ -97,6 +125,10 @@ static inline int wpa_drv_mesh_link_probe(struct wpa_supplicant *wpa_s,
 					  const u8 *addr,
 					  const u8 *eth, size_t len)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->probe_mesh_link)
 		return wpa_s->driver->probe_mesh_link(wpa_s->drv_priv, addr,
 						      eth, len);
@@ -106,6 +138,10 @@ static inline int wpa_drv_mesh_link_probe(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_scan(struct wpa_supplicant *wpa_s,
 			       struct wpa_driver_scan_params *params)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 #ifdef CONFIG_TESTING_OPTIONS
 	if (wpa_s->test_failure == WPAS_TEST_FAILURE_SCAN_TRIGGER)
 		return -EBUSY;
@@ -128,6 +164,10 @@ static inline int wpa_drv_sched_scan(struct wpa_supplicant *wpa_s,
 
 static inline int wpa_drv_stop_sched_scan(struct wpa_supplicant *wpa_s)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->stop_sched_scan)
 		return wpa_s->driver->stop_sched_scan(wpa_s->drv_priv);
 	return -1;
@@ -136,6 +176,10 @@ static inline int wpa_drv_stop_sched_scan(struct wpa_supplicant *wpa_s)
 static inline struct wpa_scan_results * wpa_drv_get_scan_results2(
 	struct wpa_supplicant *wpa_s)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->get_scan_results2)
 		return wpa_s->driver->get_scan_results2(wpa_s->drv_priv);
 	return NULL;
@@ -143,6 +187,10 @@ static inline struct wpa_scan_results * wpa_drv_get_scan_results2(
 
 static inline int wpa_drv_get_bssid(struct wpa_supplicant *wpa_s, u8 *bssid)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->get_bssid) {
 		return wpa_s->driver->get_bssid(wpa_s->drv_priv, bssid);
 	}
@@ -151,6 +199,10 @@ static inline int wpa_drv_get_bssid(struct wpa_supplicant *wpa_s, u8 *bssid)
 
 static inline int wpa_drv_get_ssid(struct wpa_supplicant *wpa_s, u8 *ssid)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->get_ssid) {
 		return wpa_s->driver->get_ssid(wpa_s->drv_priv, ssid);
 	}
@@ -163,6 +215,10 @@ static inline int wpa_drv_set_key(struct wpa_supplicant *wpa_s,
 				  const u8 *seq, size_t seq_len,
 				  const u8 *key, size_t key_len)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (alg != WPA_ALG_NONE) {
 		if (key_idx >= 0 && key_idx <= 6)
 			wpa_s->keys_cleared &= ~BIT(key_idx);
@@ -180,6 +236,10 @@ static inline int wpa_drv_set_key(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_get_seqnum(struct wpa_supplicant *wpa_s,
 				     const u8 *addr, int idx, u8 *seq)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->get_seqnum)
 		return wpa_s->driver->get_seqnum(wpa_s->ifname, wpa_s->drv_priv,
 						 addr, idx, seq);
@@ -189,6 +249,10 @@ static inline int wpa_drv_get_seqnum(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_sta_deauth(struct wpa_supplicant *wpa_s,
 				     const u8 *addr, u16 reason_code)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->sta_deauth) {
 		return wpa_s->driver->sta_deauth(wpa_s->drv_priv,
 						 wpa_s->own_addr, addr,
@@ -200,6 +264,10 @@ static inline int wpa_drv_sta_deauth(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_deauthenticate(struct wpa_supplicant *wpa_s,
 					 const u8 *addr, u16 reason_code)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->deauthenticate) {
 		return wpa_s->driver->deauthenticate(wpa_s->drv_priv, addr,
 						     reason_code);
@@ -210,6 +278,10 @@ static inline int wpa_drv_deauthenticate(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_add_pmkid(struct wpa_supplicant *wpa_s,
 				    struct wpa_pmkid_params *params)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->add_pmkid) {
 		return wpa_s->driver->add_pmkid(wpa_s->drv_priv, params);
 	}
@@ -219,6 +291,10 @@ static inline int wpa_drv_add_pmkid(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_remove_pmkid(struct wpa_supplicant *wpa_s,
 				       struct wpa_pmkid_params *params)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->remove_pmkid) {
 		return wpa_s->driver->remove_pmkid(wpa_s->drv_priv, params);
 	}
@@ -227,6 +303,10 @@ static inline int wpa_drv_remove_pmkid(struct wpa_supplicant *wpa_s,
 
 static inline int wpa_drv_flush_pmkid(struct wpa_supplicant *wpa_s)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->flush_pmkid) {
 		return wpa_s->driver->flush_pmkid(wpa_s->drv_priv);
 	}
@@ -236,6 +316,10 @@ static inline int wpa_drv_flush_pmkid(struct wpa_supplicant *wpa_s)
 static inline int wpa_drv_get_capa(struct wpa_supplicant *wpa_s,
 				   struct wpa_driver_capa *capa)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->get_capa) {
 		return wpa_s->driver->get_capa(wpa_s->drv_priv, capa);
 	}
@@ -244,6 +328,10 @@ static inline int wpa_drv_get_capa(struct wpa_supplicant *wpa_s,
 
 static inline void wpa_drv_poll(struct wpa_supplicant *wpa_s)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->poll) {
 		wpa_s->driver->poll(wpa_s->drv_priv);
 	}
@@ -263,6 +351,10 @@ static inline const char * wpa_drv_get_ifname(struct wpa_supplicant *wpa_s)
 static inline const char *
 wpa_driver_get_radio_name(struct wpa_supplicant *wpa_s)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->get_radio_name)
 		return wpa_s->driver->get_radio_name(wpa_s->drv_priv);
 	return NULL;
@@ -270,6 +362,10 @@ wpa_driver_get_radio_name(struct wpa_supplicant *wpa_s)
 
 static inline const u8 * wpa_drv_get_mac_addr(struct wpa_supplicant *wpa_s)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->get_mac_addr) {
 		return wpa_s->driver->get_mac_addr(wpa_s->drv_priv);
 	}
@@ -279,6 +375,10 @@ static inline const u8 * wpa_drv_get_mac_addr(struct wpa_supplicant *wpa_s)
 static inline int wpa_drv_set_operstate(struct wpa_supplicant *wpa_s,
 					int state)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->set_operstate)
 		return wpa_s->driver->set_operstate(wpa_s->drv_priv, state);
 	return 0;
@@ -288,6 +388,10 @@ static inline int wpa_drv_mlme_setprotection(struct wpa_supplicant *wpa_s,
 					     const u8 *addr, int protect_type,
 					     int key_type)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->mlme_setprotection)
 		return wpa_s->driver->mlme_setprotection(wpa_s->drv_priv, addr,
 							 protect_type,
@@ -299,6 +403,10 @@ static inline struct hostapd_hw_modes *
 wpa_drv_get_hw_feature_data(struct wpa_supplicant *wpa_s, u16 *num_modes,
 			    u16 *flags, u8 *dfs_domain)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->get_hw_feature_data)
 		return wpa_s->driver->get_hw_feature_data(wpa_s->drv_priv,
 							  num_modes, flags,
@@ -309,6 +417,10 @@ wpa_drv_get_hw_feature_data(struct wpa_supplicant *wpa_s, u16 *num_modes,
 static inline int wpa_drv_set_country(struct wpa_supplicant *wpa_s,
 				      const char *alpha2)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->set_country)
 		return wpa_s->driver->set_country(wpa_s->drv_priv, alpha2);
 	return 0;
@@ -318,6 +430,10 @@ static inline int wpa_drv_send_mlme(struct wpa_supplicant *wpa_s,
 				    const u8 *data, size_t data_len, int noack,
 				    unsigned int freq)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->send_mlme)
 		return wpa_s->driver->send_mlme(wpa_s->drv_priv,
 						data, data_len, noack,
@@ -329,6 +445,10 @@ static inline int wpa_drv_update_ft_ies(struct wpa_supplicant *wpa_s,
 					const u8 *md,
 					const u8 *ies, size_t ies_len)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->update_ft_ies)
 		return wpa_s->driver->update_ft_ies(wpa_s->drv_priv, md,
 						    ies, ies_len);
@@ -338,6 +458,10 @@ static inline int wpa_drv_update_ft_ies(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_set_ap(struct wpa_supplicant *wpa_s,
 				 struct wpa_driver_ap_params *params)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->set_ap)
 		return wpa_s->driver->set_ap(wpa_s->drv_priv, params);
 	return -1;
@@ -346,6 +470,10 @@ static inline int wpa_drv_set_ap(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_sta_add(struct wpa_supplicant *wpa_s,
 				  struct hostapd_sta_add_params *params)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->sta_add)
 		return wpa_s->driver->sta_add(wpa_s->drv_priv, params);
 	return -1;
@@ -354,6 +482,10 @@ static inline int wpa_drv_sta_add(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_sta_remove(struct wpa_supplicant *wpa_s,
 				     const u8 *addr)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->sta_remove)
 		return wpa_s->driver->sta_remove(wpa_s->drv_priv, addr);
 	return -1;
@@ -364,6 +496,10 @@ static inline int wpa_drv_hapd_send_eapol(struct wpa_supplicant *wpa_s,
 					  size_t data_len, int encrypt,
 					  const u8 *own_addr, u32 flags)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->hapd_send_eapol)
 		return wpa_s->driver->hapd_send_eapol(wpa_s->drv_priv, addr,
 						      data, data_len, encrypt,
@@ -375,6 +511,10 @@ static inline int wpa_drv_sta_set_flags(struct wpa_supplicant *wpa_s,
 					const u8 *addr, int total_flags,
 					int flags_or, int flags_and)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->sta_set_flags)
 		return wpa_s->driver->sta_set_flags(wpa_s->drv_priv, addr,
 						    total_flags, flags_or,
@@ -385,6 +525,10 @@ static inline int wpa_drv_sta_set_flags(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_set_supp_port(struct wpa_supplicant *wpa_s,
 					int authorized)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->set_supp_port) {
 		return wpa_s->driver->set_supp_port(wpa_s->drv_priv,
 						    authorized);
@@ -400,6 +544,10 @@ static inline int wpa_drv_send_action(struct wpa_supplicant *wpa_s,
 				      const u8 *data, size_t data_len,
 				      int no_cck)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->send_action)
 		return wpa_s->driver->send_action(wpa_s->drv_priv, freq,
 						  wait, dst, src, bssid,
@@ -409,6 +557,10 @@ static inline int wpa_drv_send_action(struct wpa_supplicant *wpa_s,
 
 static inline void wpa_drv_send_action_cancel_wait(struct wpa_supplicant *wpa_s)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->send_action_cancel_wait)
 		wpa_s->driver->send_action_cancel_wait(wpa_s->drv_priv);
 }
@@ -416,6 +568,10 @@ static inline void wpa_drv_send_action_cancel_wait(struct wpa_supplicant *wpa_s)
 static inline int wpa_drv_set_freq(struct wpa_supplicant *wpa_s,
 				   struct hostapd_freq_params *freq)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->set_freq)
 		return wpa_s->driver->set_freq(wpa_s->drv_priv, freq);
 	return -1;
@@ -427,6 +583,10 @@ static inline int wpa_drv_if_add(struct wpa_supplicant *wpa_s,
 				 void *bss_ctx, char *force_ifname,
 				 u8 *if_addr, const char *bridge)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->if_add)
 		return wpa_s->driver->if_add(wpa_s->drv_priv, type, ifname,
 					     addr, bss_ctx, NULL, force_ifname,
@@ -438,6 +598,10 @@ static inline int wpa_drv_if_remove(struct wpa_supplicant *wpa_s,
 				    enum wpa_driver_if_type type,
 				    const char *ifname)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->if_remove)
 		return wpa_s->driver->if_remove(wpa_s->drv_priv, type, ifname);
 	return -1;
@@ -447,6 +611,10 @@ static inline int wpa_drv_remain_on_channel(struct wpa_supplicant *wpa_s,
 					    unsigned int freq,
 					    unsigned int duration)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->remain_on_channel)
 		return wpa_s->driver->remain_on_channel(wpa_s->drv_priv, freq,
 							duration);
@@ -456,6 +624,10 @@ static inline int wpa_drv_remain_on_channel(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_cancel_remain_on_channel(
 	struct wpa_supplicant *wpa_s)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->cancel_remain_on_channel)
 		return wpa_s->driver->cancel_remain_on_channel(
 			wpa_s->drv_priv);
@@ -465,6 +637,10 @@ static inline int wpa_drv_cancel_remain_on_channel(
 static inline int wpa_drv_probe_req_report(struct wpa_supplicant *wpa_s,
 					   int report)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->probe_req_report)
 		return wpa_s->driver->probe_req_report(wpa_s->drv_priv,
 						       report);
@@ -473,6 +649,10 @@ static inline int wpa_drv_probe_req_report(struct wpa_supplicant *wpa_s,
 
 static inline int wpa_drv_deinit_ap(struct wpa_supplicant *wpa_s)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->deinit_ap)
 		return wpa_s->driver->deinit_ap(wpa_s->drv_priv);
 	return 0;
@@ -480,6 +660,10 @@ static inline int wpa_drv_deinit_ap(struct wpa_supplicant *wpa_s)
 
 static inline int wpa_drv_deinit_p2p_cli(struct wpa_supplicant *wpa_s)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->deinit_p2p_cli)
 		return wpa_s->driver->deinit_p2p_cli(wpa_s->drv_priv);
 	return 0;
@@ -487,12 +671,20 @@ static inline int wpa_drv_deinit_p2p_cli(struct wpa_supplicant *wpa_s)
 
 static inline void wpa_drv_suspend(struct wpa_supplicant *wpa_s)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->suspend)
 		wpa_s->driver->suspend(wpa_s->drv_priv);
 }
 
 static inline void wpa_drv_resume(struct wpa_supplicant *wpa_s)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->resume)
 		wpa_s->driver->resume(wpa_s->drv_priv);
 }
@@ -500,6 +692,10 @@ static inline void wpa_drv_resume(struct wpa_supplicant *wpa_s)
 static inline int wpa_drv_signal_monitor(struct wpa_supplicant *wpa_s,
 					 int threshold, int hysteresis)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->signal_monitor)
 		return wpa_s->driver->signal_monitor(wpa_s->drv_priv,
 						     threshold, hysteresis);
@@ -509,6 +705,10 @@ static inline int wpa_drv_signal_monitor(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_signal_poll(struct wpa_supplicant *wpa_s,
 				      struct wpa_signal_info *si)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->signal_poll)
 		return wpa_s->driver->signal_poll(wpa_s->drv_priv, si);
 	return -1;
@@ -517,6 +717,10 @@ static inline int wpa_drv_signal_poll(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_channel_info(struct wpa_supplicant *wpa_s,
 				       struct wpa_channel_info *ci)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->channel_info)
 		return wpa_s->driver->channel_info(wpa_s->drv_priv, ci);
 	return -1;
@@ -525,6 +729,10 @@ static inline int wpa_drv_channel_info(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_pktcnt_poll(struct wpa_supplicant *wpa_s,
 				      struct hostap_sta_driver_data *sta)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->read_sta_data)
 		return wpa_s->driver->read_sta_data(wpa_s->drv_priv, sta,
 						    wpa_s->bssid);
@@ -536,6 +744,10 @@ static inline int wpa_drv_set_ap_wps_ie(struct wpa_supplicant *wpa_s,
 					const struct wpabuf *proberesp,
 					const struct wpabuf *assocresp)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->set_ap_wps_ie)
 		return -1;
 	return wpa_s->driver->set_ap_wps_ie(wpa_s->drv_priv, beacon,
@@ -545,6 +757,10 @@ static inline int wpa_drv_set_ap_wps_ie(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_get_noa(struct wpa_supplicant *wpa_s,
 				  u8 *buf, size_t buf_len)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->get_noa)
 		return -1;
 	return wpa_s->driver->get_noa(wpa_s->drv_priv, buf, buf_len);
@@ -554,6 +770,10 @@ static inline int wpa_drv_set_p2p_powersave(struct wpa_supplicant *wpa_s,
 					    int legacy_ps, int opp_ps,
 					    int ctwindow)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->set_p2p_powersave)
 		return -1;
 	return wpa_s->driver->set_p2p_powersave(wpa_s->drv_priv, legacy_ps,
@@ -562,6 +782,10 @@ static inline int wpa_drv_set_p2p_powersave(struct wpa_supplicant *wpa_s,
 
 static inline int wpa_drv_ampdu(struct wpa_supplicant *wpa_s, int ampdu)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->ampdu)
 		return -1;
 	return wpa_s->driver->ampdu(wpa_s->drv_priv, ampdu);
@@ -573,6 +797,10 @@ static inline int wpa_drv_send_tdls_mgmt(struct wpa_supplicant *wpa_s,
 					 u32 peer_capab, int initiator,
 					 const u8 *buf, size_t len)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (wpa_s->driver->send_tdls_mgmt) {
 		return wpa_s->driver->send_tdls_mgmt(wpa_s->drv_priv, dst,
 						     action_code, dialog_token,
@@ -585,6 +813,10 @@ static inline int wpa_drv_send_tdls_mgmt(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_tdls_oper(struct wpa_supplicant *wpa_s,
 				    enum tdls_oper oper, const u8 *peer)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->tdls_oper)
 		return -1;
 	return wpa_s->driver->tdls_oper(wpa_s->drv_priv, oper, peer);
@@ -594,6 +826,10 @@ static inline int wpa_drv_tdls_oper(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_driver_cmd(struct wpa_supplicant *wpa_s,
 				     char *cmd, char *buf, size_t buf_len)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->driver_cmd)
 		return -1;
 	return wpa_s->driver->driver_cmd(wpa_s->drv_priv, cmd, buf, buf_len);
@@ -605,6 +841,10 @@ static inline void wpa_drv_set_rekey_info(struct wpa_supplicant *wpa_s,
 					  const u8 *kck, size_t kck_len,
 					  const u8 *replay_ctr)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->set_rekey_info)
 		return;
 	wpa_s->driver->set_rekey_info(wpa_s->drv_priv, kek, kek_len,
@@ -614,6 +854,10 @@ static inline void wpa_drv_set_rekey_info(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_radio_disable(struct wpa_supplicant *wpa_s,
 					int disabled)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->radio_disable)
 		return -1;
 	return wpa_s->driver->radio_disable(wpa_s->drv_priv, disabled);
@@ -622,6 +866,10 @@ static inline int wpa_drv_radio_disable(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_switch_channel(struct wpa_supplicant *wpa_s,
 					 struct csa_settings *settings)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->switch_channel)
 		return -1;
 	return wpa_s->driver->switch_channel(wpa_s->drv_priv, settings);
@@ -631,6 +879,10 @@ static inline int wpa_drv_add_ts(struct wpa_supplicant *wpa_s, u8 tsid,
 				 const u8 *address, u8 user_priority,
 				 u16 admitted_time)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->add_tx_ts)
 		return -1;
 	return wpa_s->driver->add_tx_ts(wpa_s->drv_priv, tsid, address,
@@ -640,6 +892,10 @@ static inline int wpa_drv_add_ts(struct wpa_supplicant *wpa_s, u8 tsid,
 static inline int wpa_drv_del_ts(struct wpa_supplicant *wpa_s, u8 tid,
 				 const u8 *address)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->del_tx_ts)
 		return -1;
 	return wpa_s->driver->del_tx_ts(wpa_s->drv_priv, tid, address);
@@ -649,6 +905,10 @@ static inline int wpa_drv_tdls_enable_channel_switch(
 	struct wpa_supplicant *wpa_s, const u8 *addr, u8 oper_class,
 	const struct hostapd_freq_params *freq_params)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->tdls_enable_channel_switch)
 		return -1;
 	return wpa_s->driver->tdls_enable_channel_switch(wpa_s->drv_priv, addr,
@@ -660,6 +920,10 @@ static inline int
 wpa_drv_tdls_disable_channel_switch(struct wpa_supplicant *wpa_s,
 				    const u8 *addr)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->tdls_disable_channel_switch)
 		return -1;
 	return wpa_s->driver->tdls_disable_channel_switch(wpa_s->drv_priv,
@@ -670,6 +934,10 @@ static inline int wpa_drv_wnm_oper(struct wpa_supplicant *wpa_s,
 				   enum wnm_oper oper, const u8 *peer,
 				   u8 *buf, u16 *buf_len)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->wnm_oper)
 		return -1;
 	return wpa_s->driver->wnm_oper(wpa_s->drv_priv, oper, peer, buf,
@@ -679,6 +947,10 @@ static inline int wpa_drv_wnm_oper(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_status(struct wpa_supplicant *wpa_s,
 				 char *buf, size_t buflen)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->status)
 		return -1;
 	return wpa_s->driver->status(wpa_s->drv_priv, buf, buflen);
@@ -687,6 +959,10 @@ static inline int wpa_drv_status(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_set_qos_map(struct wpa_supplicant *wpa_s,
 				      const u8 *qos_map_set, u8 qos_map_set_len)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->set_qos_map)
 		return -1;
 	return wpa_s->driver->set_qos_map(wpa_s->drv_priv, qos_map_set,
@@ -696,6 +972,10 @@ static inline int wpa_drv_set_qos_map(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_wowlan(struct wpa_supplicant *wpa_s,
 				 const struct wowlan_triggers *triggers)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->set_wowlan)
 		return -1;
 	return wpa_s->driver->set_wowlan(wpa_s->drv_priv, triggers);
@@ -705,6 +985,10 @@ static inline int wpa_drv_vendor_cmd(struct wpa_supplicant *wpa_s,
 				     int vendor_id, int subcmd, const u8 *data,
 				     size_t data_len, struct wpabuf *buf)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->vendor_cmd)
 		return -1;
 	return wpa_s->driver->vendor_cmd(wpa_s->drv_priv, vendor_id, subcmd,
@@ -714,6 +998,10 @@ static inline int wpa_drv_vendor_cmd(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_roaming(struct wpa_supplicant *wpa_s, int allowed,
 				  const u8 *bssid)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->roaming)
 		return -1;
 	return wpa_s->driver->roaming(wpa_s->drv_priv, allowed, bssid);
@@ -722,6 +1010,10 @@ static inline int wpa_drv_roaming(struct wpa_supplicant *wpa_s, int allowed,
 static inline int wpa_drv_disable_fils(struct wpa_supplicant *wpa_s,
 				       int disable)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->disable_fils)
 		return -1;
 	return wpa_s->driver->disable_fils(wpa_s->drv_priv, disable);
@@ -730,6 +1022,10 @@ static inline int wpa_drv_disable_fils(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_set_mac_addr(struct wpa_supplicant *wpa_s,
 				       const u8 *addr)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->set_mac_addr)
 		return -1;
 	return wpa_s->driver->set_mac_addr(wpa_s->drv_priv, addr);
@@ -741,6 +1037,10 @@ static inline int wpa_drv_set_mac_addr(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_macsec_init(struct wpa_supplicant *wpa_s,
 				      struct macsec_init_params *params)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->macsec_init)
 		return -1;
 	return wpa_s->driver->macsec_init(wpa_s->drv_priv, params);
@@ -748,6 +1048,10 @@ static inline int wpa_drv_macsec_init(struct wpa_supplicant *wpa_s,
 
 static inline int wpa_drv_macsec_deinit(struct wpa_supplicant *wpa_s)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->macsec_deinit)
 		return -1;
 	return wpa_s->driver->macsec_deinit(wpa_s->drv_priv);
@@ -756,6 +1060,10 @@ static inline int wpa_drv_macsec_deinit(struct wpa_supplicant *wpa_s)
 static inline int wpa_drv_macsec_get_capability(struct wpa_supplicant *wpa_s,
 						enum macsec_cap *cap)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->macsec_get_capability)
 		return -1;
 	return wpa_s->driver->macsec_get_capability(wpa_s->drv_priv, cap);
@@ -764,6 +1072,10 @@ static inline int wpa_drv_macsec_get_capability(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_enable_protect_frames(struct wpa_supplicant *wpa_s,
 						Boolean enabled)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->enable_protect_frames)
 		return -1;
 	return wpa_s->driver->enable_protect_frames(wpa_s->drv_priv, enabled);
@@ -772,6 +1084,10 @@ static inline int wpa_drv_enable_protect_frames(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_enable_encrypt(struct wpa_supplicant *wpa_s,
 						Boolean enabled)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->enable_encrypt)
 		return -1;
 	return wpa_s->driver->enable_encrypt(wpa_s->drv_priv, enabled);
@@ -780,6 +1096,10 @@ static inline int wpa_drv_enable_encrypt(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_set_replay_protect(struct wpa_supplicant *wpa_s,
 					     Boolean enabled, u32 window)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->set_replay_protect)
 		return -1;
 	return wpa_s->driver->set_replay_protect(wpa_s->drv_priv, enabled,
@@ -789,6 +1109,10 @@ static inline int wpa_drv_set_replay_protect(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_set_current_cipher_suite(struct wpa_supplicant *wpa_s,
 						   u64 cs)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->set_current_cipher_suite)
 		return -1;
 	return wpa_s->driver->set_current_cipher_suite(wpa_s->drv_priv, cs);
@@ -797,6 +1121,10 @@ static inline int wpa_drv_set_current_cipher_suite(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_enable_controlled_port(struct wpa_supplicant *wpa_s,
 						 Boolean enabled)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->enable_controlled_port)
 		return -1;
 	return wpa_s->driver->enable_controlled_port(wpa_s->drv_priv, enabled);
@@ -805,6 +1133,10 @@ static inline int wpa_drv_enable_controlled_port(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_get_receive_lowest_pn(struct wpa_supplicant *wpa_s,
 						struct receive_sa *sa)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->get_receive_lowest_pn)
 		return -1;
 	return wpa_s->driver->get_receive_lowest_pn(wpa_s->drv_priv, sa);
@@ -813,6 +1145,10 @@ static inline int wpa_drv_get_receive_lowest_pn(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_get_transmit_next_pn(struct wpa_supplicant *wpa_s,
 						struct transmit_sa *sa)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->get_transmit_next_pn)
 		return -1;
 	return wpa_s->driver->get_transmit_next_pn(wpa_s->drv_priv, sa);
@@ -821,6 +1157,10 @@ static inline int wpa_drv_get_transmit_next_pn(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_set_transmit_next_pn(struct wpa_supplicant *wpa_s,
 						struct transmit_sa *sa)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->set_transmit_next_pn)
 		return -1;
 	return wpa_s->driver->set_transmit_next_pn(wpa_s->drv_priv, sa);
@@ -829,6 +1169,10 @@ static inline int wpa_drv_set_transmit_next_pn(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_set_receive_lowest_pn(struct wpa_supplicant *wpa_s,
 						struct receive_sa *sa)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->set_receive_lowest_pn)
 		return -1;
 	return wpa_s->driver->set_receive_lowest_pn(wpa_s->drv_priv, sa);
@@ -838,6 +1182,10 @@ static inline int
 wpa_drv_create_receive_sc(struct wpa_supplicant *wpa_s, struct receive_sc *sc,
 			  unsigned int conf_offset, int validation)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->create_receive_sc)
 		return -1;
 	return wpa_s->driver->create_receive_sc(wpa_s->drv_priv, sc,
@@ -847,6 +1195,10 @@ wpa_drv_create_receive_sc(struct wpa_supplicant *wpa_s, struct receive_sc *sc,
 static inline int wpa_drv_delete_receive_sc(struct wpa_supplicant *wpa_s,
 					    struct receive_sc *sc)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->delete_receive_sc)
 		return -1;
 	return wpa_s->driver->delete_receive_sc(wpa_s->drv_priv, sc);
@@ -855,6 +1207,10 @@ static inline int wpa_drv_delete_receive_sc(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_create_receive_sa(struct wpa_supplicant *wpa_s,
 					    struct receive_sa *sa)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->create_receive_sa)
 		return -1;
 	return wpa_s->driver->create_receive_sa(wpa_s->drv_priv, sa);
@@ -863,6 +1219,10 @@ static inline int wpa_drv_create_receive_sa(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_delete_receive_sa(struct wpa_supplicant *wpa_s,
 					    struct receive_sa *sa)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->delete_receive_sa)
 		return -1;
 	return wpa_s->driver->delete_receive_sa(wpa_s->drv_priv, sa);
@@ -871,6 +1231,10 @@ static inline int wpa_drv_delete_receive_sa(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_enable_receive_sa(struct wpa_supplicant *wpa_s,
 					    struct receive_sa *sa)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->enable_receive_sa)
 		return -1;
 	return wpa_s->driver->enable_receive_sa(wpa_s->drv_priv, sa);
@@ -879,6 +1243,10 @@ static inline int wpa_drv_enable_receive_sa(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_disable_receive_sa(struct wpa_supplicant *wpa_s,
 					     struct receive_sa *sa)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->disable_receive_sa)
 		return -1;
 	return wpa_s->driver->disable_receive_sa(wpa_s->drv_priv, sa);
@@ -888,6 +1256,10 @@ static inline int
 wpa_drv_create_transmit_sc(struct wpa_supplicant *wpa_s, struct transmit_sc *sc,
 			   unsigned int conf_offset)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->create_transmit_sc)
 		return -1;
 	return wpa_s->driver->create_transmit_sc(wpa_s->drv_priv, sc,
@@ -897,6 +1269,10 @@ wpa_drv_create_transmit_sc(struct wpa_supplicant *wpa_s, struct transmit_sc *sc,
 static inline int wpa_drv_delete_transmit_sc(struct wpa_supplicant *wpa_s,
 					     struct transmit_sc *sc)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->delete_transmit_sc)
 		return -1;
 	return wpa_s->driver->delete_transmit_sc(wpa_s->drv_priv, sc);
@@ -905,6 +1281,10 @@ static inline int wpa_drv_delete_transmit_sc(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_create_transmit_sa(struct wpa_supplicant *wpa_s,
 					     struct transmit_sa *sa)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->create_transmit_sa)
 		return -1;
 	return wpa_s->driver->create_transmit_sa(wpa_s->drv_priv, sa);
@@ -913,6 +1293,10 @@ static inline int wpa_drv_create_transmit_sa(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_delete_transmit_sa(struct wpa_supplicant *wpa_s,
 					     struct transmit_sa *sa)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->delete_transmit_sa)
 		return -1;
 	return wpa_s->driver->delete_transmit_sa(wpa_s->drv_priv, sa);
@@ -921,6 +1305,10 @@ static inline int wpa_drv_delete_transmit_sa(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_enable_transmit_sa(struct wpa_supplicant *wpa_s,
 					     struct transmit_sa *sa)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->enable_transmit_sa)
 		return -1;
 	return wpa_s->driver->enable_transmit_sa(wpa_s->drv_priv, sa);
@@ -929,6 +1317,10 @@ static inline int wpa_drv_enable_transmit_sa(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_disable_transmit_sa(struct wpa_supplicant *wpa_s,
 					      struct transmit_sa *sa)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->disable_transmit_sa)
 		return -1;
 	return wpa_s->driver->disable_transmit_sa(wpa_s->drv_priv, sa);
@@ -938,6 +1330,10 @@ static inline int wpa_drv_disable_transmit_sa(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_setband(struct wpa_supplicant *wpa_s,
 				  enum set_band band)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->set_band)
 		return -1;
 	return wpa_s->driver->set_band(wpa_s->drv_priv, band);
@@ -948,6 +1344,10 @@ static inline int wpa_drv_get_pref_freq_list(struct wpa_supplicant *wpa_s,
 					     unsigned int *num,
 					     unsigned int *freq_list)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 #ifdef CONFIG_TESTING_OPTIONS
 	if (wpa_s->get_pref_freq_list_override)
 		return wpas_ctrl_iface_get_pref_freq_list_override(
@@ -962,6 +1362,10 @@ static inline int wpa_drv_get_pref_freq_list(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_set_prob_oper_freq(struct wpa_supplicant *wpa_s,
 					     unsigned int freq)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->set_prob_oper_freq)
 		return 0;
 	return wpa_s->driver->set_prob_oper_freq(wpa_s->drv_priv, freq);
@@ -970,6 +1374,10 @@ static inline int wpa_drv_set_prob_oper_freq(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_abort_scan(struct wpa_supplicant *wpa_s,
 				     u64 scan_cookie)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->abort_scan)
 		return -1;
 	return wpa_s->driver->abort_scan(wpa_s->drv_priv, scan_cookie);
@@ -978,6 +1386,10 @@ static inline int wpa_drv_abort_scan(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_configure_frame_filters(struct wpa_supplicant *wpa_s,
 						  u32 filters)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->configure_data_frame_filters)
 		return -1;
 	return wpa_s->driver->configure_data_frame_filters(wpa_s->drv_priv,
@@ -987,6 +1399,10 @@ static inline int wpa_drv_configure_frame_filters(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_get_ext_capa(struct wpa_supplicant *wpa_s,
 				       enum wpa_driver_if_type type)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->get_ext_capab)
 		return -1;
 	return wpa_s->driver->get_ext_capab(wpa_s->drv_priv, type,
@@ -1004,6 +1420,10 @@ static inline int wpa_drv_p2p_lo_start(struct wpa_supplicant *wpa_s,
 				       size_t dev_types_len,
 				       const u8 *ies, size_t ies_len)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->p2p_lo_start)
 		return -1;
 	return wpa_s->driver->p2p_lo_start(wpa_s->drv_priv, channel, period,
@@ -1013,6 +1433,10 @@ static inline int wpa_drv_p2p_lo_start(struct wpa_supplicant *wpa_s,
 
 static inline int wpa_drv_p2p_lo_stop(struct wpa_supplicant *wpa_s)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->p2p_lo_stop)
 		return -1;
 	return wpa_s->driver->p2p_lo_stop(wpa_s->drv_priv);
@@ -1021,6 +1445,10 @@ static inline int wpa_drv_p2p_lo_stop(struct wpa_supplicant *wpa_s)
 static inline int wpa_drv_set_default_scan_ies(struct wpa_supplicant *wpa_s,
 					       const u8 *ies, size_t len)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->set_default_scan_ies)
 		return -1;
 	return wpa_s->driver->set_default_scan_ies(wpa_s->drv_priv, ies, len);
@@ -1029,6 +1457,10 @@ static inline int wpa_drv_set_default_scan_ies(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_set_tdls_mode(struct wpa_supplicant *wpa_s,
 					int tdls_external_control)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->set_tdls_mode)
 		return -1;
 	return wpa_s->driver->set_tdls_mode(wpa_s->drv_priv,
@@ -1039,6 +1471,10 @@ static inline struct wpa_bss_candidate_info *
 wpa_drv_get_bss_trans_status(struct wpa_supplicant *wpa_s,
 			     struct wpa_bss_trans_info *params)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->get_bss_transition_status)
 		return NULL;
 	return wpa_s->driver->get_bss_transition_status(wpa_s->drv_priv,
@@ -1048,6 +1484,10 @@ wpa_drv_get_bss_trans_status(struct wpa_supplicant *wpa_s,
 static inline int wpa_drv_ignore_assoc_disallow(struct wpa_supplicant *wpa_s,
 						int val)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->ignore_assoc_disallow)
 		return -1;
 	return wpa_s->driver->ignore_assoc_disallow(wpa_s->drv_priv, val);
@@ -1057,6 +1497,10 @@ static inline int wpa_drv_set_bssid_blacklist(struct wpa_supplicant *wpa_s,
 					      unsigned int num_bssid,
 					      const u8 *bssids)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->set_bssid_blacklist)
 		return -1;
 	return wpa_s->driver->set_bssid_blacklist(wpa_s->drv_priv, num_bssid,
@@ -1068,6 +1512,10 @@ static inline int wpa_drv_update_connect_params(
 	struct wpa_driver_associate_params *params,
 	enum wpa_drv_update_connect_params_mask mask)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->update_connect_params)
 		return -1;
 	return wpa_s->driver->update_connect_params(wpa_s->drv_priv, params,
@@ -1078,6 +1526,10 @@ static inline int
 wpa_drv_send_external_auth_status(struct wpa_supplicant *wpa_s,
 				  struct external_auth *params)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->send_external_auth_status)
 		return -1;
 	return wpa_s->driver->send_external_auth_status(wpa_s->drv_priv,
@@ -1086,6 +1538,10 @@ wpa_drv_send_external_auth_status(struct wpa_supplicant *wpa_s,
 
 static inline int wpa_drv_set_4addr_mode(struct wpa_supplicant *wpa_s, int val)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (!wpa_s->driver->set_4addr_mode)
 		return -1;
 	return wpa_s->driver->set_4addr_mode(wpa_s->drv_priv,

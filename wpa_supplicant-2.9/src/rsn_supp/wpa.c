@@ -51,6 +51,9 @@ int wpa_eapol_key_send(struct wpa_sm *sm, struct wpa_ptk *ptk,
 		       int ver, const u8 *dest, u16 proto,
 		       u8 *msg, size_t msg_len, u8 *key_mic)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	int ret = -1;
 	size_t mic_len = wpa_mic_len(sm->key_mgmt, sm->pmk_len);
 
@@ -178,6 +181,9 @@ out:
  */
 void wpa_sm_key_request(struct wpa_sm *sm, int error, int pairwise)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	size_t mic_len, hdrlen, rlen;
 	struct wpa_eapol_key *reply;
 	int key_info, ver;
@@ -262,6 +268,9 @@ static int wpa_supplicant_get_pmk(struct wpa_sm *sm,
 				  const unsigned char *src_addr,
 				  const u8 *pmkid)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	int abort_cached = 0;
 
 	if (pmkid && !sm->cur_pmksa) {
@@ -472,6 +481,9 @@ int wpa_supplicant_send_2_of_4(struct wpa_sm *sm, const unsigned char *dst,
 			       const u8 *wpa_ie, size_t wpa_ie_len,
 			       struct wpa_ptk *ptk)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	size_t mic_len, hdrlen, rlen;
 	struct wpa_eapol_key *reply;
 	u8 *rbuf, *key_mic;
@@ -560,6 +572,9 @@ int wpa_supplicant_send_2_of_4(struct wpa_sm *sm, const unsigned char *dst,
 static int wpa_derive_ptk(struct wpa_sm *sm, const unsigned char *src_addr,
 			  const struct wpa_eapol_key *key, struct wpa_ptk *ptk)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	const u8 *z = NULL;
 	size_t z_len = 0;
 
@@ -588,6 +603,9 @@ static void wpa_supplicant_process_1_of_4(struct wpa_sm *sm,
 					  u16 ver, const u8 *key_data,
 					  size_t key_data_len)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	struct wpa_eapol_ie_parse ie;
 	struct wpa_ptk *ptk;
 	int res;
@@ -719,6 +737,9 @@ failed:
 
 static void wpa_sm_start_preauth(void *eloop_ctx, void *timeout_ctx)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	struct wpa_sm *sm = eloop_ctx;
 	rsn_preauth_candidate_process(sm);
 }
@@ -727,6 +748,9 @@ static void wpa_sm_start_preauth(void *eloop_ctx, void *timeout_ctx)
 static void wpa_supplicant_key_neg_complete(struct wpa_sm *sm,
 					    const u8 *addr, int secure)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	wpa_msg(sm->ctx->msg_ctx, MSG_INFO,
 		"WPA: Key negotiation completed with "
 		MACSTR " [PTK=%s GTK=%s]", MAC2STR(addr),
@@ -774,6 +798,9 @@ static void wpa_supplicant_key_neg_complete(struct wpa_sm *sm,
 
 static void wpa_sm_rekey_ptk(void *eloop_ctx, void *timeout_ctx)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	struct wpa_sm *sm = eloop_ctx;
 	wpa_dbg(sm->ctx->msg_ctx, MSG_DEBUG, "WPA: Request PTK rekeying");
 	wpa_sm_key_request(sm, 0, 1);
@@ -783,6 +810,9 @@ static void wpa_sm_rekey_ptk(void *eloop_ctx, void *timeout_ctx)
 static int wpa_supplicant_install_ptk(struct wpa_sm *sm,
 				      const struct wpa_eapol_key *key)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	int keylen, rsclen;
 	enum wpa_alg alg;
 	const u8 *key_rsc;
@@ -855,6 +885,9 @@ static int wpa_supplicant_check_group_cipher(struct wpa_sm *sm,
 					     int *key_rsc_len,
 					     enum wpa_alg *alg)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	int klen;
 
 	*alg = wpa_cipher_to_alg(group_cipher);
@@ -889,6 +922,9 @@ static int wpa_supplicant_install_gtk(struct wpa_sm *sm,
 				      const struct wpa_gtk_data *gd,
 				      const u8 *key_rsc, int wnm_sleep)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	const u8 *_gtk = gd->gtk;
 	u8 gtk_buf[32];
 
@@ -954,6 +990,9 @@ static int wpa_supplicant_install_gtk(struct wpa_sm *sm,
 static int wpa_supplicant_gtk_tx_bit_workaround(const struct wpa_sm *sm,
 						int tx)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	if (tx && sm->pairwise_cipher != WPA_CIPHER_NONE) {
 		/* Ignore Tx bit for GTK if a pairwise key is used. One AP
 		 * seemed to set this bit (incorrectly, since Tx is only when
@@ -972,6 +1011,9 @@ static int wpa_supplicant_gtk_tx_bit_workaround(const struct wpa_sm *sm,
 static int wpa_supplicant_rsc_relaxation(const struct wpa_sm *sm,
 					 const u8 *rsc)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	int rsclen;
 
 	if (!sm->wpa_rsc_relaxation)
@@ -1004,6 +1046,9 @@ static int wpa_supplicant_pairwise_gtk(struct wpa_sm *sm,
 				       const u8 *gtk, size_t gtk_len,
 				       int key_info)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	struct wpa_gtk_data gd;
 	const u8 *key_rsc;
 
@@ -1056,6 +1101,9 @@ static int wpa_supplicant_install_igtk(struct wpa_sm *sm,
 				       const struct wpa_igtk_kde *igtk,
 				       int wnm_sleep)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	size_t len = wpa_cipher_key_len(sm->mgmt_group_cipher);
 	u16 keyidx = WPA_GET_LE16(igtk->keyid);
 
@@ -1124,6 +1172,9 @@ static int wpa_supplicant_install_igtk(struct wpa_sm *sm,
 static int ieee80211w_set_keys(struct wpa_sm *sm,
 			       struct wpa_eapol_ie_parse *ie)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 #ifdef CONFIG_IEEE80211W
 	if (!wpa_cipher_valid_mgmt_group(sm->mgmt_group_cipher))
 		return 0;
@@ -1153,6 +1204,9 @@ static void wpa_report_ie_mismatch(struct wpa_sm *sm,
 				   const u8 *wpa_ie, size_t wpa_ie_len,
 				   const u8 *rsn_ie, size_t rsn_ie_len)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	wpa_msg(sm->ctx->msg_ctx, MSG_WARNING, "WPA: %s (src=" MACSTR ")",
 		reason, MAC2STR(src_addr));
 
@@ -1193,6 +1247,9 @@ static int ft_validate_mdie(struct wpa_sm *sm,
 			    struct wpa_eapol_ie_parse *ie,
 			    const u8 *assoc_resp_mdie)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	struct rsn_mdie *mdie;
 
 	mdie = (struct rsn_mdie *) (ie->mdie + 2);
@@ -1224,6 +1281,9 @@ static int ft_validate_ftie(struct wpa_sm *sm,
 			    struct wpa_eapol_ie_parse *ie,
 			    const u8 *assoc_resp_ftie)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	if (ie->ftie == NULL) {
 		wpa_dbg(sm->ctx->msg_ctx, MSG_DEBUG,
 			"FT: No FTIE in EAPOL-Key msg 3/4");
@@ -1251,6 +1311,9 @@ static int ft_validate_rsnie(struct wpa_sm *sm,
 			     const unsigned char *src_addr,
 			     struct wpa_eapol_ie_parse *ie)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	struct wpa_ie_data rsn;
 
 	if (!ie->rsn_ie)
@@ -1287,6 +1350,9 @@ static int wpa_supplicant_validate_ie_ft(struct wpa_sm *sm,
 					 const unsigned char *src_addr,
 					 struct wpa_eapol_ie_parse *ie)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	const u8 *pos, *end, *mdie = NULL, *ftie = NULL;
 
 	if (sm->assoc_resp_ies) {
@@ -1322,6 +1388,9 @@ static int wpa_supplicant_validate_ie(struct wpa_sm *sm,
 				      const unsigned char *src_addr,
 				      struct wpa_eapol_ie_parse *ie)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	if (sm->ap_wpa_ie == NULL && sm->ap_rsn_ie == NULL) {
 		wpa_dbg(sm->ctx->msg_ctx, MSG_DEBUG,
 			"WPA: No WPA/RSN IE for this AP known. "
@@ -1396,6 +1465,9 @@ int wpa_supplicant_send_4_of_4(struct wpa_sm *sm, const unsigned char *dst,
 			       u16 ver, u16 key_info,
 			       struct wpa_ptk *ptk)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	size_t mic_len, hdrlen, rlen;
 	struct wpa_eapol_key *reply;
 	u8 *rbuf, *key_mic;
@@ -1602,6 +1674,9 @@ static int wpa_supplicant_process_1_of_2_rsn(struct wpa_sm *sm,
 					     u16 key_info,
 					     struct wpa_gtk_data *gd)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	int maxkeylen;
 	struct wpa_eapol_ie_parse ie;
 
@@ -1673,6 +1748,9 @@ static int wpa_supplicant_process_1_of_2_wpa(struct wpa_sm *sm,
 					     size_t key_data_len, u16 key_info,
 					     u16 ver, struct wpa_gtk_data *gd)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	size_t maxkeylen;
 	u16 gtk_len;
 
@@ -1758,6 +1836,9 @@ static int wpa_supplicant_send_2_of_2(struct wpa_sm *sm,
 				      const struct wpa_eapol_key *key,
 				      int ver, u16 key_info)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	size_t mic_len, hdrlen, rlen;
 	struct wpa_eapol_key *reply;
 	u8 *rbuf, *key_mic;
@@ -1827,6 +1908,9 @@ static void wpa_supplicant_process_1_of_2(struct wpa_sm *sm,
 					  const u8 *key_data,
 					  size_t key_data_len, u16 ver)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	u16 key_info;
 	int rekey, ret;
 	struct wpa_gtk_data gd;
@@ -1897,6 +1981,9 @@ static int wpa_supplicant_verify_eapol_key_mic(struct wpa_sm *sm,
 					       u16 ver,
 					       const u8 *buf, size_t len)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	u8 mic[WPA_EAPOL_KEY_MIC_MAX_LEN];
 	int ok = 0;
 	size_t mic_len = wpa_mic_len(sm->key_mgmt, sm->pmk_len);
@@ -1978,6 +2065,9 @@ static int wpa_supplicant_decrypt_key_data(struct wpa_sm *sm,
 					   size_t mic_len, u16 ver,
 					   u8 *key_data, size_t *key_data_len)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	wpa_hexdump(MSG_DEBUG, "RSN: encrypted key data",
 		    key_data, *key_data_len);
 	if (!sm->ptk_set) {
@@ -2068,6 +2158,9 @@ static int wpa_supplicant_decrypt_key_data(struct wpa_sm *sm,
  */
 void wpa_sm_aborted_cached(struct wpa_sm *sm)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	if (sm && sm->cur_pmksa) {
 		wpa_dbg(sm->ctx->msg_ctx, MSG_DEBUG,
 			"RSN: Cancelling PMKSA caching attempt");
@@ -2081,6 +2174,9 @@ static void wpa_eapol_key_dump(struct wpa_sm *sm,
 			       unsigned int key_data_len,
 			       const u8 *mic, unsigned int mic_len)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 #ifndef CONFIG_NO_STDOUT_DEBUG
 	u16 key_info = WPA_GET_BE16(key->key_info);
 
@@ -2117,6 +2213,9 @@ static void wpa_eapol_key_dump(struct wpa_sm *sm,
 static int wpa_supp_aead_decrypt(struct wpa_sm *sm, u8 *buf, size_t buf_len,
 				 size_t *key_data_len)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	struct wpa_ptk *ptk;
 	struct ieee802_1x_hdr *hdr;
 	struct wpa_eapol_key *key;
@@ -2202,6 +2301,9 @@ static int wpa_supp_aead_decrypt(struct wpa_sm *sm, u8 *buf, size_t buf_len,
 int wpa_sm_rx_eapol(struct wpa_sm *sm, const u8 *src_addr,
 		    const u8 *buf, size_t len)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	size_t plen, data_len, key_data_len;
 	const struct ieee802_1x_hdr *hdr;
 	struct wpa_eapol_key *key;
@@ -2464,6 +2566,9 @@ out:
 #ifdef CONFIG_CTRL_IFACE
 static u32 wpa_key_mgmt_suite(struct wpa_sm *sm)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	switch (sm->key_mgmt) {
 	case WPA_KEY_MGMT_IEEE8021X:
 		return ((sm->proto == WPA_PROTO_RSN ||
@@ -2517,6 +2622,9 @@ static u32 wpa_key_mgmt_suite(struct wpa_sm *sm)
  */
 int wpa_sm_get_mib(struct wpa_sm *sm, char *buf, size_t buflen)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	char pmkid_txt[PMKID_LEN * 2 + 1];
 	int rsna, ret;
 	size_t len;
@@ -2591,6 +2699,9 @@ int wpa_sm_get_mib(struct wpa_sm *sm, char *buf, size_t buflen)
 static void wpa_sm_pmksa_free_cb(struct rsn_pmksa_cache_entry *entry,
 				 void *ctx, enum pmksa_free_reason reason)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	struct wpa_sm *sm = ctx;
 	int deauth = 0;
 
@@ -2640,6 +2751,9 @@ static void wpa_sm_pmksa_free_cb(struct rsn_pmksa_cache_entry *entry,
  */
 struct wpa_sm * wpa_sm_init(struct wpa_sm_ctx *ctx)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	struct wpa_sm *sm;
 
 	sm = os_zalloc(sizeof(*sm));
@@ -2654,6 +2768,7 @@ struct wpa_sm * wpa_sm_init(struct wpa_sm_ctx *ctx)
 	sm->dot11RSNAConfigSATimeout = 60;
 
 	sm->pmksa = pmksa_cache_init(wpa_sm_pmksa_free_cb, sm, sm);
+	printf("WPA_SM_INIT FUNCTION SM->PMKSA %s\n",(char *)sm->pmksa);
 	if (sm->pmksa == NULL) {
 		wpa_msg(sm->ctx->msg_ctx, MSG_ERROR,
 			"RSN: PMKSA cache initialization failed");
@@ -2671,6 +2786,9 @@ struct wpa_sm * wpa_sm_init(struct wpa_sm_ctx *ctx)
  */
 void wpa_sm_deinit(struct wpa_sm *sm)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	if (sm == NULL)
 		return;
 	pmksa_cache_deinit(sm->pmksa);
@@ -2713,6 +2831,9 @@ void wpa_sm_deinit(struct wpa_sm *sm)
  */
 void wpa_sm_notify_assoc(struct wpa_sm *sm, const u8 *bssid)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	int clear_keys = 1;
 
 	if (sm == NULL)
@@ -2793,6 +2914,9 @@ void wpa_sm_notify_assoc(struct wpa_sm *sm, const u8 *bssid)
  */
 void wpa_sm_notify_disassoc(struct wpa_sm *sm)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	eloop_cancel_timeout(wpa_sm_start_preauth, sm, NULL);
 	eloop_cancel_timeout(wpa_sm_rekey_ptk, sm, NULL);
 	rsn_preauth_deinit(sm);
@@ -2831,6 +2955,9 @@ void wpa_sm_notify_disassoc(struct wpa_sm *sm)
 void wpa_sm_set_pmk(struct wpa_sm *sm, const u8 *pmk, size_t pmk_len,
 		    const u8 *pmkid, const u8 *bssid)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	if (sm == NULL)
 		return;
 
@@ -2862,6 +2989,9 @@ void wpa_sm_set_pmk(struct wpa_sm *sm, const u8 *pmk, size_t pmk_len,
  */
 void wpa_sm_set_pmk_from_pmksa(struct wpa_sm *sm)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	if (sm == NULL)
 		return;
 
@@ -2886,6 +3016,10 @@ void wpa_sm_set_pmk_from_pmksa(struct wpa_sm *sm)
  */
 void wpa_sm_set_fast_reauth(struct wpa_sm *sm, int fast_reauth)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	if (sm)
 		sm->fast_reauth = fast_reauth;
 }
@@ -2898,6 +3032,9 @@ void wpa_sm_set_fast_reauth(struct wpa_sm *sm, int fast_reauth)
  */
 void wpa_sm_set_scard_ctx(struct wpa_sm *sm, void *scard_ctx)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	if (sm == NULL)
 		return;
 	sm->scard_ctx = scard_ctx;
@@ -2917,6 +3054,9 @@ void wpa_sm_set_scard_ctx(struct wpa_sm *sm, void *scard_ctx)
  */
 void wpa_sm_set_config(struct wpa_sm *sm, struct rsn_supp_config *config)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	if (!sm)
 		return;
 
@@ -2964,6 +3104,9 @@ void wpa_sm_set_config(struct wpa_sm *sm, struct rsn_supp_config *config)
  */
 void wpa_sm_set_own_addr(struct wpa_sm *sm, const u8 *addr)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	if (sm)
 		os_memcpy(sm->own_addr, addr, ETH_ALEN);
 }
@@ -2978,6 +3121,9 @@ void wpa_sm_set_own_addr(struct wpa_sm *sm, const u8 *addr)
 void wpa_sm_set_ifname(struct wpa_sm *sm, const char *ifname,
 		       const char *bridge_ifname)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	if (sm) {
 		sm->ifname = ifname;
 		sm->bridge_ifname = bridge_ifname;
@@ -2992,6 +3138,9 @@ void wpa_sm_set_ifname(struct wpa_sm *sm, const char *ifname,
  */
 void wpa_sm_set_eapol(struct wpa_sm *sm, struct eapol_sm *eapol)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	if (sm)
 		sm->eapol = eapol;
 }
@@ -3007,6 +3156,10 @@ void wpa_sm_set_eapol(struct wpa_sm *sm, struct eapol_sm *eapol)
 int wpa_sm_set_param(struct wpa_sm *sm, enum wpa_sm_conf_params param,
 		     unsigned int value)
 {
+	printf(__FILE__);
+	printf("\n");
+	printf(__func__);
+	printf("\n");
 	int ret = 0;
 
 	if (sm == NULL)
@@ -3080,6 +3233,9 @@ int wpa_sm_set_param(struct wpa_sm *sm, enum wpa_sm_conf_params param,
 int wpa_sm_get_status(struct wpa_sm *sm, char *buf, size_t buflen,
 		      int verbose)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	char *pos = buf, *end = buf + buflen;
 	int ret;
 
@@ -3118,6 +3274,9 @@ int wpa_sm_get_status(struct wpa_sm *sm, char *buf, size_t buflen,
 
 int wpa_sm_pmf_enabled(struct wpa_sm *sm)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	struct wpa_ie_data rsn;
 
 	if (sm->mfp == NO_MGMT_FRAME_PROTECTION || !sm->ap_rsn_ie)
@@ -3133,6 +3292,9 @@ int wpa_sm_pmf_enabled(struct wpa_sm *sm)
 
 int wpa_sm_ocv_enabled(struct wpa_sm *sm)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	struct wpa_ie_data rsn;
 
 	if (!sm->ocv || !sm->ap_rsn_ie)
@@ -3154,6 +3316,9 @@ int wpa_sm_ocv_enabled(struct wpa_sm *sm)
 int wpa_sm_set_assoc_wpa_ie_default(struct wpa_sm *sm, u8 *wpa_ie,
 				    size_t *wpa_ie_len)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	int res;
 
 	if (sm == NULL)
@@ -3212,6 +3377,9 @@ int wpa_sm_set_assoc_wpa_ie_default(struct wpa_sm *sm, u8 *wpa_ie,
  */
 int wpa_sm_set_assoc_wpa_ie(struct wpa_sm *sm, const u8 *ie, size_t len)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	if (sm == NULL)
 		return -1;
 
@@ -3246,6 +3414,9 @@ int wpa_sm_set_assoc_wpa_ie(struct wpa_sm *sm, const u8 *ie, size_t len)
  */
 int wpa_sm_set_ap_wpa_ie(struct wpa_sm *sm, const u8 *ie, size_t len)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	if (sm == NULL)
 		return -1;
 
@@ -3280,6 +3451,9 @@ int wpa_sm_set_ap_wpa_ie(struct wpa_sm *sm, const u8 *ie, size_t len)
  */
 int wpa_sm_set_ap_rsn_ie(struct wpa_sm *sm, const u8 *ie, size_t len)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	if (sm == NULL)
 		return -1;
 
@@ -3313,6 +3487,9 @@ int wpa_sm_set_ap_rsn_ie(struct wpa_sm *sm, const u8 *ie, size_t len)
  */
 int wpa_sm_parse_own_wpa_ie(struct wpa_sm *sm, struct wpa_ie_data *data)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	if (sm == NULL)
 		return -1;
 
@@ -3329,12 +3506,18 @@ int wpa_sm_parse_own_wpa_ie(struct wpa_sm *sm, struct wpa_ie_data *data)
 
 int wpa_sm_pmksa_cache_list(struct wpa_sm *sm, char *buf, size_t len)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	return pmksa_cache_list(sm->pmksa, buf, len);
 }
 
 
 struct rsn_pmksa_cache_entry * wpa_sm_pmksa_cache_head(struct wpa_sm *sm)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	return pmksa_cache_head(sm->pmksa);
 }
 
@@ -3343,6 +3526,9 @@ struct rsn_pmksa_cache_entry *
 wpa_sm_pmksa_cache_add_entry(struct wpa_sm *sm,
 			     struct rsn_pmksa_cache_entry * entry)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	return pmksa_cache_add_entry(sm->pmksa, entry);
 }
 
@@ -3351,6 +3537,9 @@ void wpa_sm_pmksa_cache_add(struct wpa_sm *sm, const u8 *pmk, size_t pmk_len,
 			    const u8 *pmkid, const u8 *bssid,
 			    const u8 *fils_cache_id)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	sm->cur_pmksa = pmksa_cache_add(sm->pmksa, pmk, pmk_len, pmkid, NULL, 0,
 					bssid, sm->own_addr, sm->network_ctx,
 					sm->key_mgmt, fils_cache_id);
@@ -3360,12 +3549,18 @@ void wpa_sm_pmksa_cache_add(struct wpa_sm *sm, const u8 *pmk, size_t pmk_len,
 int wpa_sm_pmksa_exists(struct wpa_sm *sm, const u8 *bssid,
 			const void *network_ctx)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	return pmksa_cache_get(sm->pmksa, bssid, NULL, network_ctx, 0) != NULL;
 }
 
 
 void wpa_sm_drop_sa(struct wpa_sm *sm)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	wpa_dbg(sm->ctx->msg_ctx, MSG_DEBUG, "WPA: Clear old PMK and PTK");
 	sm->ptk_set = 0;
 	sm->tptk_set = 0;
@@ -3392,6 +3587,9 @@ void wpa_sm_drop_sa(struct wpa_sm *sm)
 
 int wpa_sm_has_ptk(struct wpa_sm *sm)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	if (sm == NULL)
 		return 0;
 	return sm->ptk_set;
@@ -3400,12 +3598,18 @@ int wpa_sm_has_ptk(struct wpa_sm *sm)
 
 void wpa_sm_update_replay_ctr(struct wpa_sm *sm, const u8 *replay_ctr)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	os_memcpy(sm->rx_replay_counter, replay_ctr, WPA_REPLAY_COUNTER_LEN);
 }
 
 
 void wpa_sm_pmksa_cache_flush(struct wpa_sm *sm, void *network_ctx)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	pmksa_cache_flush(sm->pmksa, network_ctx, NULL, 0);
 }
 
@@ -3413,6 +3617,9 @@ void wpa_sm_pmksa_cache_flush(struct wpa_sm *sm, void *network_ctx)
 #ifdef CONFIG_WNM
 int wpa_wnmsleep_install_key(struct wpa_sm *sm, u8 subelem_id, u8 *buf)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	u16 keyinfo;
 	u8 keylen;  /* plaintext key len */
 	u8 *key_rsc;
@@ -3474,6 +3681,9 @@ int wpa_wnmsleep_install_key(struct wpa_sm *sm, u8 subelem_id, u8 *buf)
 
 int wpa_sm_get_p2p_ip_addr(struct wpa_sm *sm, u8 *buf)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	if (sm == NULL || WPA_GET_BE32(sm->p2p_ip_addr) == 0)
 		return -1;
 	os_memcpy(buf, sm->p2p_ip_addr, 3 * 4);
@@ -3485,6 +3695,9 @@ int wpa_sm_get_p2p_ip_addr(struct wpa_sm *sm, u8 *buf)
 
 void wpa_sm_set_rx_replay_ctr(struct wpa_sm *sm, const u8 *rx_replay_counter)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	if (rx_replay_counter == NULL)
 		return;
 
@@ -3499,6 +3712,9 @@ void wpa_sm_set_ptk_kck_kek(struct wpa_sm *sm,
 			    const u8 *ptk_kck, size_t ptk_kck_len,
 			    const u8 *ptk_kek, size_t ptk_kek_len)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	if (ptk_kck && ptk_kck_len <= WPA_KCK_MAX_LEN) {
 		os_memcpy(sm->ptk.kck, ptk_kck, ptk_kck_len);
 		sm->ptk.kck_len = ptk_kck_len;
@@ -3517,6 +3733,9 @@ void wpa_sm_set_ptk_kck_kek(struct wpa_sm *sm,
 
 void wpa_sm_set_test_assoc_ie(struct wpa_sm *sm, struct wpabuf *buf)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	wpabuf_free(sm->test_assoc_ie);
 	sm->test_assoc_ie = buf;
 }
@@ -3524,6 +3743,9 @@ void wpa_sm_set_test_assoc_ie(struct wpa_sm *sm, struct wpabuf *buf)
 
 const u8 * wpa_sm_get_anonce(struct wpa_sm *sm)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	return sm->anonce;
 }
 
@@ -3532,6 +3754,9 @@ const u8 * wpa_sm_get_anonce(struct wpa_sm *sm)
 
 unsigned int wpa_sm_get_key_mgmt(struct wpa_sm *sm)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	return sm->key_mgmt;
 }
 
@@ -3540,6 +3765,9 @@ unsigned int wpa_sm_get_key_mgmt(struct wpa_sm *sm)
 
 struct wpabuf * fils_build_auth(struct wpa_sm *sm, int dh_group, const u8 *md)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	struct wpabuf *buf = NULL;
 	struct wpabuf *erp_msg;
 	struct wpabuf *pub = NULL;
@@ -3672,6 +3900,9 @@ fail:
 int fils_process_auth(struct wpa_sm *sm, const u8 *bssid, const u8 *data,
 		      size_t len)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	const u8 *pos, *end;
 	struct ieee802_11_elems elems;
 	struct wpa_ie_data rsn;
@@ -3968,6 +4199,9 @@ fail:
 #ifdef CONFIG_IEEE80211R
 static int fils_ft_build_assoc_req_rsne(struct wpa_sm *sm, struct wpabuf *buf)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	struct rsn_ie_hdr *rsnie;
 	u16 capab;
 	u8 *pos;
@@ -4082,6 +4316,9 @@ struct wpabuf * fils_build_assoc_req(struct wpa_sm *sm, const u8 **kek,
 				     const struct wpabuf **hlp,
 				     unsigned int num_hlp)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	struct wpabuf *buf;
 	size_t len;
 	unsigned int i;
@@ -4199,6 +4436,9 @@ struct wpabuf * fils_build_assoc_req(struct wpa_sm *sm, const u8 **kek,
 
 static void fils_process_hlp_resp(struct wpa_sm *sm, const u8 *resp, size_t len)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	const u8 *pos, *end;
 
 	wpa_hexdump(MSG_MSGDUMP, "FILS: HLP response", resp, len);
@@ -4216,6 +4456,9 @@ static void fils_process_hlp_resp(struct wpa_sm *sm, const u8 *resp, size_t len)
 static void fils_process_hlp_container(struct wpa_sm *sm, const u8 *pos,
 				       size_t len)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	const u8 *end = pos + len;
 	u8 *tmp, *tmp_pos;
 
@@ -4264,6 +4507,9 @@ static void fils_process_hlp_container(struct wpa_sm *sm, const u8 *pos,
 
 int fils_process_assoc_resp(struct wpa_sm *sm, const u8 *resp, size_t len)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	const struct ieee80211_mgmt *mgmt;
 	const u8 *end, *ie_start;
 	struct ieee802_11_elems elems;
@@ -4491,6 +4737,9 @@ fail:
 
 void wpa_sm_set_reset_fils_completed(struct wpa_sm *sm, int set)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	if (sm)
 		sm->fils_completed = !!set;
 }
@@ -4500,6 +4749,9 @@ void wpa_sm_set_reset_fils_completed(struct wpa_sm *sm, int set)
 
 int wpa_fils_is_completed(struct wpa_sm *sm)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 #ifdef CONFIG_FILS
 	return sm && sm->fils_completed;
 #else /* CONFIG_FILS */
@@ -4512,6 +4764,9 @@ int wpa_fils_is_completed(struct wpa_sm *sm)
 
 struct wpabuf * owe_build_assoc_req(struct wpa_sm *sm, u16 group)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	struct wpabuf *ie = NULL, *pub = NULL;
 	size_t prime_len;
 
@@ -4558,6 +4813,9 @@ fail:
 int owe_process_assoc_resp(struct wpa_sm *sm, const u8 *bssid,
 			   const u8 *resp_ies, size_t resp_ies_len)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	struct ieee802_11_elems elems;
 	u16 group;
 	struct wpabuf *secret, *pub, *hkey;
@@ -4717,6 +4975,9 @@ int owe_process_assoc_resp(struct wpa_sm *sm, const u8 *bssid,
 
 void wpa_sm_set_fils_cache_id(struct wpa_sm *sm, const u8 *fils_cache_id)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 #ifdef CONFIG_FILS
 	if (sm && fils_cache_id) {
 		sm->fils_cache_id_set = 1;
@@ -4729,6 +4990,9 @@ void wpa_sm_set_fils_cache_id(struct wpa_sm *sm, const u8 *fils_cache_id)
 #ifdef CONFIG_DPP2
 void wpa_sm_set_dpp_z(struct wpa_sm *sm, const struct wpabuf *z)
 {
+	printf(__FILE__);
+	printf(__func__);
+	printf("\n");
 	if (sm) {
 		wpabuf_clear_free(sm->dpp_z);
 		sm->dpp_z = z ? wpabuf_dup(z) : NULL;

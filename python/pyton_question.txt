@@ -1,0 +1,4 @@
+1) regular_expression re.search,re.filterall,re.compile,re.match,
+2) Difference between asyncio , threads,and Multiprocessing
+3) Explanation of lamda,map,generator,iterators
+

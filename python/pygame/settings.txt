@@ -1,0 +1,4 @@
+acceleration=1
+difficulty=4
+startlength=5
+growlength=1

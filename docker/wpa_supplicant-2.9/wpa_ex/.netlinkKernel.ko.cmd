@@ -1,0 +1,1 @@
+cmd_/tmp/wpa_supplicant-2.9/wpa_ex/netlinkKernel.ko := ld -r -m elf_x86_64  -z max-page-size=0x200000  --build-id  -T ./scripts/module-common.lds -o /tmp/wpa_supplicant-2.9/wpa_ex/netlinkKernel.ko /tmp/wpa_supplicant-2.9/wpa_ex/netlinkKernel.o /tmp/wpa_supplicant-2.9/wpa_ex/netlinkKernel.mod.o;  true

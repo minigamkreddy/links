@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20181117 11:02:10.443" generator="Robot 3.0.4 (Python 2.7.15rc1 on linux2)">
+<suite source="/home/minigamanojkumarreddy/pythn/AP/ap.robot" id="s1" name="Ap">
+<test id="s1-t1" name="TC_01">
+<kw name="[Documentation] the selenium">
+<msg timestamp="20181117 11:02:10.599" level="FAIL">No keyword with name '[Documentation] the selenium' found.</msg>
+<status status="FAIL" endtime="20181117 11:02:10.600" starttime="20181117 11:02:10.599"></status>
+</kw>
+<status status="FAIL" endtime="20181117 11:02:10.600" critical="yes" starttime="20181117 11:02:10.595">No keyword with name '[Documentation] the selenium' found.</status>
+</test>
+<status status="FAIL" endtime="20181117 11:02:10.600" starttime="20181117 11:02:10.445"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="Ap" pass="0">Ap</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20181117 11:02:10.440" level="ERROR">Error in file '/home/minigamanojkumarreddy/pythn/AP/ap.robot': Non-existing setting 'Library Remote'.</msg>
+<msg timestamp="20181117 11:02:10.440" level="ERROR">Error in file '/home/minigamanojkumarreddy/pythn/AP/ap.robot': Non-existing setting 'Library String'.</msg>
+<msg timestamp="20181117 11:02:10.577" level="ERROR">Error in file '/home/minigamanojkumarreddy/pythn/AP/ap.robot': Importing test library '/home/minigamanojkumarreddy/pythn/Utility/utility.py' failed: ImportError: cannot import name select
+Traceback (most recent call last):
+  File "/home/minigamanojkumarreddy/pythn/Utility/utility.py", line 2, in &lt;module&gt;
+    from selenium.webdriver.support.ui import select
+PYTHONPATH:
+  /usr/local/bin
+  /usr/lib/python2.7
+  /usr/lib/python2.7/plat-x86_64-linux-gnu
+  /usr/lib/python2.7/lib-tk
+  /usr/lib/python2.7/lib-old
+  /usr/lib/python2.7/lib-dynload
+  /usr/local/lib/python2.7/dist-packages
+  /usr/lib/python2.7/dist-packages
+  /usr/lib/python2.7/dist-packages/wx-3.0-gtk3</msg>
+</errors>
+</robot>

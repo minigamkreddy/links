@@ -1,0 +1,17 @@
+1) sudo apt-get install snap
+
+2) sudo snap install --classic kubeadm
+
+3) rm /var/lib/dpkg/lock-frontend
+4) sudo dpkg --configure -a
+5) sudo kubeadm init --pod-network-cidr=192.168.0.0/16  --apiserver-advertise-address=192.168.0.113
+
+6) Error
+[ERROR Swap]: running with swap on is not supported. Please disable swap
+[ERROR KubeletVersion]: couldn't get kubelet version: cannot execute 'kubelet --version': executable file not found in $PATH
+[preflight] If you know what you are doing, you can make a check non-fatal with `--ignore-preflight-errors=...`
+To see the stack trace of this error execute with --v=5 or higher
+
+sudo swapoff -a
+
+

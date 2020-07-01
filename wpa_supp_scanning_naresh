@@ -1,0 +1,330 @@
+===============================================================================================================================
+Socket and ATTACK:
+wpa_cli.c:
+main - wpa_cli_interactive - try_connection - wpa_cli_open_connection - wpa_ctrl_open2 - wpa_ctrl_attach
+wpa_ctrl.c:
+wpa_ctrl_attach - wpa_ctrl_attach_helper - wpa_ctrl_request - send and recv
+
+SCAN cmd path in wpa_cli[SEND]: When we triggered SCAN in wpa_cli
+start_edit -wpa_cli_edit_cmd_cb - wpa_request (It calls cmd handler, wpa_cli_cmd_scan is scan command handler)
+    wpa_cli_cmd_scan: wpa_cli.c
+        wpa_cli_cmd
+            wpa_ctrl_command
+                _wpa_ctrl_command
+          	    wpa_ctrl_request : wpa_ctrl.c
+			send : send cmd/data to wpa_supplicant using sock
+		     	
+SCAN cmd path in wpa_cli[RECV]:
+			select : monitor sock, waiting until become "ready" for some class of I/O operation
+		    recv : recv data from wpa_supplicant
+		wpa_cli_msg_cb: prints the recv data
+
+===============================================================================================================================
+Socket and Get CMD in wpa_supplicant: 
+main (main.c) 	- wpa_supplicant_init (wpa_supplicant.c)
+	      	- wpa_supplicant_add_iface (wpa_supplicant.c)
+		    wpa_supplicant_init_iface (wpa_supplicant.c)
+			wpa_supplicant_ctrl_iface_init : ctrl_iface_unix.c or ctrl_iface_udp.c or ctrl_iface_named_pipe.c
+			    wpas_ctrl_iface_open_sock : ctrl_iface_unix.c (REG. wpa_supplicant_ctrl_iface_receive in eloop_register_read_sock)
+				wpa_supplicant_ctrl_iface_receive : ctrl_iface_unix.c
+
+
+SCAN cmd path in wpa_supplicant[SEND]: When we triggered SCAN in wpa_cli
+wpa_supplicant_global_ctrl_iface_init
+wpas_global_ctrl_iface_open_sock
+wpa_supplicant_ctrl_iface_receive : ctrl_iface_unix.c or ctrl_iface_udp.c
+    wpa_supplicant_ctrl_iface_process : ctrl_iface.c (It calls scan cmd handler: wpas_ctrl_scan if CMD is scan) 
+	wpas_ctrl_scan : ctrl_iface.c 
+	    wpa_supplicant_req_scan : scan.c (Register wpa_supplicant_scan in eloop_register_timeout)
+		wpa_supplicant_scan : scan.c 
+		    wpa_supplicant_trigger_scan : scan.c (Add wpas_trigger_scan_cb in radio_add_work)
+			wpas_trigger_scan_cb
+			    wpa_drv_scan : driver-i.h (I
+
+t calls call back function: scan2 in driver_nl80211.c using struct wpa_driver_ops)
+							(wpa_s->driver->scan2(wpa_s->drv_priv, params))
+				driver_nl80211_scan2 : driver_nl80211.c
+				    wpa_driver_nl80211_scan : driver_nl80211.c
+					send_and_recv_msgs : driver_nl80211.c
+	    				    send_and_recv : driver_nl80211.c
+						nl_send_auto_complete : driver_nl80211.c
+
+SCAN cmd path in wpa_supplicant[RECV]:
+						nl_recvmsgs : driver_nl80211.c
+
+
+
+nl80211_global_init - After scan triggered means cmd dropped to kernel
+
+=============================================================================================================================== 
+wpa_driver_nl80211_scan
+	send_and_recv_msgs
+		 send_and_recv
+			nl_send_auto_complete
+				    nl_send_auto
+					 nl_send
+					    nl_send_iovec
+						nl_sendmsg
+						  sendmsg
+
+
+.doit = nl80211_trigger_scan : net/wireless/nl80211.c
+		if (rdev->ops->scan)  // .scan = ieee80211_scan
+		    ieee80211_request_scan
+			 __ieee80211_start_scan
+				ieee80211_start_sw_scan
+					drv_sw_scan_start
+						if (local->ops->sw_scan_start) //.sw_scan_start      = ath9k_sw_scan_start
+							 ath9k_hw_common
+								set_bit
+===============================================================================================================================================
+NETLINK FUNCTIONS:
+struct nl_msg *msg;
+msg = nlmsg_alloc
+
+struct wpa_driver_nl80211_data *drv;
+genlmsg_put(msg, 0, 0, drv->global->nl80211_id, 0, flags, cmd, 0);
+
+nla_put_u64(msg, NL80211_ATTR_WDEV, bss->wdev_id);
+
+nla_put_u32(msg, NL80211_ATTR_IFINDEX, bss->ifindex);
+
+
+struct nlattr *ssids;                                                                              
+ssids = nla_nest_start(msg, NL80211_ATTR_SCANSSIDS);
+	nla_put(msg, i + 1, params->ssids[i].ssid_len, params->ssids[i].ssid)
+nla_nest_end(msg, ssids);
+
+struct nl_cb *cb;
+cb = nl_cb_clone(global->nl_cb);
+
+setsockopt(nl_socket_get_fd(nl_handle), SOL_NETLINK, NETLINK_EXT_ACK, &opt, sizeof(opt));
+
+
+struct nl_handle * nl (in nl80211_global in wpa_driver_nl80211_data)
+err = nl_send_auto_complete(nl_handle, msg);
+
+nl_cb_err(cb, NL_CB_CUSTOM, error_handler, &err);                            
+nl_cb_set(cb, NL_CB_FINISH, NL_CB_CUSTOM, finish_handler, &err);
+
+int res = nl_recvmsgs(nl_handle, cb);
+
+nl_cb_put(cb);
+
+nl80211_nlmsg_clear(msg);                                                
+nlmsg_free(msg);
+
+					
+
+
+
+
+
+
+
+
+
+
+
+wpa_cli
+interactive mode output
+
+root@miniga:/tmp/wpa_supplicant-2.9/wpa_supplicant# wpa_cli
+wpa_cli.cmain
+wpa_cli v2.9
+Copyright (c) 2004-2019, Jouni Malinen <j@w1.fi> and contributors
+
+This software may be distributed under the terms of the BSD license.
+See README for more details.
+
+
+wpa_cli.c
+wpa_cli_get_default_ifname
+Selected interface 'wlp3s0'
+wpa_cli.c
+wpa_cli_interactive
+
+Interactive mode
+
+wpa_cli.c
+try_connection
+wpa_cli.c
+wpa_cli_open_connection
+../src/common/wpa_ctrl.c
+wpa_ctrl_open2
+../src/common/wpa_ctrl.c
+wpa_ctrl_open2
+../src/common/wpa_ctrl.c
+wpa_ctrl_attach
+../src/common/wpa_ctrl.c
+wpa_ctrl_attach_helper
+../src/common/wpa_ctrl.cwpa_ctrl_get_fd
+wpa_cli.cupdate_bssid_list
+../src/common/wpa_ctrl.cwpa_ctrl_request
+wpa_cli.cupdate_creds
+../src/common/wpa_ctrl.cwpa_ctrl_request
+wpa_cli.cupdate_networks
+../src/common/wpa_ctrl.cwpa_ctrl_request
+wpa_cli.cupdate_stations
+wpa_cli.cwpa_ctrl_command_sta
+../src/common/wpa_ctrl.cwpa_ctrl_request
+wpa_cli.cstart_edit
+> wpa_cli.cwpa_cli_ping
+wpa_cli.c_wpa_ctrl_command
+../src/common/wpa_ctrl.cwpa_ctrl_request
+wpa_cli.cwpa_cli_ping
+wpa_cli.c_wpa_ctrl_command
+../src/common/wpa_ctrl.cwpa_ctrl_request
+scanwpa_cli.cwpa_cli_ping
+wpa_cli.c_wpa_ctrl_command
+../src/common/wpa_ctrl.cwpa_ctrl_request
+
+wpa_cli.cwpa_cli_edit_cmd_cb
+>
+wpa_cli.cwpa_cli_edit_cmd_cb
+>
+wpa_cli.cwpa_cli_edit_cmd_cb
+>
+wpa_cli.cwpa_cli_edit_cmd_cb
+>
+wpa_cli.cwpa_cli_edit_cmd_cb
+
+
+
+
+table = ���V�U
+
+ctrl_iface_unix.c
+wpa_supplicant_ctrl_iface_receive
+
+ctrl_iface.c
+wpa_supplicant_ctrl_iface_process
+
+wpa_supplicant.c
+wpa_supplicant_msg_ifname_cb
+
+wpa_supplicant.c
+radio_work_pending
+
+scan.c
+wpa_supplicant_req_scan
+
+wpa_supplicant.cwpa_supplicant_msg_ifname_cb
+....................................................
+global_edge8
+*******************************************
+../src/utils/eloop.celoop_sock_table_dispatch
+global_edge9
+*******************************************
+
+wpa_supplicant.cwpa_supplicant_msg_ifname_cb
+....................................................
+global_edge8
+*******************************************
+../src/utils/eloop.celoop_sock_table_dispatch
+global_edge9
+*******************************************
+../src/utils/eloop.celoop_sock_table_dispatch
+don't see the code otherwise i will fuck you
+....................................................
+global_edge10
+scan.cwpa_supplicant_scan
+scan.cwpa_supplicant_enabled_networks
+
+
+> scan
+wpa_cli.c
+wpa_cli_edit_cmd_cb
+
+wpa_cli.c
+wpa_request
+
+wpa_cli.c
+wpa_cli_cmd_scan
+
+wpa_cli.c
+wpa_cli_cmd
+
+wpa_cli.c
+wpa_ctrl_command
+
+wpa_cli.c
+_wpa_ctrl_command
+../src/common/wpa_ctrl.cwpa_ctrl_request
+
+wpa_cli.c
+_wpa_ctrl_command
+../src/common/wpa_ctrl.cwpa_ctrl_request
+OK
+> wpa_cli.cwpa_cli_mon_receive
+wpa_cli.cwpa_cli_recv_pending
+../src/common/wpa_ctrl.cwpa_ctrl_pending
+../src/common/wpa_ctrl.cwpa_ctrl_recv
+wpa_cli.ccli_event
+wpa_cli.cwpa_cli_show_event
+<3>CTRL-EVENT-SCAN-STARTED
+> wpa_cli.ccheck_terminating
+../src/common/wpa_ctrl.cwpa_ctrl_pending
+../src/common/wpa_ctrl.cwpa_ctrl_pending
+wpa_cli.cwpa_cli_ping
+wpa_cli.c_wpa_ctrl_command
+../src/common/wpa_ctrl.cwpa_ctrl_request
+wpa_cli.cwpa_cli_mon_receive
+wpa_cli.cwpa_cli_recv_pending
+../src/common/wpa_ctrl.cwpa_ctrl_pending
+../src/common/wpa_ctrl.cwpa_ctrl_recv
+wpa_cli.ccli_event
+wpa_cli.cwpa_cli_show_event
+wpa_cli.ccheck_terminating
+../src/common/wpa_ctrl.cwpa_ctrl_pending
+../src/common/wpa_ctrl.cwpa_ctrl_recv
+wpa_cli.ccli_event
+wpa_cli.cwpa_cli_show_event
+wpa_cli.ccheck_terminating
+../src/common/wpa_ctrl.cwpa_ctrl_pending
+../src/common/wpa_ctrl.cwpa_ctrl_recv
+
+
+wpa_cli.ccli_event
+wpa_cli.cwpa_cli_show_event
+wpa_cli.ccheck_terminating
+../src/common/wpa_ctrl.cwpa_ctrl_pending
+../src/common/wpa_ctrl.cwpa_ctrl_recv
+wpa_cli.ccli_event
+wpa_cli.cwpa_cli_show_event
+wpa_cli.ccheck_terminating
+../src/common/wpa_ctrl.cwpa_ctrl_pending
+../src/common/wpa_ctrl.cwpa_ctrl_recv
+wpa_cli.ccli_event
+wpa_cli.cwpa_cli_show_event
+wpa_cli.ccheck_terminating
+../src/common/wpa_ctrl.cwpa_ctrl_pending
+../src/common/wpa_ctrl.cwpa_ctrl_recv
+wpa_cli.ccli_event
+wpa_cli.cwpa_cli_show_event
+wpa_cli.ccheck_terminating
+../src/common/wpa_ctrl.cwpa_ctrl_pending
+../src/common/wpa_ctrl.cwpa_ctrl_recv
+wpa_cli.ccli_event
+wpa_cli.cwpa_cli_show_event
+wpa_cli.ccheck_terminating
+../src/common/wpa_ctrl.cwpa_ctrl_pending
+../src/common/wpa_ctrl.cwpa_ctrl_recv
+wpa_cli.ccli_event
+wpa_cli.cwpa_cli_show_event
+<3>CTRL-EVENT-SCAN-RESULTS
+> wpa_cli.ccheck_terminating
+
+
+
+
+
+
+
+
+
+
+
+
+
+

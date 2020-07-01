@@ -1,0 +1,80 @@
+<html><head>
+<title>pendulum2.py</title>
+<meta name="Generator" content="htmlizer/[twisted, version 13.2.0]" />
+<link rel="alternate" href="pendulum2.py" type="text/x-python" />
+
+</head>
+<body>
+<pre><span class="py-src-keyword">import</span> <span class="py-src-variable">pygame</span>, <span class="py-src-variable">sys</span>, <span class="py-src-variable">math</span>, <span class="py-src-variable">time</span>
+<span class="py-src-keyword">from</span> <span class="py-src-variable">pygame</span>.<span class="py-src-variable">locals</span> <span class="py-src-keyword">import</span> *
+
+<span class="py-src-variable">pygame</span>.<span class="py-src-variable">init</span>()
+
+<span class="py-src-variable">PI</span> = <span class="py-src-variable">math</span>.<span class="py-src-variable">pi</span>
+<span class="py-src-variable">Xside</span> = <span class="py-src-number">800</span>
+<span class="py-src-variable">Yside</span> = <span class="py-src-number">400</span>
+<span class="py-src-variable">BLACK</span> = (<span class="py-src-number">0</span>, <span class="py-src-number">0</span>, <span class="py-src-number">0</span>)
+<span class="py-src-variable">WHITE</span> = (<span class="py-src-number">255</span>, <span class="py-src-number">255</span>, <span class="py-src-number">255</span>)
+<span class="py-src-variable">RED</span> = (<span class="py-src-number">255</span>, <span class="py-src-number">0</span>, <span class="py-src-number">0</span>)
+<span class="py-src-variable">GREEN</span> = (<span class="py-src-number">0</span>, <span class="py-src-number">255</span>, <span class="py-src-number">0</span>)
+<span class="py-src-variable">BLUE</span> = (<span class="py-src-number">0</span>, <span class="py-src-number">0</span>, <span class="py-src-number">255</span>)
+<span class="py-src-variable">angle1</span> = <span class="py-src-variable">PI</span>/<span class="py-src-number">3</span>
+<span class="py-src-variable">angac1</span> = <span class="py-src-number">0</span>
+<span class="py-src-variable">angvel1</span> = <span class="py-src-number">0</span>
+<span class="py-src-variable">LENGTH1</span> = <span class="py-src-number">150</span>
+<span class="py-src-variable">angle2</span> = <span class="py-src-variable">PI</span>/<span class="py-src-number">2</span>
+<span class="py-src-variable">angac2</span> = <span class="py-src-number">0</span>
+<span class="py-src-variable">angvel2</span> = <span class="py-src-number">0</span>
+<span class="py-src-variable">LENGTH2</span> = <span class="py-src-number">150</span>
+<span class="py-src-variable">g</span> = <span class="py-src-number">1</span>
+<span class="py-src-variable">mass1</span> = <span class="py-src-number">15</span>
+<span class="py-src-variable">mass2</span> = <span class="py-src-number">15</span>
+
+<span class="py-src-variable">L1x</span> = <span class="py-src-variable">Xside</span>/<span class="py-src-number">2</span> + <span class="py-src-variable">LENGTH1</span> * <span class="py-src-variable">math</span>.<span class="py-src-variable">sin</span>(<span class="py-src-variable">angle1</span>)
+<span class="py-src-variable">L1y</span> = <span class="py-src-number">50</span> + <span class="py-src-variable">LENGTH1</span> * <span class="py-src-variable">math</span>.<span class="py-src-variable">cos</span>(<span class="py-src-variable">angle1</span>)
+
+<span class="py-src-variable">L2x</span> = <span class="py-src-variable">L1x</span> + <span class="py-src-variable">LENGTH2</span> * <span class="py-src-variable">math</span>.<span class="py-src-variable">sin</span>(<span class="py-src-variable">angle2</span>)
+<span class="py-src-variable">L2y</span> = <span class="py-src-variable">L2y</span> + <span class="py-src-variable">LENGTH2</span> * <span class="py-src-variable">math</span>.<span class="py-src-variable">cos</span>(<span class="py-src-variable">angle2</span>)
+
+<span class="py-src-comment">#display function</span>
+<span class="py-src-variable">DISPLAY</span> = <span class="py-src-variable">pygame</span>.<span class="py-src-variable">display</span>.<span class="py-src-variable">set_mode</span>((<span class="py-src-variable">Xside</span>, <span class="py-src-variable">Yside</span>))
+<span class="py-src-variable">pygame</span>.<span class="py-src-variable">display</span>.<span class="py-src-variable">set_caption</span>(<span class="py-src-string">'_____ball_____'</span>)
+
+<span class="py-src-comment">#pygame.draw.ellipse(DISPLAYSURF, RED, (300, 250, 40, 80), 1)</span>
+<span class="py-src-comment">#pygame.draw.rect(DISPLAYSURF, RED, (200, 150, 100, 50))</span>
+<span class="py-src-keyword">while</span> <span class="py-src-variable">True</span>: <span class="py-src-comment"># main game loop</span>
+	<span class="py-src-variable">DISPLAY</span>.<span class="py-src-variable">fill</span>(<span class="py-src-variable">WHITE</span>)
+ <span class="py-src-comment">#draw pendulum </span>
+ <span class="py-src-variable">pygame</span>.<span class="py-src-variable">draw</span>.<span class="py-src-variable">circle</span>(<span class="py-src-variable">DISPLAY</span>, <span class="py-src-variable">BLUE</span>, (<span class="py-src-variable">Xside</span>/<span class="py-src-number">2</span>, <span class="py-src-number">50</span>), <span class="py-src-number">5</span>, <span class="py-src-number">2</span>)
+ 
+ <span class="py-src-variable">pygame</span>.<span class="py-src-variable">draw</span>.<span class="py-src-variable">aaline</span>(<span class="py-src-variable">DISPLAY</span>, <span class="py-src-variable">RED</span>, (<span class="py-src-variable">Xside</span>/<span class="py-src-number">2</span>, <span class="py-src-number">50</span>), (<span class="py-src-variable">L1x</span>, <span class="py-src-variable">L1y</span>), <span class="py-src-number">4</span>)
+ <span class="py-src-variable">pygame</span>.<span class="py-src-variable">draw</span>.<span class="py-src-variable">circle</span>(<span class="py-src-variable">DISPLAY</span>, <span class="py-src-variable">GREEN</span>, (<span class="py-src-variable">int</span>(<span class="py-src-variable">L1x</span>), <span class="py-src-variable">int</span>(<span class="py-src-variable">L2y</span>)), <span class="py-src-number">15</span>, <span class="py-src-number">0</span>)
+ 
+ <span class="py-src-variable">pygame</span>.<span class="py-src-variable">draw</span>.<span class="py-src-variable">aaline</span>(<span class="py-src-variable">DISPLAY</span>, <span class="py-src-variable">RED</span>, (<span class="py-src-variable">L1x</span>, <span class="py-src-variable">L2y</span>), (<span class="py-src-variable">L2x</span>, <span class="py-src-variable">L2y</span>), <span class="py-src-number">4</span>)
+ <span class="py-src-variable">pygame</span>.<span class="py-src-variable">draw</span>.<span class="py-src-variable">circle</span>(<span class="py-src-variable">DISPLAY</span>, <span class="py-src-variable">GREEN</span>, (<span class="py-src-variable">int</span>(<span class="py-src-variable">L2x</span>), <span class="py-src-variable">int</span>(<span class="py-src-variable">L2y</span>)), <span class="py-src-number">15</span>, <span class="py-src-number">0</span>)
+ 
+ <span class="py-src-variable">Lx</span> = <span class="py-src-variable">Xside</span>/<span class="py-src-number">2</span> + <span class="py-src-variable">LENGTH</span> * <span class="py-src-variable">math</span>.<span class="py-src-variable">sin</span>(<span class="py-src-variable">angle</span>)
+ <span class="py-src-variable">Ly</span> = <span class="py-src-number">50</span> + <span class="py-src-variable">LENGTH</span> * <span class="py-src-variable">math</span>.<span class="py-src-variable">cos</span>(<span class="py-src-variable">angle</span>)
+ <span class="py-src-variable">L2x</span> = <span class="py-src-variable">L1x</span> + <span class="py-src-variable">LENGTH2</span> * <span class="py-src-variable">math</span>.<span class="py-src-variable">sin</span>(<span class="py-src-variable">angle2</span>)
+ <span class="py-src-variable">L2y</span> = <span class="py-src-variable">L2y</span> + <span class="py-src-variable">LENGTH2</span> * <span class="py-src-variable">math</span>.<span class="py-src-variable">cos</span>(<span class="py-src-variable">angle2</span>)
+ <span class="py-src-comment">#math calculas</span>
+ 
+ <span class="py-src-variable">angac1</span> =<span class="py-src-errortoken"> </span><span class="py-src-errortoken">â</span><span class="py-src-errortoken">ˆ</span><span class="py-src-errortoken">’</span> <span class="py-src-variable">g</span> * (<span class="py-src-number">2</span> * <span class="py-src-variable">mass1</span> + <span class="py-src-variable">mass2</span>) * <span class="py-src-variable">math</span>.<span class="py-src-variable">sin</span>(<span class="py-src-variable">angle1</span>)<span class="py-src-errortoken"> </span><span class="py-src-errortoken">â</span><span class="py-src-errortoken">ˆ</span><span class="py-src-errortoken">’</span> <span class="py-src-variable">mass2</span> * <span class="py-src-variable">g</span> * <span class="py-src-variable">math</span>.<span class="py-src-variable">sin</span>(<span class="py-src-variable">angle1</span><span class="py-src-errortoken"> </span><span class="py-src-errortoken">â</span><span class="py-src-errortoken">ˆ</span><span class="py-src-errortoken">’</span> <span class="py-src-number">2</span> * <span class="py-src-variable">angle2</span>)<span class="py-src-errortoken"> </span><span class="py-src-errortoken">â</span><span class="py-src-errortoken">ˆ</span><span class="py-src-errortoken">’</span> <span class="py-src-number">2</span> * <span class="py-src-variable">math</span>.<span class="py-src-variable">sin</span>(<span class="py-src-variable">angle1</span><span class="py-src-errortoken"> </span><span class="py-src-errortoken">â</span><span class="py-src-errortoken">ˆ</span><span class="py-src-errortoken">’</span> <span class="py-src-variable">angle2</span>) * <span class="py-src-variable">mass2</span> * (<span class="py-src-variable">angvel2</span> * <span class="py-src-variable">angvel2</span> * <span class="py-src-variable">LENGTH2</span> + <span class="py-src-variable">angvel1</span> * <span class="py-src-variable">angvel1</span> * <span class="py-src-variable">LENGTH1</span> * <span class="py-src-variable">math</span>.<span class="py-src-variable">cos</span>(<span class="py-src-variable">angle1</span><span class="py-src-errortoken"> </span><span class="py-src-errortoken">â</span><span class="py-src-errortoken">ˆ</span><span class="py-src-errortoken">’</span> <span class="py-src-variable">angle2</span>)) * <span class="py-src-variable">LENGTH1</span> * (<span class="py-src-number">2</span> * <span class="py-src-variable">mass1</span> + <span class="py-src-variable">mass2</span><span class="py-src-errortoken"> </span><span class="py-src-errortoken">â</span><span class="py-src-errortoken">ˆ</span><span class="py-src-errortoken">’</span> <span class="py-src-variable">mass2</span> * <span class="py-src-variable">math</span>.<span class="py-src-variable">cos</span>(<span class="py-src-number">2</span> * <span class="py-src-variable">angle1</span><span class="py-src-errortoken"> </span><span class="py-src-errortoken">â</span><span class="py-src-errortoken">ˆ</span><span class="py-src-errortoken">’</span> <span class="py-src-number">2</span> * <span class="py-src-variable">angle2</span>))
+ <span class="py-src-variable">angle1</span> += <span class="py-src-variable">angvel1</span>
+ <span class="py-src-variable">angvel1</span> += <span class="py-src-variable">angac1</span>
+ <span class="py-src-variable">angvel1</span> *= <span class="py-src-number">0.99</span>
+
+ <span class="py-src-variable">angac2</span> =  <span class="py-src-number">2</span> * <span class="py-src-variable">math</span>.<span class="py-src-variable">sin</span>(<span class="py-src-variable">angle1</span><span class="py-src-errortoken"> </span><span class="py-src-errortoken">â</span><span class="py-src-errortoken">ˆ</span><span class="py-src-errortoken">’</span> <span class="py-src-variable">angle2</span>) * (<span class="py-src-variable">angvel1</span> * <span class="py-src-variable">angvel1</span> * <span class="py-src-variable">LENGTH1</span> * (<span class="py-src-variable">mass1</span> + <span class="py-src-variable">mass2</span>) + <span class="py-src-variable">g</span> * (<span class="py-src-variable">mass1</span> + <span class="py-src-variable">mass2</span>) * <span class="py-src-variable">math</span>.<span class="py-src-variable">cos</span>(<span class="py-src-variable">angle1</span>) + <span class="py-src-variable">angvel2</span> * <span class="py-src-variable">angvel2</span> * <span class="py-src-variable">LENGTH2</span> * <span class="py-src-variable">mass2</span> * <span class="py-src-variable">math</span>.<span class="py-src-variable">cos</span>(<span class="py-src-variable">angle1</span><span class="py-src-errortoken"> </span><span class="py-src-errortoken">â</span><span class="py-src-errortoken">ˆ</span><span class="py-src-errortoken">’</span> <span class="py-src-variable">angle2</span>)) * <span class="py-src-variable">LENGTH2</span> * (<span class="py-src-number">2</span> * <span class="py-src-variable">mass1</span> + <span class="py-src-variable">mass2</span><span class="py-src-errortoken"> </span><span class="py-src-errortoken">â</span><span class="py-src-errortoken">ˆ</span><span class="py-src-errortoken">’</span> <span class="py-src-variable">mass2</span> * <span class="py-src-variable">math</span>.<span class="py-src-variable">cos</span>(<span class="py-src-number">2</span> * <span class="py-src-variable">angle1</span><span class="py-src-errortoken"> </span><span class="py-src-errortoken">â</span><span class="py-src-errortoken">ˆ</span><span class="py-src-errortoken">’</span> <span class="py-src-number">2</span> * <span class="py-src-variable">angle2</span>))
+
+ <span class="py-src-variable">angle2</span> += <span class="py-src-variable">angvel2</span>
+ <span class="py-src-variable">angvel2</span> += <span class="py-src-variable">angac2</span>
+ <span class="py-src-variable">angvel2</span> *= <span class="py-src-number">0.99</span>
+<span class="py-src-comment">#exit event</span>
+ <span class="py-src-keyword">for</span> <span class="py-src-variable">event</span> <span class="py-src-keyword">in</span> <span class="py-src-variable">pygame</span>.<span class="py-src-variable">event</span>.<span class="py-src-variable">get</span>():
+		<span class="py-src-keyword">if</span> <span class="py-src-variable">event</span>.<span class="py-src-variable">type</span> == <span class="py-src-variable">QUIT</span>:
+			<span class="py-src-variable">pygame</span>.<span class="py-src-variable">quit</span>()
+   <span class="py-src-variable">sys</span>.<span class="py-src-variable">exit</span>()
+ <span class="py-src-variable">time</span>.<span class="py-src-variable">sleep</span>(<span class="py-src-number">0.1</span>)
+ <span class="py-src-variable">pygame</span>.<span class="py-src-variable">display</span>.<span class="py-src-variable">update</span>()
+</pre>
+</body>

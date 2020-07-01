@@ -1,0 +1,470 @@
+1543247843988	geckodriver	INFO	Listening on 127.0.0.1:58917
+1543247844988	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.rHpG9SRZqF3j
+1543247844990	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1543247844994	geckodriver::marionette	INFO	Connecting to Marionette on localhost:36817
+Running Firefox as root in a regular user's session is not supported.  ($XDG_RUNTIME_DIR is /run/user/1000 which is owned by minigamanojkumarreddy.)
+1543248008171	geckodriver	INFO	Listening on 127.0.0.1:32987
+1543248009172	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.P3tBXsSmDcZz
+1543248009173	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1543248009177	geckodriver::marionette	INFO	Connecting to Marionette on localhost:39541
+Running Firefox as root in a regular user's session is not supported.  ($XDG_RUNTIME_DIR is /run/user/1000 which is owned by minigamanojkumarreddy.)
+1543248096986	geckodriver	INFO	Listening on 127.0.0.1:42599
+1543248097987	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.MvT4MsbvZafx
+1543248097989	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1543248097993	geckodriver::marionette	INFO	Connecting to Marionette on localhost:35471
+Running Firefox as root in a regular user's session is not supported.  ($XDG_RUNTIME_DIR is /run/user/1000 which is owned by minigamanojkumarreddy.)
+1543248216395	geckodriver	INFO	Listening on 127.0.0.1:47401
+1543248217394	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.djY1oQvvkMCf
+1543248217396	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1543248217399	geckodriver::marionette	INFO	Connecting to Marionette on localhost:35311
+Running Firefox as root in a regular user's session is not supported.  ($XDG_RUNTIME_DIR is /run/user/1000 which is owned by minigamanojkumarreddy.)
+1543248435282	geckodriver	INFO	Listening on 127.0.0.1:37653
+1543248436281	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.NLGUpMNuAKYb
+1543248436284	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1543248436288	geckodriver::marionette	INFO	Connecting to Marionette on localhost:41835
+Running Firefox as root in a regular user's session is not supported.  ($XDG_RUNTIME_DIR is /run/user/1000 which is owned by minigamanojkumarreddy.)
+1543249531272	geckodriver	INFO	Listening on 127.0.0.1:52341
+1543249532273	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.8BTmsLIbhUzw
+1543249532275	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1543249532279	geckodriver::marionette	INFO	Connecting to Marionette on localhost:36647
+1543249533127	Marionette	INFO	Enabled via --marionette
+
+(firefox:17939): GConf-WARNING **: 21:55:34.103: Client failed to connect to the D-BUS daemon:
+Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+
+(firefox:17939): GConf-WARNING **: 21:55:36.055: Client failed to connect to the D-BUS daemon:
+Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+1543249536288	Marionette	INFO	Listening on port 36647
+
+(firefox:17939): GConf-WARNING **: 21:55:36.388: Client failed to connect to the D-BUS daemon:
+Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+
+(firefox:17939): GConf-WARNING **: 21:55:38.161: Client failed to connect to the D-BUS daemon:
+Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+
+(firefox:17939): GConf-WARNING **: 21:55:39.160: Client failed to connect to the D-BUS daemon:
+Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+
+(firefox:17939): GConf-WARNING **: 21:55:51.894: Client failed to connect to the D-BUS daemon:
+Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+
+(firefox:17939): GConf-WARNING **: 21:55:51.908: Client failed to connect to the D-BUS daemon:
+Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+
+(firefox:17939): GConf-WARNING **: 21:55:51.910: Client failed to connect to the D-BUS daemon:
+Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+
+(firefox:17939): GConf-WARNING **: 21:55:51.912: Client failed to connect to the D-BUS daemon:
+Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+
+(firefox:17939): GConf-WARNING **: 21:55:51.914: Client failed to connect to the D-BUS daemon:
+Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+1543250139077	geckodriver	INFO	Listening on 127.0.0.1:40201
+1543250140078	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.64Q3iDhRl9i5
+1543250140080	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1543250140084	geckodriver::marionette	INFO	Connecting to Marionette on localhost:34441
+1543250141090	Marionette	INFO	Enabled via --marionette
+
+(firefox:20000): GConf-WARNING **: 22:05:42.076: Client failed to connect to the D-BUS daemon:
+Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+
+(firefox:20000): GConf-WARNING **: 22:05:43.975: Client failed to connect to the D-BUS daemon:
+Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+1543250144279	Marionette	INFO	Listening on port 34441
+
+(firefox:20000): GConf-WARNING **: 22:05:44.386: Client failed to connect to the D-BUS daemon:
+Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+
+(firefox:20000): GConf-WARNING **: 22:05:45.933: Client failed to connect to the D-BUS daemon:
+Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+
+(firefox:20000): GConf-WARNING **: 22:05:46.925: Client failed to connect to the D-BUS daemon:
+Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+
+(firefox:20000): GConf-WARNING **: 22:05:58.654: Client failed to connect to the D-BUS daemon:
+Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+
+(firefox:20000): GConf-WARNING **: 22:05:58.669: Client failed to connect to the D-BUS daemon:
+Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+
+(firefox:20000): GConf-WARNING **: 22:05:58.672: Client failed to connect to the D-BUS daemon:
+Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+
+(firefox:20000): GConf-WARNING **: 22:05:58.674: Client failed to connect to the D-BUS daemon:
+Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+
+(firefox:20000): GConf-WARNING **: 22:05:58.676: Client failed to connect to the D-BUS daemon:
+Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+1543250516957	geckodriver	INFO	Listening on 127.0.0.1:57825
+1543250517958	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.jacaUpOOzSem
+1543250517960	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1543250517964	geckodriver::marionette	INFO	Connecting to Marionette on localhost:43379
+1543250518834	Marionette	INFO	Enabled via --marionette
+
+(firefox:20260): GConf-WARNING **: 22:11:59.754: Client failed to connect to the D-BUS daemon:
+Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+
+(firefox:20260): GConf-WARNING **: 22:12:01.692: Client failed to connect to the D-BUS daemon:
+Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+1543250522030	Marionette	INFO	Listening on port 43379
+
+(firefox:20260): GConf-WARNING **: 22:12:02.111: Client failed to connect to the D-BUS daemon:
+Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+
+(firefox:20260): GConf-WARNING **: 22:12:02.527: Client failed to connect to the D-BUS daemon:
+Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+
+(firefox:20260): GConf-WARNING **: 22:12:03.591: Client failed to connect to the D-BUS daemon:
+Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+
+(firefox:20260): GConf-WARNING **: 22:12:48.130: Client failed to connect to the D-BUS daemon:
+Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+
+(firefox:20260): GConf-WARNING **: 22:13:59.786: Client failed to connect to the D-BUS daemon:
+Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+
+(firefox:20260): GConf-WARNING **: 22:13:59.800: Client failed to connect to the D-BUS daemon:
+Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+
+(firefox:20260): GConf-WARNING **: 22:13:59.802: Client failed to connect to the D-BUS daemon:
+Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+
+(firefox:20260): GConf-WARNING **: 22:13:59.804: Client failed to connect to the D-BUS daemon:
+Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+
+(firefox:20260): GConf-WARNING **: 22:13:59.806: Client failed to connect to the D-BUS daemon:
+Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+1580136697281	geckodriver	INFO	Listening on 127.0.0.1:40867
+1580136698231	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.NX3Ixp72uvZj
+1580136698233	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1580136698236	geckodriver::marionette	INFO	Connecting to Marionette on localhost:35683
+1580136699112	Marionette	INFO	Enabled via --marionette
+1580136702277	Marionette	INFO	Listening on port 35683
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+1580136724503	geckodriver	INFO	Listening on 127.0.0.1:37173
+1580136725504	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.TlBUejPYW8np
+1580136725507	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1580136725511	geckodriver::marionette	INFO	Connecting to Marionette on localhost:46531
+1580136726401	Marionette	INFO	Enabled via --marionette
+1580136729662	Marionette	INFO	Listening on port 46531
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+1580136784614	geckodriver	INFO	Listening on 127.0.0.1:45477
+1580136785615	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.iaCp5YR1yLZJ
+1580136785617	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1580136785621	geckodriver::marionette	INFO	Connecting to Marionette on localhost:46375
+1580136786480	Marionette	INFO	Enabled via --marionette
+1580136789806	Marionette	INFO	Listening on port 46375
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+1580136855272	geckodriver	INFO	Listening on 127.0.0.1:41587
+1580136856274	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.GuGTYZoWd8Js
+1580136856276	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1580136856280	geckodriver::marionette	INFO	Connecting to Marionette on localhost:39207
+1580136857164	Marionette	INFO	Enabled via --marionette
+1580136860535	Marionette	INFO	Listening on port 39207
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+1587454211728	geckodriver	INFO	Listening on 127.0.0.1:40101
+1587454212675	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.WwrQDaRT3nx3
+1587454212676	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1587454212695	geckodriver::marionette	INFO	Connecting to Marionette on localhost:41829
+1587454216954	Marionette	INFO	Enabled via --marionette
+1587454223909	Marionette	INFO	Listening on port 41829
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+1587454252558	geckodriver	INFO	Listening on 127.0.0.1:50405
+1587454253559	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.vDOomvTNPLej
+1587454253561	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1587454253565	geckodriver::marionette	INFO	Connecting to Marionette on localhost:46123
+1587454254365	Marionette	INFO	Enabled via --marionette
+1587454257449	Marionette	INFO	Listening on port 46123
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+1587465911685	geckodriver	INFO	Listening on 127.0.0.1:49295
+1587465912613	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.EO7BJjOIGVDA
+1587465912614	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1587465912616	geckodriver::marionette	INFO	Connecting to Marionette on localhost:43099
+1587465914642	Marionette	INFO	Enabled via --marionette
+1587465920573	geckodriver	INFO	Listening on 127.0.0.1:37781
+1587465921575	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.HvXwJ4k2Dnb2
+1587465921577	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1587465921581	geckodriver::marionette	INFO	Connecting to Marionette on localhost:41481
+1587465922452	Marionette	INFO	Enabled via --marionette
+1587465926857	Marionette	INFO	Listening on port 41481
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+1587465947983	geckodriver	INFO	Listening on 127.0.0.1:58355
+1587465948981	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.KCGxSkijAKf7
+1587465948984	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1587465948988	geckodriver::marionette	INFO	Connecting to Marionette on localhost:44535
+1587465949968	Marionette	INFO	Enabled via --marionette
+1587465953024	Marionette	INFO	Listening on port 44535
+1587466078255	geckodriver	INFO	Listening on 127.0.0.1:52549
+1587466078274	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.QK0tOtg4dIMX
+1587466078275	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1587466078277	geckodriver::marionette	INFO	Connecting to Marionette on localhost:35439
+1587466083209	Marionette	INFO	Enabled via --marionette
+1587466088941	Marionette	INFO	Listening on port 35439
+1587466239057	geckodriver	INFO	Listening on 127.0.0.1:50977
+1587466239984	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.Wzm1ZS6PYHji
+1587466239987	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1587466239991	geckodriver::marionette	INFO	Connecting to Marionette on localhost:35381
+1587466242444	Marionette	INFO	Enabled via --marionette
+1587466249761	Marionette	INFO	Listening on port 35381
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+1587466391451	geckodriver	INFO	Listening on 127.0.0.1:44527
+1587466392462	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.pwiqKV3nBDry
+1587466392463	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1587466392465	geckodriver::marionette	INFO	Connecting to Marionette on localhost:44937
+1587466394029	Marionette	INFO	Enabled via --marionette
+1587466397710	Marionette	INFO	Listening on port 44937
+1587466511978	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: timeout
+1587466511979	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: timeout
+1587466547174	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+1587467167206	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+1587468745651	geckodriver	INFO	Listening on 127.0.0.1:50529
+1587468746590	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.eXsVmLuJJF8l
+1587468746592	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1587468746618	geckodriver::marionette	INFO	Connecting to Marionette on localhost:43271
+1587468747889	Marionette	INFO	Enabled via --marionette
+1587468751426	Marionette	INFO	Listening on port 43271
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+1587468866367	geckodriver	INFO	Listening on 127.0.0.1:51441
+1587468867364	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.tTEa8dLVmtSH
+1587468867367	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1587468867370	geckodriver::marionette	INFO	Connecting to Marionette on localhost:38199
+1587468868391	Marionette	INFO	Enabled via --marionette
+1587468871481	Marionette	INFO	Listening on port 38199
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+1587468953071	geckodriver	INFO	Listening on 127.0.0.1:53955
+1587468954084	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.EqSHlJL60PSm
+1587468954086	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1587468954089	geckodriver::marionette	INFO	Connecting to Marionette on localhost:46143
+1587468955310	Marionette	INFO	Enabled via --marionette
+1587468958403	Marionette	INFO	Listening on port 46143
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+1587468997959	geckodriver	INFO	Listening on 127.0.0.1:38359
+1587468998906	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.qHhHehxeswls
+1587468998907	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1587468998909	geckodriver::marionette	INFO	Connecting to Marionette on localhost:38281
+1587469001282	Marionette	INFO	Enabled via --marionette
+1587469004726	Marionette	INFO	Listening on port 38281
+JavaScript error: resource://shield-recipe-client/lib/RecipeRunner.jsm, line 137: TypeError: prefs is undefined
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+1587469057822	geckodriver	INFO	Listening on 127.0.0.1:52931
+1587469058829	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.Jx2erE8wxK4O
+1587469058832	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1587469058835	geckodriver::marionette	INFO	Connecting to Marionette on localhost:33947
+1587469059782	Marionette	INFO	Enabled via --marionette
+1587469063263	Marionette	INFO	Listening on port 33947
+1587469141285	geckodriver	INFO	Listening on 127.0.0.1:38939
+1587469141309	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.v3f0Evi8j8Oo
+1587469141310	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1587469141312	geckodriver::marionette	INFO	Connecting to Marionette on localhost:41949
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+1587469145471	Marionette	INFO	Enabled via --marionette
+1587469149137	Marionette	INFO	Listening on port 41949
+console.warn: LoginRecipes: getRecipes: falling back to a synchronous message for: http://dgftebrc.nic.in:8100
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+1587469370160	geckodriver	INFO	Listening on 127.0.0.1:51805
+1587469371158	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.dj7COgHzFgwt
+1587469371159	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1587469371162	geckodriver::marionette	INFO	Connecting to Marionette on localhost:42603
+1587469372028	Marionette	INFO	Enabled via --marionette
+1587469375349	Marionette	INFO	Listening on port 42603
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+1587469546783	geckodriver	INFO	Listening on 127.0.0.1:40067
+1587469547800	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.py8IqiN8vpcP
+1587469547801	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1587469547803	geckodriver::marionette	INFO	Connecting to Marionette on localhost:40119
+1587469548650	Marionette	INFO	Enabled via --marionette
+1587469551733	Marionette	INFO	Listening on port 40119
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+1587469601703	geckodriver	INFO	Listening on 127.0.0.1:34809
+1587469602700	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.ILoZ9T6tbWRo
+1587469602701	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1587469602704	geckodriver::marionette	INFO	Connecting to Marionette on localhost:41887
+1587469603514	Marionette	INFO	Enabled via --marionette
+1587469606673	Marionette	INFO	Listening on port 41887
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+1587469667312	geckodriver	INFO	Listening on 127.0.0.1:47009
+1587469668325	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.lic2feJtR8Fc
+1587469668326	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1587469668328	geckodriver::marionette	INFO	Connecting to Marionette on localhost:37249
+1587469669241	Marionette	INFO	Enabled via --marionette
+1587469672331	Marionette	INFO	Listening on port 37249
+[Child 1446, Chrome_ChildThread] WARNING: pipe error (15): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 1446, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1587469746005	geckodriver	INFO	Listening on 127.0.0.1:45851
+1587469747004	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.oWiIrAAn6iT1
+1587469747006	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1587469747010	geckodriver::marionette	INFO	Connecting to Marionette on localhost:39213
+1587469748478	Marionette	INFO	Enabled via --marionette
+1587469752226	Marionette	INFO	Listening on port 39213
+[Child 1882, Chrome_ChildThread] WARNING: pipe error (15): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 1882, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1587470052376	geckodriver	INFO	Listening on 127.0.0.1:60157
+1587470053372	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.4zF45sUjKAJm
+1587470053374	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1587470053395	geckodriver::marionette	INFO	Connecting to Marionette on localhost:33393
+1587470054616	Marionette	INFO	Enabled via --marionette
+1587470057925	Marionette	INFO	Listening on port 33393
+[Child 3110, Chrome_ChildThread] WARNING: pipe error (17): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 3110, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1587470121392	geckodriver	INFO	Listening on 127.0.0.1:57017
+1587470122391	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.A3NBoOftKMwK
+1587470122393	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1587470122397	geckodriver::marionette	INFO	Connecting to Marionette on localhost:35979
+1587470123232	Marionette	INFO	Enabled via --marionette
+1587470126682	Marionette	INFO	Listening on port 35979
+[Child 3515, Chrome_ChildThread] WARNING: pipe error (17): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 3515, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1587470191309	geckodriver	INFO	Listening on 127.0.0.1:35941
+1587470192305	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.3iQuzkvkE6VI
+1587470192307	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1587470192311	geckodriver::marionette	INFO	Connecting to Marionette on localhost:34165
+1587470193135	Marionette	INFO	Enabled via --marionette
+1587470196349	Marionette	INFO	Listening on port 34165
+[Child 4013, Chrome_ChildThread] WARNING: pipe error (17): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 4013, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1587470345199	geckodriver	INFO	Listening on 127.0.0.1:38917
+1587470346199	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.ndJE3WY71IK0
+1587470346201	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1587470346206	geckodriver::marionette	INFO	Connecting to Marionette on localhost:43479
+1587470347071	Marionette	INFO	Enabled via --marionette
+1587470350584	Marionette	INFO	Listening on port 43479
+[Child 4913, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1587470392556	geckodriver	INFO	Listening on 127.0.0.1:43525
+1587470393556	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.NzEap6tC0XaD
+1587470393558	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1587470393562	geckodriver::marionette	INFO	Connecting to Marionette on localhost:39483
+1587470394469	Marionette	INFO	Enabled via --marionette
+1587470398072	Marionette	INFO	Listening on port 39483
+[Child 5267, Chrome_ChildThread] WARNING: pipe error (15): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 5267, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1587470564098	geckodriver	INFO	Listening on 127.0.0.1:36625
+1587470565099	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.OR6XYLXsxnz7
+1587470565101	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1587470565105	geckodriver::marionette	INFO	Connecting to Marionette on localhost:33861
+1587470566027	Marionette	INFO	Enabled via --marionette
+1587470569147	Marionette	INFO	Listening on port 33861
+1587470879098	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+console.warn: LoginRecipes: getRecipes: falling back to a synchronous message for: http://dgftebrc.nic.in:8100
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+JavaScript error: jar:file:///opt/firefox/omni.ja!/components/nsUrlClassifierListManager.js, line 324: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+1587471477121	geckodriver	INFO	geckodriver 0.18.0
+1587471477126	geckodriver	INFO	Listening on 127.0.0.1:35571
+1587471478312	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1587471481455	Marionette	INFO	Enabled via --marionette
+1587471485980	Marionette	INFO	Listening on port 46011
+1587471486044	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Child 9300, Chrome_ChildThread] WARNING: pipe error (15): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 9300, Chrome_ChildThread] WARNING: pipe error (31): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 9300, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1587471668799	geckodriver	INFO	geckodriver 0.18.0
+1587471668804	geckodriver	INFO	Listening on 127.0.0.1:43041
+1587471669978	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1587471670811	Marionette	INFO	Enabled via --marionette
+1587471674195	Marionette	INFO	Listening on port 45183
+1587471674297	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Child 10081, Chrome_ChildThread] WARNING: pipe error (31): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 10081, Chrome_ChildThread] WARNING: pipe error (15): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 10081, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1587473063699	geckodriver	INFO	geckodriver 0.18.0
+1587473063705	geckodriver	INFO	Listening on 127.0.0.1:52203
+1587473064875	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1587473065884	Marionette	INFO	Enabled via --marionette
+1587473069098	Marionette	INFO	Listening on port 34493
+1587473069214	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Child 16508, Chrome_ChildThread] WARNING: pipe error (31): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 16508, Chrome_ChildThread] WARNING: pipe error (15): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 16508, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1587473104466	geckodriver	INFO	geckodriver 0.18.0
+1587473104475	geckodriver	INFO	Listening on 127.0.0.1:57383
+1587473105647	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1587473106459	Marionette	INFO	Enabled via --marionette
+1587473109746	Marionette	INFO	Listening on port 36729
+1587473109771	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Child 16801, Chrome_ChildThread] WARNING: pipe error (17): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 16801, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1587473170443	geckodriver	INFO	geckodriver 0.18.0
+1587473170449	geckodriver	INFO	Listening on 127.0.0.1:45199
+1587473171639	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1587473172454	Marionette	INFO	Enabled via --marionette
+1587473175551	Marionette	INFO	Listening on port 42197
+1587473175663	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Child 17158, Chrome_ChildThread] WARNING: pipe error (17): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 17158, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1587473836122	geckodriver	INFO	geckodriver 0.18.0
+1587473836131	geckodriver	INFO	Listening on 127.0.0.1:34805
+1587473837299	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1587473838218	Marionette	INFO	Enabled via --marionette
+1587473841770	Marionette	INFO	Listening on port 41127
+1587473841832	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Child 19520, Chrome_ChildThread] WARNING: pipe error (15): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 19520, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1587474049444	geckodriver	INFO	geckodriver 0.18.0
+1587474049449	geckodriver	INFO	Listening on 127.0.0.1:43733
+1587474050636	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1587474051976	Marionette	INFO	Enabled via --marionette
+1587474055168	Marionette	INFO	Listening on port 37731
+1587474055255	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: resource://shield-recipe-client/lib/RecipeRunner.jsm, line 137: TypeError: prefs is undefined
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1587474084182	geckodriver	INFO	geckodriver 0.18.0
+1587474084189	geckodriver	INFO	Listening on 127.0.0.1:36087
+1587474085365	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1587474086195	Marionette	INFO	Enabled via --marionette
+1587474089467	Marionette	INFO	Listening on port 41485
+1587474089493	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Child 20779, Chrome_ChildThread] WARNING: pipe error (15): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 20779, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1587474207760	geckodriver	INFO	geckodriver 0.18.0
+1587474207766	geckodriver	INFO	Listening on 127.0.0.1:46253
+1587474208940	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1587474209776	Marionette	INFO	Enabled via --marionette
+1587474212897	Marionette	INFO	Listening on port 41563
+1587474212961	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Child 21350, Chrome_ChildThread] WARNING: pipe error (31): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 21350, Chrome_ChildThread] WARNING: pipe error (15): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[Child 21350, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353

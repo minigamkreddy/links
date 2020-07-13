@@ -1,0 +1,47 @@
+﻿os concepts
+
+FILE OPERATIONS	
+
+	i) read
+	ii) write
+	iii) open
+	iv) create
+	
+i) do experiment on the signal , sigaction and execv function.
+	In signal
+		what is the difference between the signal and sigaction
+		i) SIGABRT
+		ii) sigfillset
+		iii) sigprocmask
+		iv) SIGCHID
+		v) SIGALARM
+		vi)SIGUP
+		vii) pipe
+		viii) SIGFPE
+		ix) SIGTRAP
+		x) SIGQUIT
+		xi) SIGUSR1
+		xii) popen
+		xiii) pclose
+		ix) execl
+		x) execlp
+		xi) execle
+		xii) execv
+		xiii) execvp
+		xiv) execvpe
+		xv) fork
+		xvi) vfork
+		
+SIGACTION
+
+IPC machenism
+	i) pipe
+	ii) shemaphore
+	iii) message queue
+	iv) fifo
+Theard
+	i) Thearding
+
+
+
+

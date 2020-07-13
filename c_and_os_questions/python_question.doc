@@ -1,0 +1,39 @@
+﻿Python questions
+
+1) Inheritance
+2) multiple inheritance
+3) multilevel inheritance
+4) deep and shallow copy
+5) polymophysim with explain
+6) method overloading and overriding support
+7) generators and iterators,iterable(list)
+8) how to create decorator within the class and outside the class
+9) singleton object creations
+10) how to write into a list using one thread and read from the same list from another thread
+11) *args and **kargs
+12) In *args we can many arguments and in **kargs we can pass the dictionary as an arguments
+13) comprehension
+14) closures
+15) generators
+16) iterators
+17) lamda
+18) map
+19) filters
+20) reduce
+21) operator overloading
+22) obj and class
+23) packages and modules
+24) relative path and obsolute path
+25) dynamic and static link
+26) super function use case in operated overloading and fuction overloading 
+27) namespace in python
+28) user defined execptions and defined exception in python
+29) what is the class n mandatory methods of class
+30) what is constructor and why it is used
+31) what are class variables
+32) what are instance variables
+33) what are iterators
+34) is for loop indirectly using next method
+35) how to change the tuple elements
+36) how do you define datatype in python
+

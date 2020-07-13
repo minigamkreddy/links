@@ -1,0 +1,124 @@
+﻿
+1) what is the use of storage class with example.
+	Automatic
+		i) auto
+		ii) register
+	static
+		i) static
+		scope,lifetime,memory
+what is the main use of static when we declare inside main and while loop the static remain unchangable and static is retricted within the file.
+		ii) extern
+the extern is used to access the variable in other files
+		ii) global
+
+2) Storage class qualifierswith examples.
+	i) const
+In const where the const is stored in memory when we declared outside the main function and inside the main function and how we can change the value of constant in outsid and inside.
+	ii) volatile
+In Volatile how we can apply the optimization level in volatile and differen types of optimization levels.
+
+3) what is the use of data types.
+	i) int 
+		i) int or signed int
+		ii) unsigned short int
+		iii) long int or signed long int
+		iv) unsigned long int
+	ii) float
+	iii) double
+		i) double
+		ii) long double
+	iv) char
+		i) Signed char 
+		ii) Unsigned char
+
+4) The commands to generate the output of application building process.
+Suppose there is a file test.c
+	i) gcc -s test.i -o test.s
+	ii) gcc -c test.s -o test.o
+	iii) gcc test.o -o test.exe
+	iv) ./test.ext
+
+5) The different types of error  whilc compling the program.
+	i) Compilation Error EX : Snematic and syntax errors
+	ii) Runtime Error Ex: Segmentation fault
+	iii) Preprocessor Error EX: fatal error
+
+6) The command to executable file without executing main function
+	i) gcc -nonstartfiles test.o -o test 
+
+
+7) High precedence grouped
+	i) For example d = (a=b) && (b=c) || (c=a) in this expression which will execute frist
+
+8) Logical operator with example
+9) Bit wise operators with example
+10) what is the use of ternary conditional operator
+11) Nesting of Conditional operator
+12) write a program by 3 interger by using conditional operator
+
+
+
+
+14) What is the use of control statements
+15) what is use of structure and union.
+13) how we can create the memory leak using structure.
+14) what happens when we allocate the memory to variable using malloc and we didn’t deallocate the memory using free.
+15) write a programs on the given below.
+	i) arrays.
+	ii) array of pointer
+	iii) pointer to the array
+	iv) function pointer
+	v) array of function pointer
+
+16) do experiments on malloc , calloc and realloc.
+17) what is the memory leak
+18) what is the disadvantage of scanf.
+19) what is the use of getchar(),gets(),fgets()
+20) what is the pragma in the structure.
+21) bitfields in the structure.
+22) the use of froced bitfield in the struction.
+23) what is the use of self referencial structure.
+24) write a program on recursion.
+25) what is the use of common symbol and weak symbols and strong symbols.
+26) do experiments on different types of arrays.
+	i) one dimensional array
+	iii) two dimensional array
+	iv) 	three dimensional array 
+and allocate memory using malloc
+
+27) sting functions
+	i) strcpy
+	ii) strncmp
+	iii) strcmp
+	iv) strcat
+	v) strrot
+	vi )strstr
+	vii) strtok
+	viii) strchr
+	ix) 	strncat
+	x) strcspn
+	xi) strspnn
+
+28) write a program to find wheather your system is little endian or big endian.
+
+
+29) FILE OPERATIONS
+	i) fread
+	ii) fwrite
+	iii) fopen
+	iv) fscanf
+	v) fseek
+	vi) rewind
+	vii) fclose
+	viii) memmove
+	ix) memmove
+	x) memcpy
+	xi) putc
+	xii) fgetc
+	xiii) fgetw
+	xiv) fgetc	
+	xv) fpurge
+	xvi) rand
+	
+30) Dangling pointer,wild pointer 
+

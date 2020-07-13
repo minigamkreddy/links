@@ -1,0 +1,55 @@
+﻿Networking concepts
+
+1) WAN (wide area network)
+2) LAN (local area network)
+3) client server model
+4) server defination
+5) client defination
+6) Host
+7) physical address or hardware address or mac address or link address
+8) port number (ranges)
+	i) Registered
+	ii) Epemiral
+	iii) Well known port numbers
+9) class full ipv4 address
+	i) class A
+	ii) class B
+	iii) class E
+	iv) class C
+	v) class D
+	vi) class E 
+10) what is the use of repeater
+11) HUB
+12) SWITCH
+13)ROUTER
+14) GEATWAY
+15) Classless ipv4 addressing
+	i) Class A range
+	ii) Class B range
+	iii) Class C range
+
+
+16) Subentting
+17) Supernetting
+18) Variable Subnetting
+19) broadcast address
+20) NAT and PAT
+21) ARP
+22) ping functionality
+
+
+23) The difference between the OSI MODEL and TCP/IP stack
+24) Client and Server moder 
+	Server APIS 				Client API
+        i) Socket()				  i) Socket()
+	  ii) bind()
+	  iii) listen()
+        iv) accept()				   iv) Connect()
+	  vi) recv()/send()			   v) send()/recv()
+	  vii) send()/recv()			   vi) recv()/send()
+	  viii) close()    			   vii) close()
+
+25) what is the use of ioctl
+26) What is the use of three way handshake
+27) what is the use of select and poll API
+	
